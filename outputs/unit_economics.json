@@ -1,0 +1,265 @@
+{
+  "per_customer_base": {
+    "price_usd": 19.0,
+    "ops_per_month": 20.0,
+    "llm_cost_per_op": 0.0,
+    "gross_revenue": 19.0,
+    "refund_loss": 0.57,
+    "mor_fee": 1.6829,
+    "mor_effective_rate": 0.0913,
+    "cogs_llm": 0.0,
+    "contribution_margin_usd": 16.7471,
+    "contribution_margin_pct": 0.8814,
+    "lifetime_months": 14.29,
+    "ltv_usd": 239.24
+  },
+  "price_ladder": [
+    {
+      "price": 9,
+      "mor_effective_rate": 0.1206,
+      "contribution_usd": 7.6776,
+      "contribution_pct": 0.8531,
+      "ltv_usd": 109.68,
+      "customers_to_cover_infra": 7.81
+    },
+    {
+      "price": 19,
+      "mor_effective_rate": 0.0913,
+      "contribution_usd": 16.7471,
+      "contribution_pct": 0.8814,
+      "ltv_usd": 239.24,
+      "customers_to_cover_infra": 3.58
+    },
+    {
+      "price": 29,
+      "mor_effective_rate": 0.0822,
+      "contribution_usd": 25.8165,
+      "contribution_pct": 0.8902,
+      "ltv_usd": 368.81,
+      "customers_to_cover_infra": 2.32
+    },
+    {
+      "price": 49,
+      "mor_effective_rate": 0.0752,
+      "contribution_usd": 43.9556,
+      "contribution_pct": 0.8971,
+      "ltv_usd": 627.94,
+      "customers_to_cover_infra": 1.37
+    },
+    {
+      "price": 99,
+      "mor_effective_rate": 0.0701,
+      "contribution_usd": 89.303,
+      "contribution_pct": 0.9021,
+      "ltv_usd": 1275.76,
+      "customers_to_cover_infra": 0.67
+    }
+  ],
+  "product_form_comparison": [
+    {
+      "form": "C12 纯规则分析（零推理）",
+      "llm_cost_per_op": 0.0,
+      "monthly_cogs_at_20_ops": 0.0,
+      "contribution_pct": 0.8814,
+      "ltv_usd": 239.24
+    },
+    {
+      "form": "单次推理式审查（Sonnet 5 推算）",
+      "llm_cost_per_op": 0.0714,
+      "monthly_cogs_at_20_ops": 1.428,
+      "contribution_pct": 0.8063,
+      "ltv_usd": 218.84
+    },
+    {
+      "form": "agentic 审查（Ellipsis 生产均值）",
+      "llm_cost_per_op": 0.12,
+      "monthly_cogs_at_20_ops": 2.4,
+      "contribution_pct": 0.7551,
+      "ltv_usd": 204.96
+    },
+    {
+      "form": "agentic 未优化（朴素全上下文实现）",
+      "llm_cost_per_op": 1.65,
+      "monthly_cogs_at_20_ops": 33.0,
+      "contribution_pct": -0.8554,
+      "ltv_usd": -232.18
+    }
+  ],
+  "breakeven": {
+    "contribution_per_customer_month": 16.75,
+    "cash_breakeven": {
+      "description": "只覆盖基础设施现金支出（$60/月）——这是最低、也是最容易误导人的口径",
+      "customers": 3.58,
+      "mrr_usd": 68.07,
+      "monthly_visitors_needed": 186.0
+    },
+    "full_breakeven": {
+      "description": "同时覆盖基础设施与时间机会成本（87 小时/月 × $30/小时 = $2,600/月）——**这才是真实的盈亏平衡**",
+      "monthly_hours": 86.7,
+      "monthly_time_cost_usd": 2600.0,
+      "customers": 158.83,
+      "mrr_usd": 3017.84,
+      "monthly_visitors_needed": 8236.0,
+      "monthly_visitors_needed_with_card": 3001.0
+    },
+    "ratio": 44.3
+  },
+  "time_based_cac_scenarios": [
+    {
+      "acquisition_hours_per_month": 4,
+      "monthly_visitors": 500,
+      "hours_on_acquisition_per_month": 4,
+      "customers_acquired_per_month": 0.675,
+      "hours_per_customer": 5.93,
+      "cac_usd_time_priced": 177.78,
+      "contribution_per_month": 16.75,
+      "payback_months": 10.6,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 1.35,
+      "healthy": false
+    },
+    {
+      "acquisition_hours_per_month": 4,
+      "monthly_visitors": 1000,
+      "hours_on_acquisition_per_month": 4,
+      "customers_acquired_per_month": 1.35,
+      "hours_per_customer": 2.96,
+      "cac_usd_time_priced": 88.89,
+      "contribution_per_month": 16.75,
+      "payback_months": 5.3,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 2.69,
+      "healthy": false
+    },
+    {
+      "acquisition_hours_per_month": 4,
+      "monthly_visitors": 2000,
+      "hours_on_acquisition_per_month": 4,
+      "customers_acquired_per_month": 2.7,
+      "hours_per_customer": 1.48,
+      "cac_usd_time_priced": 44.44,
+      "contribution_per_month": 16.75,
+      "payback_months": 2.7,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 5.38,
+      "healthy": true
+    },
+    {
+      "acquisition_hours_per_month": 4,
+      "monthly_visitors": 2729,
+      "hours_on_acquisition_per_month": 4,
+      "customers_acquired_per_month": 3.684,
+      "hours_per_customer": 1.09,
+      "cac_usd_time_priced": 32.57,
+      "contribution_per_month": 16.75,
+      "payback_months": 1.9,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 7.34,
+      "healthy": true
+    },
+    {
+      "acquisition_hours_per_month": 8,
+      "monthly_visitors": 500,
+      "hours_on_acquisition_per_month": 8,
+      "customers_acquired_per_month": 0.675,
+      "hours_per_customer": 11.85,
+      "cac_usd_time_priced": 355.56,
+      "contribution_per_month": 16.75,
+      "payback_months": 21.2,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 0.67,
+      "healthy": false
+    },
+    {
+      "acquisition_hours_per_month": 8,
+      "monthly_visitors": 1000,
+      "hours_on_acquisition_per_month": 8,
+      "customers_acquired_per_month": 1.35,
+      "hours_per_customer": 5.93,
+      "cac_usd_time_priced": 177.78,
+      "contribution_per_month": 16.75,
+      "payback_months": 10.6,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 1.35,
+      "healthy": false
+    },
+    {
+      "acquisition_hours_per_month": 8,
+      "monthly_visitors": 2000,
+      "hours_on_acquisition_per_month": 8,
+      "customers_acquired_per_month": 2.7,
+      "hours_per_customer": 2.96,
+      "cac_usd_time_priced": 88.89,
+      "contribution_per_month": 16.75,
+      "payback_months": 5.3,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 2.69,
+      "healthy": false
+    },
+    {
+      "acquisition_hours_per_month": 8,
+      "monthly_visitors": 2729,
+      "hours_on_acquisition_per_month": 8,
+      "customers_acquired_per_month": 3.684,
+      "hours_per_customer": 2.17,
+      "cac_usd_time_priced": 65.14,
+      "contribution_per_month": 16.75,
+      "payback_months": 3.9,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 3.67,
+      "healthy": true
+    },
+    {
+      "acquisition_hours_per_month": 12,
+      "monthly_visitors": 500,
+      "hours_on_acquisition_per_month": 12,
+      "customers_acquired_per_month": 0.675,
+      "hours_per_customer": 17.78,
+      "cac_usd_time_priced": 533.33,
+      "contribution_per_month": 16.75,
+      "payback_months": 31.8,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 0.45,
+      "healthy": false
+    },
+    {
+      "acquisition_hours_per_month": 12,
+      "monthly_visitors": 1000,
+      "hours_on_acquisition_per_month": 12,
+      "customers_acquired_per_month": 1.35,
+      "hours_per_customer": 8.89,
+      "cac_usd_time_priced": 266.67,
+      "contribution_per_month": 16.75,
+      "payback_months": 15.9,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 0.9,
+      "healthy": false
+    },
+    {
+      "acquisition_hours_per_month": 12,
+      "monthly_visitors": 2000,
+      "hours_on_acquisition_per_month": 12,
+      "customers_acquired_per_month": 2.7,
+      "hours_per_customer": 4.44,
+      "cac_usd_time_priced": 133.33,
+      "contribution_per_month": 16.75,
+      "payback_months": 8.0,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 1.79,
+      "healthy": false
+    },
+    {
+      "acquisition_hours_per_month": 12,
+      "monthly_visitors": 2729,
+      "hours_on_acquisition_per_month": 12,
+      "customers_acquired_per_month": 3.684,
+      "hours_per_customer": 3.26,
+      "cac_usd_time_priced": 97.72,
+      "contribution_per_month": 16.75,
+      "payback_months": 5.8,
+      "ltv_usd": 239.24,
+      "ltv_over_cac": 2.45,
+      "healthy": false
+    }
+  ]
+}

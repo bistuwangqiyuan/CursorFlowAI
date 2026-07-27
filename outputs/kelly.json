@@ -1,0 +1,308 @@
+{
+  "meta": {
+    "seed": 20260727,
+    "n_sims": 100000,
+    "note": "两种口径并列。**全口径是本 BP 的正式口径**；现金口径保留是为了展示忽略时间成本会得出多么不同的结论。"
+  },
+  "full_accounting": {
+    "label": "全口径（现金 + 时间机会成本 $30/h）",
+    "bankroll_usd": 170000.0,
+    "planned_wager_usd": 94500.0,
+    "planned_wager_as_fraction_of_bankroll": 0.5558823529411765,
+    "win_loss": {
+      "win_rate_p": 0.01809,
+      "loss_rate_q": 0.98191,
+      "avg_win_W": 1.5956726060908861,
+      "avg_loss_L": 0.12162900518055172,
+      "payoff_ratio_b": 13.119178305554632,
+      "expected_value": -0.0905630190326514,
+      "kelly_two_outcome": -0.056755388722574296,
+      "breakeven_win_rate": 0.07082565134874666
+    },
+    "buckets": [
+      {
+        "bucket": "全损（回收 <25%）",
+        "probability": 0.05912,
+        "mean_multiple": 0.16978286259040848
+      },
+      {
+        "bucket": "重损（25%–75%）",
+        "probability": 0.07901,
+        "mean_multiple": 0.45224521433252096
+      },
+      {
+        "bucket": "轻损（75%–100%）",
+        "probability": 0.84378,
+        "mean_multiple": 0.9679203184507894
+      },
+      {
+        "bucket": "回本至小成（1.0–2.0 倍）",
+        "probability": 0.0117,
+        "mean_multiple": 1.370137940032883
+      },
+      {
+        "bucket": "中成（2.0–5.0 倍）",
+        "probability": 0.00497,
+        "mean_multiple": 2.884750227645785
+      },
+      {
+        "bucket": "大成（>5 倍）",
+        "probability": 0.00142,
+        "mean_multiple": 11.681616136901297
+      }
+    ],
+    "kelly": {
+      "f_star": 0.0,
+      "growth_rate_at_f_star": 0.0,
+      "growth_rate_at_f_1": -0.18944278348287302,
+      "max_safe_f": 1.075216530797076,
+      "worst_case_multiple": 0.06995564027059344,
+      "kelly_says_do_not_bet": true
+    },
+    "kelly_implied_wager_usd": 0.0,
+    "kelly_exceeds_bankroll": false,
+    "commitment_view": {
+      "share_of_paths_committed": 0.21748,
+      "win_rate_given_commitment": 0.08318006253448593,
+      "avg_loss_given_commitment": 0.49861562830447453,
+      "payoff_ratio_given_commitment": 3.2002057607318015,
+      "expected_value_given_commitment": -0.3244126020022303,
+      "note": "对比无条件胜率可见：阶段门把绝大多数失败拦在了「只亏几十小时」的阶段。无条件胜率低 ≠ 风险大；真正的风险集中在通过 Gate 1 之后的 240+ 小时。"
+    },
+    "fractional_kelly": [],
+    "annualization": {
+      "A_expect_then_annualize": {
+        "label": "口径 A：先算期望倍数，再年化",
+        "formula": "(E[M])^(1/T) − 1",
+        "value": -0.03114778445502231,
+        "misleading_because": "最容易被误读为「预期年化收益」。它是**均值的年化**，而均值被极少数右尾路径拉动；中位路径拿不到这个数。"
+      },
+      "B_annualize_then_expect": {
+        "label": "口径 B：各路径先年化，再取期望",
+        "formula": "E[M^(1/T)] − 1",
+        "value": -0.04990656350300027,
+        "misleading_because": "由 Jensen 不等式，恒 ≤ 口径 A。它更贴近「随机抽一条路径的年化」，但把全损路径的 −100% 也平均了进来，会低估「做成时」的量级。"
+      },
+      "C_geometric_conditional_on_survival": {
+        "label": "口径 C：条件于未全损的几何平均年化",
+        "formula": "exp(E[ln M | M > 0.25])^(1/T) − 1",
+        "value": -0.028879385494945953,
+        "misleading_because": "**隐藏了 5.9% 的全损概率。**这是创业故事里最常被单独引用的数字，也是最危险的一个。"
+      },
+      "D_true_geometric_all_paths": {
+        "label": "口径 D：全路径几何平均年化（重复下注的真实增长率）",
+        "formula": "exp(E[ln M])^(1/T) − 1",
+        "value": -0.06119509897150133,
+        "misleading_because": "这一口径本身不误导，但**只在「能重复下很多次同样的注」时才有意义**。单人创业一生下注个位数次，此数是理论参照而非可实现收益。"
+      },
+      "_spread_pct_points": 3.2315713476555374,
+      "_risk_free_comparison": {
+        "us_10y": 0.0471,
+        "cn_10y": 0.0173,
+        "note": "同一分布可产出相差数十个百分点的四个「年化」。BP 中任何一处出现「年化 XX%」，必须紧跟口径名与该口径的误导风险说明。"
+      }
+    },
+    "forbidden_approximations": {
+      "volatility_drag": {
+        "exact_log_growth": -0.18944278348287302,
+        "approx_mu_minus_half_sigma2": -0.315241642337789,
+        "absolute_error": -0.12579885885491598,
+        "sign_flipped": false,
+        "verdict": "近似式 g ≈ μ − σ²/2 只在小波动下成立。本项目 σ(算术) = 0.670，远超其适用范围，误差 0.1258。**禁用，一律用精确式 E[ln M]。**"
+      },
+      "half_kelly_retention": {
+        "measured": null,
+        "c2minusc_approx": 0.75,
+        "verdict": "Kelly 最优比例为 0（优势为负），分数 Kelly 无从谈起。"
+      }
+    },
+    "inapplicable_ratios": {
+      "sharpe": -0.3559720882479964,
+      "sortino": -0.6710179981505082,
+      "omega": 0.09968736186586248,
+      "skewness": 67.11714530891906,
+      "excess_kurtosis": 8070.886126687578,
+      "why_not_reported_as_conclusion": "这三个比率均以「收益对称、波动可作为风险代理」为前提。本分布偏度 与超额峰度都极高（见上），标准差主要由**右尾的好结果**贡献，于是「波动越大 = 越危险」的解读方向是反的。把它们放进 BP 正文，只会让读者得到与事实相反的印象。仅在方法论附录中作为反例出现。"
+    }
+  },
+  "cash_only": {
+    "label": "现金口径（时间按 $0 计，即把 20 小时/周当纯闲暇）",
+    "bankroll_usd": 80000.0,
+    "planned_wager_usd": 4500.0,
+    "planned_wager_as_fraction_of_bankroll": 0.05625,
+    "win_loss": {
+      "win_rate_p": 0.14009,
+      "loss_rate_q": 0.85991,
+      "avg_win_W": 10.553202018988875,
+      "avg_loss_L": 0.04584082435909879,
+      "payoff_ratio_b": 230.21405409988458,
+      "expected_value": 1.4389790875655188,
+      "kelly_two_outcome": 0.13635473716662447,
+      "breakeven_win_rate": 0.004324996609280505
+    },
+    "buckets": [
+      {
+        "bucket": "全损（回收 <25%）",
+        "probability": 0.00014,
+        "mean_multiple": 0.1889464310390347
+      },
+      {
+        "bucket": "重损（25%–75%）",
+        "probability": 0.01161,
+        "mean_multiple": 0.6021804311641858
+      },
+      {
+        "bucket": "轻损（75%–100%）",
+        "probability": 0.84816,
+        "mean_multiple": 0.9591035293095711
+      },
+      {
+        "bucket": "回本至小成（1.0–2.0 倍）",
+        "probability": 0.02992,
+        "mean_multiple": 1.4449093921988097
+      },
+      {
+        "bucket": "中成（2.0–5.0 倍）",
+        "probability": 0.04267,
+        "mean_multiple": 3.2708190850626173
+      },
+      {
+        "bucket": "大成（>5 倍）",
+        "probability": 0.0675,
+        "mean_multiple": 21.269489355050986
+      }
+    ],
+    "kelly": {
+      "f_star": 1.1550411158844671,
+      "growth_rate_at_f_star": 0.19502362306846943,
+      "growth_rate_at_f_1": 0.1892258182150379,
+      "max_safe_f": 1.1553797966762016,
+      "worst_case_multiple": 0.13448448954942033,
+      "kelly_says_do_not_bet": false
+    },
+    "kelly_implied_wager_usd": 92403.28927075736,
+    "kelly_exceeds_bankroll": true,
+    "commitment_view": {
+      "share_of_paths_committed": 0.21748,
+      "win_rate_given_commitment": 0.6441511863159831,
+      "avg_loss_given_commitment": 0.11177985584676822,
+      "payoff_ratio_given_commitment": 94.41058891197335,
+      "expected_value_given_commitment": 6.758080870867069,
+      "note": "对比无条件胜率可见：阶段门把绝大多数失败拦在了「只亏几十小时」的阶段。无条件胜率低 ≠ 风险大；真正的风险集中在通过 Gate 1 之后的 240+ 小时。"
+    },
+    "fractional_kelly": [
+      {
+        "fraction_c": 0.25,
+        "f": 0.2887602789711168,
+        "growth_rate": 0.11751741092535094,
+        "ruin": false,
+        "retention_measured": 0.6025803903975909,
+        "retention_c2minusc_approx": 0.4375
+      },
+      {
+        "fraction_c": 0.5,
+        "f": 0.5775205579422336,
+        "growth_rate": 0.15913753954427265,
+        "ruin": false,
+        "retention_measured": 0.8159910940040438,
+        "retention_c2minusc_approx": 0.75
+      },
+      {
+        "fraction_c": 0.75,
+        "f": 0.8662808369133503,
+        "growth_rate": 0.1822070019183692,
+        "ruin": false,
+        "retention_measured": 0.934281699065756,
+        "retention_c2minusc_approx": 0.9375
+      },
+      {
+        "fraction_c": 1.0,
+        "f": 1.1550411158844671,
+        "growth_rate": 0.19502362306846943,
+        "ruin": false,
+        "retention_measured": 1.0,
+        "retention_c2minusc_approx": 1.0
+      },
+      {
+        "fraction_c": 1.5,
+        "f": 1.7325616738267007,
+        "growth_rate": null,
+        "ruin": true,
+        "retention_measured": null,
+        "retention_c2minusc_approx": 0.75
+      },
+      {
+        "fraction_c": 2.0,
+        "f": 2.3100822317689342,
+        "growth_rate": null,
+        "ruin": true,
+        "retention_measured": null,
+        "retention_c2minusc_approx": 0.0
+      }
+    ],
+    "annualization": {
+      "A_expect_then_annualize": {
+        "label": "口径 A：先算期望倍数，再年化",
+        "formula": "(E[M])^(1/T) − 1",
+        "value": 0.3460753114105317,
+        "misleading_because": "最容易被误读为「预期年化收益」。它是**均值的年化**，而均值被极少数右尾路径拉动；中位路径拿不到这个数。"
+      },
+      "B_annualize_then_expect": {
+        "label": "口径 B：各路径先年化，再取期望",
+        "formula": "E[M^(1/T)] − 1",
+        "value": 0.10846276698782797,
+        "misleading_because": "由 Jensen 不等式，恒 ≤ 口径 A。它更贴近「随机抽一条路径的年化」，但把全损路径的 −100% 也平均了进来，会低估「做成时」的量级。"
+      },
+      "C_geometric_conditional_on_survival": {
+        "label": "口径 C：条件于未全损的几何平均年化",
+        "formula": "exp(E[ln M | M > 0.25])^(1/T) − 1",
+        "value": 0.0652000061921596,
+        "misleading_because": "**隐藏了 0.0% 的全损概率。**这是创业故事里最常被单独引用的数字，也是最危险的一个。"
+      },
+      "D_true_geometric_all_paths": {
+        "label": "口径 D：全路径几何平均年化（重复下注的真实增长率）",
+        "formula": "exp(E[ln M])^(1/T) − 1",
+        "value": 0.06510700973519512,
+        "misleading_because": "这一口径本身不误导，但**只在「能重复下很多次同样的注」时才有意义**。单人创业一生下注个位数次，此数是理论参照而非可实现收益。"
+      },
+      "_spread_pct_points": 28.09683016753366,
+      "_risk_free_comparison": {
+        "us_10y": 0.0471,
+        "cn_10y": 0.0173,
+        "note": "同一分布可产出相差数十个百分点的四个「年化」。BP 中任何一处出现「年化 XX%」，必须紧跟口径名与该口径的误导风险说明。"
+      }
+    },
+    "forbidden_approximations": {
+      "volatility_drag": {
+        "exact_log_growth": 0.1892258182150379,
+        "approx_mu_minus_half_sigma2": -99.94897330792422,
+        "absolute_error": -100.13819912613926,
+        "sign_flipped": true,
+        "verdict": "近似式 g ≈ μ − σ²/2 只在小波动下成立。本项目 σ(算术) = 14.240，远超其适用范围，误差 100.1382。**禁用，一律用精确式 E[ln M]。**"
+      },
+      "half_kelly_retention": {
+        "measured": 0.8159910940040438,
+        "c2minusc_approx": 0.75,
+        "verdict": "实测半 Kelly 保留 81.6%，而流传的 c(2−c) 近似给出 75.0%。**禁用近似，用实测值。**"
+      }
+    },
+    "inapplicable_ratios": {
+      "sharpe": 0.09065482910772679,
+      "sortino": 6.043417280237408,
+      "omega": 8.721360062693785,
+      "skewness": 67.82452572561218,
+      "excess_kurtosis": 7984.852541359246,
+      "why_not_reported_as_conclusion": "这三个比率均以「收益对称、波动可作为风险代理」为前提。本分布偏度 与超额峰度都极高（见上），标准差主要由**右尾的好结果**贡献，于是「波动越大 = 越危险」的解读方向是反的。把它们放进 BP 正文，只会让读者得到与事实相反的印象。仅在方法论附录中作为反例出现。"
+    },
+    "reductio_ad_absurdum": "现金口径下 Kelly 解出 f* = 1.155 > 1，即「押上全部身家的 116% 还不够」。这是个荒谬的处方，而荒谬恰恰是有用的：它证明**现金口径本身是错的**。Kelly 之所以敢让你满仓，是因为在该口径下你几乎亏不掉什么（最差路径仍回收 13.4%）——而这只是因为它把三年 3,000 小时当成了免费的。**一个模型给出「无限加杠杆」的建议时，要怀疑的是模型，不是自己的胆量。**"
+  },
+  "indifference_hourly_rate": {
+    "exists": true,
+    "indifference_hourly_usd": 11.843964843750001,
+    "annual_equivalent_usd": 11843.964843750002,
+    "assumed_hourly_usd": 30.0,
+    "verdict": "全口径期望值在时薪约 $11.8/h 处由正转负。换算成年：这 1,000 小时/年若能在别处挣到超过 $11,844/年，就不该做这个项目；挣不到，就该做。当前假设值为 $30/h，高于无差异点。",
+    "n_sims_per_eval": 40000,
+    "note": "此处用 4 万次/评估以控制二分法的总耗时；均值的跨种子相对标准差在此规模下约 0.5%，不影响 ±$0.25/h 的分辨率。"
+  }
+}

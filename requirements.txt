@@ -1,0 +1,16 @@
+# 构建本商业计划书所需的全部依赖。版本号锁定为本次产出的实测环境，
+# 使任何第三方都能复现出逐字节可比的 results.json（随机种子已固定）。
+# Python 3.12.10 实测通过。
+#
+# 安装：
+#   pip install -r requirements.txt
+#   playwright install chromium      # PDF 导出需要的无头浏览器，须单独下载
+#
+# 然后：
+#   python build.py
+
+numpy==2.5.1
+pandas==3.0.5
+matplotlib==3.11.1
+scipy==1.18.0
+playwright==1.61.0

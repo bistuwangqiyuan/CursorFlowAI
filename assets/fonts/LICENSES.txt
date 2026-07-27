@@ -1,0 +1,18 @@
+本目录下字体均为可自由再分发、可嵌入 PDF 的开源字体。
+之所以随仓库携带而不依赖系统字体：构建机上缺少任一字体时，
+Chromium 会静默回退到系统字体（Windows 上是微软雅黑 / Cambria Math），
+换台机器构建就会得到字形不同的 PDF，破坏「一条命令可复现」这一前提。
+
+Inter（拉丁文正文，SF Pro 的自由替代）
+  SIL Open Font License 1.1 — https://github.com/rsms/inter/blob/master/LICENSE.txt
+  Inter-Regular.ttf / Inter-Medium.ttf / Inter-SemiBold.ttf / Inter-Bold.ttf
+
+Noto Sans SC（中文正文，Windows 上最接近苹方）
+  SIL Open Font License 1.1 — https://fonts.google.com/noto/specimen/Noto+Sans+SC/license
+  NotoSansSC-Regular.ttf / NotoSansSC-Medium.ttf / NotoSansSC-SemiBold.ttf / NotoSansSC-Bold.ttf
+
+JetBrains Mono（代码与数据字段的等宽字体）
+  SIL Open Font License 1.1 — https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt
+  JetBrainsMono-Regular.ttf / JetBrainsMono-Bold.ttf
+  加入原因：等宽栏位若回退到 Noto Sans SC，其连字符与数字按汉字方框设计，
+  会把「2026-07-27」渲染成「2026 - 07 - 27」那样的宽间距。

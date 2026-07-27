@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="552.648281pt" height="184.85625pt" viewBox="0 0 552.648281 184.85625" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-27T12:25:06.521007</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 184.85625 
+L 552.648281 184.85625 
+L 552.648281 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 151.248281 174.05625 
+L 541.848281 174.05625 
+L 541.848281 35.45625 
+L 151.248281 35.45625 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="147.748281" y="163.895272" transform="rotate(-0 147.748281 163.895272)">C16　AI PR 的审阅证据包</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="147.748281" y="136.384355" transform="rotate(-0 147.748281 136.384355)">C14　CI 中 agent 的花费熔断器</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="147.748281" y="108.873438" transform="rotate(-0 147.748281 108.873438)">C15　EU CRA 证据收集与打包</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="147.748281" y="81.36252" transform="rotate(-0 147.748281 81.36252)">C13　MCP server / Agent Ski</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="147.748281" y="53.851603" transform="rotate(-0 147.748281 53.851603)">C12　AI agent 在 CI/CD 中的配置安</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 151.248281 167.75625 
+L 376.870887 167.75625 
+L 376.870887 151.799918 
+L 151.248281 151.799918 
+z
+" clip-path="url(#p52daf987cd)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 151.248281 140.245333 
+L 414.880743 140.245333 
+L 414.880743 124.289001 
+L 151.248281 124.289001 
+z
+" clip-path="url(#p52daf987cd)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 151.248281 112.734416 
+L 419.266496 112.734416 
+L 419.266496 96.778084 
+L 151.248281 96.778084 
+z
+" clip-path="url(#p52daf987cd)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 151.248281 85.223499 
+L 451.915988 85.223499 
+L 451.915988 69.267167 
+L 151.248281 69.267167 
+z
+" clip-path="url(#p52daf987cd)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 151.248281 57.712582 
+L 490.900455 57.712582 
+L 490.900455 41.75625 
+L 151.248281 41.75625 
+z
+" clip-path="url(#p52daf987cd)" style="fill: #0071e3"/>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="380.946714" y="163.05201" transform="rotate(-0 380.946714 163.05201)">4.63</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="418.956569" y="135.541093" transform="rotate(-0 418.956569 135.541093)">5.41</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="423.342322" y="108.030176" transform="rotate(-0 423.342322 108.030176)">5.50</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="455.991814" y="80.519259" transform="rotate(-0 455.991814 80.519259)">6.17</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="494.976281" y="53.008342" transform="rotate(-0 494.976281 53.008342)">6.97</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #1d1d1f" x="346.548281" y="21.45625" transform="rotate(-0 346.548281 21.45625)">通过 12 条硬过滤后的加权评分（前五名）</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p52daf987cd">
+   <rect x="151.248281" y="35.45625" width="390.6" height="138.6"/>
+  </clipPath>
+ </defs>
+</svg>

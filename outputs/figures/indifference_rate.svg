@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="460.421992pt" height="252.338566pt" viewBox="0 0 460.421992 252.338566" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-27T12:25:04.591151</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 252.338566 
+L 460.421992 252.338566 
+L 460.421992 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 59.021992 212.86425 
+L 449.621992 212.86425 
+L 449.621992 35.45625 
+L 59.021992 35.45625 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 76.776538 212.86425 
+L 76.776538 35.45625 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="76.776538" y="224.598625" transform="rotate(-0 76.776538 224.598625)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 135.958356 212.86425 
+L 135.958356 35.45625 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="135.958356" y="224.598625" transform="rotate(-0 135.958356 224.598625)">10</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 195.140174 212.86425 
+L 195.140174 35.45625 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="195.140174" y="224.598625" transform="rotate(-0 195.140174 224.598625)">20</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 254.321992 212.86425 
+L 254.321992 35.45625 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="254.321992" y="224.598625" transform="rotate(-0 254.321992 224.598625)">30</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 313.50381 212.86425 
+L 313.50381 35.45625 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="313.50381" y="224.598625" transform="rotate(-0 313.50381 224.598625)">40</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 372.685629 212.86425 
+L 372.685629 35.45625 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_6">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="372.685629" y="224.598625" transform="rotate(-0 372.685629 224.598625)">50</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 431.867447 212.86425 
+L 431.867447 35.45625 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_7">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="431.867447" y="224.598625" transform="rotate(-0 431.867447 224.598625)">60</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="254.321992" y="239.367668" transform="rotate(-0 254.321992 239.367668)">时间机会成本（美元/小时）</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_15"/>
+     <g id="text_9">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="55.521992" y="193.851798" transform="rotate(-0 55.521992 193.851798)">-20000</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_16"/>
+     <g id="text_10">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="55.521992" y="166.239007" transform="rotate(-0 55.521992 166.239007)">-15000</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_17"/>
+     <g id="text_11">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="55.521992" y="138.626216" transform="rotate(-0 55.521992 138.626216)">-10000</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_18"/>
+     <g id="text_12">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="55.521992" y="111.013426" transform="rotate(-0 55.521992 111.013426)">-5000</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_19"/>
+     <g id="text_13">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="55.521992" y="83.400635" transform="rotate(-0 55.521992 83.400635)">0</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_20"/>
+     <g id="text_14">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="55.521992" y="55.787844" transform="rotate(-0 55.521992 55.787844)">5000</text>
+     </g>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="19.51875" y="124.16025" transform="rotate(-90 19.51875 124.16025)">三年期望值（美元）</text>
+    </g>
+   </g>
+   <g id="FillBetweenPolyCollection_1">
+    <defs>
+     <path id="m4e2a2a682a" d="M 76.776538 -173.055119 
+L 76.776538 -208.818316 
+L 88.612901 -203.442576 
+L 100.449265 -198.066567 
+L 112.285629 -192.690558 
+L 124.121992 -187.314549 
+L 135.958356 -181.93854 
+L 147.794719 -176.562531 
+L 147.794719 -173.055119 
+L 147.794719 -173.055119 
+L 135.958356 -173.055119 
+L 124.121992 -173.055119 
+L 112.285629 -173.055119 
+L 100.449265 -173.055119 
+L 88.612901 -173.055119 
+L 76.776538 -173.055119 
+z
+" style="stroke: #34c759; stroke-opacity: 0.1"/>
+    </defs>
+    <g clip-path="url(#pa3637af26c)">
+     <use xlink:href="#m4e2a2a682a" x="0" y="252.338566" style="fill: #34c759; fill-opacity: 0.1; stroke: #34c759; stroke-opacity: 0.1"/>
+    </g>
+   </g>
+   <g id="FillBetweenPolyCollection_2">
+    <defs>
+     <path id="m6e2ec2df09" d="M 159.631083 -173.055119 
+L 159.631083 -171.186522 
+L 171.467447 -165.810514 
+L 195.140174 -155.058496 
+L 224.731083 -141.618473 
+L 254.321992 -128.178451 
+L 313.50381 -101.298406 
+L 372.685629 -74.418361 
+L 431.867447 -47.538316 
+L 431.867447 -173.055119 
+L 431.867447 -173.055119 
+L 372.685629 -173.055119 
+L 313.50381 -173.055119 
+L 254.321992 -173.055119 
+L 224.731083 -173.055119 
+L 195.140174 -173.055119 
+L 171.467447 -173.055119 
+L 159.631083 -173.055119 
+z
+" style="stroke: #ff3b30; stroke-opacity: 0.08"/>
+    </defs>
+    <g clip-path="url(#pa3637af26c)">
+     <use xlink:href="#m6e2ec2df09" x="0" y="252.338566" style="fill: #ff3b30; fill-opacity: 0.08; stroke: #ff3b30; stroke-opacity: 0.08"/>
+    </g>
+   </g>
+   <g id="line2d_21">
+    <path d="M 59.021992 79.283448 
+L 449.621992 79.283448 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke: #1d1d1f; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 76.776538 43.52025 
+L 88.612901 48.89599 
+L 100.449265 54.271999 
+L 112.285629 59.648008 
+L 124.121992 65.024017 
+L 135.958356 70.400026 
+L 147.794719 75.776035 
+L 159.631083 81.152044 
+L 171.467447 86.528053 
+L 195.140174 97.280071 
+L 224.731083 110.720093 
+L 254.321992 124.160116 
+L 313.50381 151.04016 
+L 372.685629 177.920205 
+L 431.867447 204.80025 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke: #0071e3; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_23">
+    <path d="M 149.64496 212.86425 
+L 149.64496 35.45625 
+" clip-path="url(#pa3637af26c)" style="fill: none; stroke-dasharray: 0.8,1.32; stroke-dashoffset: 0; stroke: #1d1d1f; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_24">
+    <defs>
+     <path id="mb3eb9e332d" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #1d1d1f"/>
+    </defs>
+    <g clip-path="url(#pa3637af26c)">
+     <use xlink:href="#mb3eb9e332d" x="149.64496" y="79.283448" style="fill: #1d1d1f; stroke: #1d1d1f"/>
+    </g>
+   </g>
+   <g id="line2d_25">
+    <defs>
+     <path id="m56c04c3771" d="M 0 2.5 
+C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767 
+C 2.236584 1.29895 2.5 0.663008 2.5 0 
+C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767 
+C 1.29895 -2.236584 0.663008 -2.5 0 -2.5 
+C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767 
+C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0 
+C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767 
+C -1.29895 2.236584 -0.663008 2.5 0 2.5 
+z
+" style="stroke: #ff3b30"/>
+    </defs>
+    <g clip-path="url(#pa3637af26c)">
+     <use xlink:href="#m56c04c3771" x="254.321992" y="124.160116" style="fill: #ff3b30; stroke: #ff3b30"/>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 59.021992 212.86425 
+L 59.021992 35.45625 
+" style="fill: none; stroke: #d2d2d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 59.021992 212.86425 
+L 449.621992 212.86425 
+" style="fill: none; stroke: #d2d2d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 177.911313 68.095451 
+Q 164.708042 73.321387 151.50477 78.547323 
+" style="fill: none; stroke: #d2d2d7; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; fill: #1d1d1f" transform="translate(173.317688 52.30036)">无差异时薪 $12.3/h</text>
+    <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; fill: #1d1d1f" transform="translate(173.317688 63.190009)">（≈ $12,313/年）</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #ff3b30" x="244.852901" y="140.288116" transform="rotate(-0 244.852901 140.288116)">当前假设 $30/h</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #1d1d1f" x="254.321992" y="21.45625" transform="rotate(-0 254.321992 21.45625)">整份分析里最可操作的一张图：时薪多少以下才值得做</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa3637af26c">
+   <rect x="59.021992" y="35.45625" width="390.6" height="177.408"/>
+  </clipPath>
+ </defs>
+</svg>

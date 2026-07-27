@@ -1,0 +1,2895 @@
+{
+  "scoring": {
+    "meta": {
+      "seed": 20260727,
+      "n_candidates": 16,
+      "n_survivors": 5,
+      "n_eliminated": 11,
+      "score_scale": "0-10",
+      "weights": {
+        "wtp_evidence": {
+          "cn": "付费意愿证据强度",
+          "w": 0.18
+        },
+        "unmanned_acquisition": {
+          "cn": "无人化获客可行性",
+          "w": 0.16
+        },
+        "competition_low": {
+          "cn": "竞争稀疏度（竞争密度的反向）",
+          "w": 0.15
+        },
+        "pain_evidence": {
+          "cn": "痛点证据强度",
+          "w": 0.14
+        },
+        "deliverability_20h": {
+          "cn": "20 小时每周的可交付性",
+          "w": 0.13
+        },
+        "vendor_independence": {
+          "cn": "跨厂商独立性（单厂商依赖度的反向）",
+          "w": 0.1
+        },
+        "margin_structure": {
+          "cn": "边际成本结构",
+          "w": 0.08
+        },
+        "switching_cost": {
+          "cn": "客户迁移成本 / 留存结构",
+          "w": 0.03
+        },
+        "regulatory_tailwind": {
+          "cn": "监管顺风",
+          "w": 0.03
+        }
+      },
+      "hard_filters": {
+        "F1": "变现路径依赖 Cursor Marketplace 或任何合同禁止收费的渠道（Publisher Terms 3.1 条：插件必须免费提供）",
+        "F2": "核心功能与平台方自营产品正面重叠，且该功能已被打包进客户已付费的订阅中（客户获得它的边际价格为零）",
+        "F3": "依赖只有编辑器厂商才能采集的数据（如设备端 AI 代码逐行签名）",
+        "F4": "需人工销售，或需先有 SOC 2 才能开出第一单",
+        "F5": "推理成本不可透传（无法 BYOK，也无法按用量转嫁）",
+        "F6": "采用「每次操作跑 LLM」的结构，且不具备分层路由/增量处理/缓存三件套的架构能力（已按 sources.md §4.1 更正：成本是架构问题，不是结构性宿命）",
+        "F7": "变现叙事依赖 EU AI Act 或美国 SSDF 对普通软件开发的强制力（该前提不成立）",
+        "F8": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+        "F9": "需要重资产才能建立护城河（千万级片段语料库、纵向代码语料、漏洞情报数据库等），$4,000 预算无法支撑",
+        "F10": "产品需对客户作出「你已合规」的法律判定——超出自身能力边界，只可做证据收集",
+        "F11": "单人 20 小时每周下 MVP 超过 12 周",
+        "F12": "合法性或公序良俗存疑"
+      }
+    },
+    "survivors": [
+      {
+        "rank": 1,
+        "cid": "C12",
+        "name": "AI agent 在 CI/CD 中的配置安全审计",
+        "thesis": "检测「不受信输入流入 agent 提示 × agent 持有高权限凭据 × 存在外发通道」的致命三角，纯 YAML/AST 规则分析，零推理成本，持续监控仓库配置漂移。",
+        "total": 6.97,
+        "scores": {
+          "wtp_evidence": {
+            "score": 3.0,
+            "cn": "付费意愿证据强度",
+            "rationale": "无任何直接付费证据。唯一支撑是 StepSecurity（同为 GitHub Actions 安全）已商业化运营这一间接类比。这是本候选最大的未验证风险。",
+            "source": "无一手来源；见 docs/WTP_VALIDATION.md"
+          },
+          "unmanned_acquisition": {
+            "score": 6.0,
+            "cn": "无人化获客可行性",
+            "rationale": "安全类内容在 HN 有天然传播力（四篇来源本身都是高传播安全研究）；GitHub Action Marketplace 是一个可被搜索的分发面。但安全产品历史上靠恐惧+销售，自助获客不确定。",
+            "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+          },
+          "competition_low": {
+            "score": 8.0,
+            "cn": "竞争稀疏度（竞争密度的反向）",
+            "rationale": "zizmor / actionlint 覆盖通用 Actions 安全，但不理解 claude-code-action 等 agent action 的配置语义；本轮调研未发现做 agent 语义感知的商业竞品。",
+            "source": "CSA 研究简报 2026-05-03 https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/05/CSA_research_note_ai_github_actions_security_20260503-csa-styled.pdf"
+          },
+          "pain_evidence": {
+            "score": 9.0,
+            "cn": "痛点证据强度",
+            "rationale": "四个独立权威源（微软威胁情报、CSA、Aikido、Noma）且均为已确认漏洞而非推测；微软案例中 Anthropic 已发版修复，说明厂商承认问题真实。",
+            "source": "微软威胁情报 https://www.microsoft.com/en-us/security/blog/2026/06/05/securing-ci-cd-in-agentic-world-claude-code-github-action-case/；CSA 研究简报 2026-05-03 https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/05/CSA_research_note_ai_github_actions_security_20260503-csa-styled.pdf；Aikido PromptPwnd https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents；Noma GitLost https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/"
+          },
+          "deliverability_20h": {
+            "score": 9.0,
+            "cn": "20 小时每周的可交付性",
+            "rationale": "纯规则引擎：解析 workflow YAML + 已知 agent action 的输入语义 + 权限图，无模型训练、无 ML。MVP 明显在 12 周内。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "vendor_independence": {
+            "score": 8.0,
+            "cn": "跨厂商独立性（单厂商依赖度的反向）",
+            "rationale": "同时适用 GitHub Actions 与 GitLab CI，且对 agent 厂商中立（Claude Code / Codex / Gemini CLI 都在覆盖面内）。",
+            "source": "Aikido PromptPwnd https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents"
+          },
+          "margin_structure": {
+            "score": 10.0,
+            "cn": "边际成本结构",
+            "rationale": "零 LLM 推理成本，边际成本仅为解析算力，可忽略。这是全部候选中唯一真正零边际成本的。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "switching_cost": {
+            "score": 4.0,
+            "cn": "客户迁移成本 / 留存结构",
+            "rationale": "规则本身可被复制；但历史发现记录与基线比对会积累一定状态黏性。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "regulatory_tailwind": {
+            "score": 4.0,
+            "cn": "监管顺风",
+            "rationale": "CRA 的漏洞报告义务间接相关，但不构成强制要求。刻意不使用已证伪的 AI Act 叙事。",
+            "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+          }
+        }
+      },
+      {
+        "rank": 2,
+        "cid": "C13",
+        "name": "MCP server / Agent Skill 的持续供应链监控",
+        "thesis": "官方 Registry 白纸黑字声明自己不做安全扫描、留给下游聚合方。一次性扫描已被免费 OSS 覆盖，唯一可收费的是持续 rug-pull 监控（你装的 47 个 server 昨晚有 3 个改了 tool description）。",
+        "total": 6.17,
+        "scores": {
+          "wtp_evidence": {
+            "score": 3.0,
+            "cn": "付费意愿证据强度",
+            "rationale": "无直接付费证据。间接信号：Enterprise 管理员已在 Cursor 后台按 URL 屏蔽 MCP，说明企业侧已有担忧，但担忧未必转化为付费。",
+            "source": "MCP Registry 官方文档 https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/about.mdx"
+          },
+          "unmanned_acquisition": {
+            "score": 6.0,
+            "cn": "无人化获客可行性",
+            "rationale": "MCP 是 2026 年的高热话题，内容与工具都容易获得自然传播；但同样意味着注意力竞争激烈。",
+            "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+          },
+          "competition_low": {
+            "score": 6.0,
+            "cn": "竞争稀疏度（竞争密度的反向）",
+            "rationale": "一次性扫描已有 4+ 免费 OSS 加 NVIDIA SkillSpector（68 个漏洞模式）；持续监控形态覆盖较少。**产品必须严格限定在持续态，否则直接撞 F8。**",
+            "source": "MCP Registry 官方文档 https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/about.mdx"
+          },
+          "pain_evidence": {
+            "score": 6.0,
+            "cn": "痛点证据强度",
+            "rationale": "rug-pull 风险在概念上成立且 Registry 官方承认不管，但本轮未找到「我因为 MCP server 被改而受损」的一手事件。痛点是预期性的，不是已发生的。",
+            "source": "MCP Registry 官方文档 https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/about.mdx"
+          },
+          "deliverability_20h": {
+            "score": 8.0,
+            "cn": "20 小时每周的可交付性",
+            "rationale": "抓取 Registry + 定期 diff tool description/权限声明 + 告警，工程量可控。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "vendor_independence": {
+            "score": 9.0,
+            "cn": "跨厂商独立性（单厂商依赖度的反向）",
+            "rationale": "MCP 是跨厂商开放标准，被 Cursor/Codex/Claude Code 等共同采用，分发不由单一厂商条款决定。",
+            "source": "Cursor MCP 文档 https://cursor.com/docs/mcp"
+          },
+          "margin_structure": {
+            "score": 9.0,
+            "cn": "边际成本结构",
+            "rationale": "以爬取与结构化 diff 为主，LLM 仅在语义变更判定时可选调用，可控。",
+            "source": "Ellipsis 工程博客：生产均值 $0.12/次审查 https://www.ellipsis.dev/blog/lessons-from-building-llm-agents"
+          },
+          "switching_cost": {
+            "score": 6.0,
+            "cn": "客户迁移成本 / 留存结构",
+            "rationale": "「你安装的 server 清单 + 历史基线」是托管状态，迁移会丢失历史，黏性中等偏上。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "regulatory_tailwind": {
+            "score": 3.0,
+            "cn": "监管顺风",
+            "rationale": "CRA 的 SBOM 要求在 2027-12-11 后可能延伸到 agent 依赖，但目前无明文。",
+            "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+          }
+        }
+      },
+      {
+        "rank": 3,
+        "cid": "C15",
+        "name": "EU CRA 证据收集与打包",
+        "thesis": "纯证据流水线：SBOM 生成、漏洞处置记录、报告时限追踪。绝不做「你已合规」的法律判定。",
+        "total": 5.5,
+        "scores": {
+          "wtp_evidence": {
+            "score": 6.0,
+            "cn": "付费意愿证据强度",
+            "rationale": "已有 4 家在此收费，说明付费意愿被市场验证过——这是全部候选中付费证据最硬的一个。",
+            "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+          },
+          "unmanned_acquisition": {
+            "score": 4.0,
+            "cn": "无人化获客可行性",
+            "rationale": "合规采购方不逛 HN，他们通过审计师、行业协会、咨询顾问获知方案。这与零人工自助获客的路径不匹配。",
+            "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+          },
+          "competition_low": {
+            "score": 3.0,
+            "cn": "竞争稀疏度（竞争密度的反向）",
+            "rationale": "4 家在收费且各价位段被占满；GitHub 的 SPDX SBOM 导出对云仓库完全免费，吃掉了最容易做的那部分。",
+            "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+          },
+          "pain_evidence": {
+            "score": 5.0,
+            "cn": "痛点证据强度",
+            "rationale": "时间窗口真实（2026-09-11 报告义务、2027-12-11 全面适用），但 Art.64(10) 对开源管理者完全免除行政罚款，微小型制造商亦部分豁免，**恐惧驱动比营销宣称的弱得多**。",
+            "source": "CRA Art.64(10) 开源管理者免除行政罚款 https://digital-strategy.ec.europa.eu/en/policies/cra-open-source"
+          },
+          "deliverability_20h": {
+            "score": 5.0,
+            "cn": "20 小时每周的可交付性",
+            "rationale": "证据流水线 + SBOM + CVE 映射 + 时限追踪，12 周内做完偏紧。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "vendor_independence": {
+            "score": 8.0,
+            "cn": "跨厂商独立性（单厂商依赖度的反向）",
+            "rationale": "与代码托管平台解耦，跨 GitHub/GitLab 均可。",
+            "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+          },
+          "margin_structure": {
+            "score": 8.0,
+            "cn": "边际成本结构",
+            "rationale": "以数据管道为主，可用 OSV.dev 免费漏洞数据源，边际成本低。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "switching_cost": {
+            "score": 8.0,
+            "cn": "客户迁移成本 / 留存结构",
+            "rationale": "合规证据是纵向累积的，迁移会丢失历史记录，黏性最强。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "regulatory_tailwind": {
+            "score": 10.0,
+            "cn": "监管顺风",
+            "rationale": "唯一有硬性外部时间窗口的候选。",
+            "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+          }
+        }
+      },
+      {
+        "rank": 4,
+        "cid": "C14",
+        "name": "CI 中 agent 的花费熔断器",
+        "thesis": "收窄至 CI 中的非交互式 agent（超支最狠、无 SLA 焦虑、必然走 API），做跨仓库预算与自动熔断。",
+        "total": 5.41,
+        "scores": {
+          "wtp_evidence": {
+            "score": 5.0,
+            "cn": "付费意愿证据强度",
+            "rationale": "HN 上有最真实的「用户正在流血」证据（退款被拒、单次调用 $12）；但流血的人第一反应是要求厂商提供免费额度控制，不是买第三方网关。",
+            "source": "HN 一手帖：月消耗 $60→$500+，单次调用 $12 https://news.ycombinator.com/item?id=46544838"
+          },
+          "unmanned_acquisition": {
+            "score": 5.0,
+            "cn": "无人化获客可行性",
+            "rationale": "成本话题传播力强，但同题材已被 Helicone / Portkey / LiteLLM 的内容占满。",
+            "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+          },
+          "competition_low": {
+            "score": 3.0,
+            "cn": "竞争稀疏度（竞争密度的反向）",
+            "rationale": "LiteLLM 是免费 OSS 网关且自带预算与速率限制；Helicone、Portkey、OpenMeter 均已商业化；模型厂商自身也提供组织级支出上限。竞争密集。",
+            "source": "Ask HN 「如何防止 agent 烧钱」仅 8 分 32 评论 https://news.ycombinator.com/item?id=47559293"
+          },
+          "pain_evidence": {
+            "score": 7.0,
+            "cn": "痛点证据强度",
+            "rationale": "个案证据极强但统计证据极弱——Ask HN 同题仅 8 分、32 条评论，说明这不是一个广泛被感知的问题。**强轶事 + 弱统计。**",
+            "source": "HN 一手帖：月消耗 $60→$500+，单次调用 $12 https://news.ycombinator.com/item?id=46544838；Ask HN 「如何防止 agent 烧钱」仅 8 分 32 评论 https://news.ycombinator.com/item?id=47559293"
+          },
+          "deliverability_20h": {
+            "score": 6.0,
+            "cn": "20 小时每周的可交付性",
+            "rationale": "网关处于请求热路径，对可用性与延迟的要求远高于旁路工具。单人维护一个不能挂的代理，风险被低估。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "vendor_independence": {
+            "score": 7.0,
+            "cn": "跨厂商独立性（单厂商依赖度的反向）",
+            "rationale": "对模型厂商中立，但存在结构性错配：最痛的人用 Cursor 订阅制，网关拦不到那部分流量。",
+            "source": "HN 一手帖：月消耗 $60→$500+，单次调用 $12 https://news.ycombinator.com/item?id=46544838"
+          },
+          "margin_structure": {
+            "score": 7.0,
+            "cn": "边际成本结构",
+            "rationale": "透传为主，但需承担带宽与常驻算力，非零边际成本。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "switching_cost": {
+            "score": 7.0,
+            "cn": "客户迁移成本 / 留存结构",
+            "rationale": "一旦进入请求热路径，替换成本高。这是本候选最强的一维。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "regulatory_tailwind": {
+            "score": 1.0,
+            "cn": "监管顺风",
+            "rationale": "无。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          }
+        }
+      },
+      {
+        "rank": 5,
+        "cid": "C16",
+        "name": "AI PR 的审阅证据包",
+        "thesis": "为 AI 生成的 PR 附上「这段代码被验证过什么」的证据，减轻审阅者负担。",
+        "total": 4.63,
+        "scores": {
+          "wtp_evidence": {
+            "score": 4.0,
+            "cn": "付费意愿证据强度",
+            "rationale": "同赛道有人付费（CodeRabbit 据 Sacra 估算 $40M ARR），但「证据包」这个特定形态无独立付费证据。",
+            "source": "Sacra 估算 https://sacra.com/c/coderabbit/"
+          },
+          "unmanned_acquisition": {
+            "score": 2.0,
+            "cn": "无人化获客可行性",
+            "rationale": "关键词（AI code review、cursor rules）已被 246 人的 CodeRabbit、有 Benchmark 背书的 Greptile 和大量 SEO 内容农场完全占据。单人无任何机会在此获得自然搜索流量。",
+            "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+          },
+          "competition_low": {
+            "score": 1.0,
+            "cn": "竞争稀疏度（竞争密度的反向）",
+            "rationale": "真实玩家 30+ 家；Bugbot / CodeRabbit / Greptile 三方交火；GitHub Copilot $10/月含 code review 构成价格天花板；开源项目免费已是行业标配。",
+            "source": "Cursor Bugbot 官方文档 https://cursor.com/docs/bugbot.md；GitHub Copilot Pro $10/月含 code review（sources.md §4.2）"
+          },
+          "pain_evidence": {
+            "score": 10.0,
+            "cn": "痛点证据强度",
+            "rationale": "全场最硬：1,154 条帖子的定性编码分析，加 curl 因 AI 生成漏洞报告关闭 bug bounty 这一不可辩驳的一手事件。**但「痛点最强」与「你能赢」是两件事，这条属前者。**",
+            "source": "arXiv 2603.27249（1,154 条帖子定性编码）https://arxiv.org/abs/2603.27249；curl 关闭 bug bounty，lists.haxx.se 2026-01"
+          },
+          "deliverability_20h": {
+            "score": 6.0,
+            "cn": "20 小时每周的可交付性",
+            "rationale": "要做到比现有玩家更有说服力的证据，需要真正执行代码（Greptile 已发布 TREX 层），工程量大。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "vendor_independence": {
+            "score": 6.0,
+            "cn": "跨厂商独立性（单厂商依赖度的反向）",
+            "rationale": "跨 GitHub/GitLab 可行，但与平台自营产品同场竞技。",
+            "source": "Cursor Bugbot 官方文档 https://cursor.com/docs/bugbot.md"
+          },
+          "margin_structure": {
+            "score": 6.0,
+            "cn": "边际成本结构",
+            "rationale": "有真实推理成本。按 Ellipsis 生产均值 $0.12/次、月 20 次计，$19 客单价下毛利约 87%——**成本不是问题，竞争才是**。",
+            "source": "Ellipsis 工程博客：生产均值 $0.12/次审查 https://www.ellipsis.dev/blog/lessons-from-building-llm-agents"
+          },
+          "switching_cost": {
+            "score": 4.0,
+            "cn": "客户迁移成本 / 留存结构",
+            "rationale": "审查工具切换成本低，装个 App 即可换。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          },
+          "regulatory_tailwind": {
+            "score": 2.0,
+            "cn": "监管顺风",
+            "rationale": "无。刻意不使用已证伪的 AI Act 叙事。",
+            "source": "本 BP 自评（推测，无外部来源）"
+          }
+        }
+      }
+    ],
+    "eliminated": [
+      {
+        "cid": "C11",
+        "name": "slopsquatting 检测（独立产品）",
+        "hypothetical_total": 4.79,
+        "failed_filters": [
+          {
+            "id": "F8",
+            "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+            "reason": "至少 9 个免费 OSS 实现；Augment 已在生成端解决；零付费意愿证据。"
+          }
+        ]
+      },
+      {
+        "cid": "C06",
+        "name": "agent / prompt 回归评测",
+        "hypothetical_total": 4.54,
+        "failed_filters": [
+          {
+            "id": "F8",
+            "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+            "reason": "Promptfoo 是免费 OSS CLI 且功能完整；Braintrust、Langfuse 已占满托管形态。"
+          }
+        ]
+      },
+      {
+        "cid": "C10",
+        "name": "AGENTS.md / rules 漂移检测",
+        "hypothetical_total": 4.44,
+        "failed_filters": [
+          {
+            "id": "F8",
+            "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+            "reason": "一个脚本即可完成；且论坛证据显示主因是「模型不遵守规则」而非「文件不同步」，解决的是次要矛盾。"
+          }
+        ]
+      },
+      {
+        "cid": "C01",
+        "name": "通用 AI 代码审查",
+        "hypothetical_total": 4.39,
+        "failed_filters": [
+          {
+            "id": "F2",
+            "filter": "核心功能与平台方自营产品正面重叠，且该功能已被打包进客户已付费的订阅中（客户获得它的边际价格为零）",
+            "reason": "Cursor Bugbot 已含在 Cursor Individual/Teams 订阅中；GitHub Copilot Pro $10/月即含 code review。客户获得该功能的边际价格为零，第三方必须为一个客户已免费拥有的东西收费。（Cursor Bugbot 官方文档 https://cursor.com/docs/bugbot.md；GitHub Copilot Pro $10/月含 code review（sources.md §4.2））"
+          }
+        ]
+      },
+      {
+        "cid": "C05",
+        "name": "死代码检测",
+        "hypothetical_total": 4.23,
+        "failed_filters": [
+          {
+            "id": "F8",
+            "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+            "reason": "Knip 是免费事实标准：11,752 stars、260 贡献者、ISC 许可、且已自带 @knip/mcp；Vercel 用它删掉约 30 万行。核心功能可被一个 npx 命令完整替代。（Knip 11,752 stars, ISC 免费, 自带 MCP https://github.com/webpro-nl/knip）"
+          }
+        ]
+      },
+      {
+        "cid": "C03",
+        "name": "许可证污染 snippet 匹配",
+        "hypothetical_total": 4.17,
+        "failed_filters": [
+          {
+            "id": "F9",
+            "filter": "需要重资产才能建立护城河（千万级片段语料库、纵向代码语料、漏洞情报数据库等），$4,000 预算无法支撑",
+            "reason": "护城河是千万级代码片段语料库与索引，$4,000 预算连一次全量索引都不够。"
+          }
+        ]
+      },
+      {
+        "cid": "C04",
+        "name": "AI 技术债度量",
+        "hypothetical_total": 3.91,
+        "failed_filters": [
+          {
+            "id": "F9",
+            "filter": "需要重资产才能建立护城河（千万级片段语料库、纵向代码语料、漏洞情报数据库等），$4,000 预算无法支撑",
+            "reason": "结论需建立在纵向大规模代码语料上（GitClear 用了 6.23 亿行变更），单人无法自建；且唯一权威数据的提供者 GitClear 自己就是卖这个产品的竞品。（GitClear 6.23 亿行分析（利益冲突：其自身即该品类厂商）https://www.gitclear.com/the_ai_code_quality_maintainability_gap）"
+          }
+        ]
+      },
+      {
+        "cid": "C08",
+        "name": "EU AI Act Art.50 透明度扫描",
+        "hypothetical_total": 3.91,
+        "failed_filters": [
+          {
+            "id": "F7",
+            "filter": "变现叙事依赖 EU AI Act 或美国 SSDF 对普通软件开发的强制力（该前提不成立）",
+            "reason": "范畴错误：Art.50 管的是「你的产品是不是 AI、有没有告知用户」，与「你用 AI 写代码」无关；且 Digital Omnibus 已于 2026-07-27 生效，将高风险义务推迟至 2027-12-02。"
+          }
+        ]
+      },
+      {
+        "cid": "C07",
+        "name": "私有知识库转 MCP",
+        "hypothetical_total": 3.71,
+        "failed_filters": [
+          {
+            "id": "F8",
+            "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+            "reason": "已有多个免费 OSS 实现；KBKit 等已把该功能降级为免费赠品。"
+          }
+        ]
+      },
+      {
+        "cid": "C09",
+        "name": "AI 代码溯源 attestation",
+        "hypothetical_total": 3.68,
+        "failed_filters": [
+          {
+            "id": "F8",
+            "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+            "reason": "agentdiff、aiir、ai-footprint、pedigree、agentmark 等 5 个功能高度重叠的免费 OSS；且没有任何法规要求证明代码作者身份。"
+          }
+        ]
+      },
+      {
+        "cid": "C02",
+        "name": "团队 AI 编码 ROI 报表 / 本地 AI 代码归因",
+        "hypothetical_total": 3.61,
+        "failed_filters": [
+          {
+            "id": "F3",
+            "filter": "依赖只有编辑器厂商才能采集的数据（如设备端 AI 代码逐行签名）",
+            "reason": "AI 代码归因依赖设备端对每行 AI 建议签名再与 git commit 比对，只有编辑器本身能产生该数据；第三方只能靠启发式 diff，精度天然落后。（Cursor AI Code Tracking API https://cursor.com/docs/account/teams/ai-code-tracking-api）"
+          },
+          {
+            "id": "F4",
+            "filter": "需人工销售，或需先有 SOC 2 才能开出第一单",
+            "reason": "Cursor Analytics / AI Code Tracking API 仅 Enterprise 可用，客户必走采购流程，与「零人工自助订阅」硬约束冲突。"
+          }
+        ]
+      }
+    ],
+    "sensitivity": {
+      "baseline_top1": "C12",
+      "one_at_a_time": [
+        {
+          "dimension": "wtp_evidence",
+          "dimension_cn": "付费意愿证据强度",
+          "perturbation": "-50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "wtp_evidence",
+          "dimension_cn": "付费意愿证据强度",
+          "perturbation": "+50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "unmanned_acquisition",
+          "dimension_cn": "无人化获客可行性",
+          "perturbation": "-50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "unmanned_acquisition",
+          "dimension_cn": "无人化获客可行性",
+          "perturbation": "+50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "competition_low",
+          "dimension_cn": "竞争稀疏度（竞争密度的反向）",
+          "perturbation": "-50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "competition_low",
+          "dimension_cn": "竞争稀疏度（竞争密度的反向）",
+          "perturbation": "+50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "pain_evidence",
+          "dimension_cn": "痛点证据强度",
+          "perturbation": "-50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "pain_evidence",
+          "dimension_cn": "痛点证据强度",
+          "perturbation": "+50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "deliverability_20h",
+          "dimension_cn": "20 小时每周的可交付性",
+          "perturbation": "-50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "deliverability_20h",
+          "dimension_cn": "20 小时每周的可交付性",
+          "perturbation": "+50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "vendor_independence",
+          "dimension_cn": "跨厂商独立性（单厂商依赖度的反向）",
+          "perturbation": "-50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "vendor_independence",
+          "dimension_cn": "跨厂商独立性（单厂商依赖度的反向）",
+          "perturbation": "+50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "margin_structure",
+          "dimension_cn": "边际成本结构",
+          "perturbation": "-50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "margin_structure",
+          "dimension_cn": "边际成本结构",
+          "perturbation": "+50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "switching_cost",
+          "dimension_cn": "客户迁移成本 / 留存结构",
+          "perturbation": "-50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "switching_cost",
+          "dimension_cn": "客户迁移成本 / 留存结构",
+          "perturbation": "+50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "regulatory_tailwind",
+          "dimension_cn": "监管顺风",
+          "perturbation": "-50%",
+          "top1": "C12",
+          "flipped": false
+        },
+        {
+          "dimension": "regulatory_tailwind",
+          "dimension_cn": "监管顺风",
+          "perturbation": "+50%",
+          "top1": "C12",
+          "flipped": false
+        }
+      ],
+      "oat_flip_count": 0,
+      "dirichlet_draws": 10000,
+      "dirichlet_top1_frequency": {
+        "C12": 0.9971,
+        "C13": 0.0,
+        "C15": 0.0029,
+        "C14": 0.0,
+        "C16": 0.0
+      },
+      "dirichlet_full_order_identical_rate": 0.5304
+    },
+    "score_robustness": {
+      "leader": "C12",
+      "runner_up": "C13",
+      "leader_weakest_dimension": "wtp_evidence",
+      "leader_weakest_score": 3.0,
+      "checks": [
+        {
+          "name": "领先者付费意愿分归零",
+          "detail": "C12 的 wtp_evidence 由 3.0 降为 0",
+          "leader_new_total": 6.43,
+          "runner_up_total": 6.17,
+          "still_leads": true
+        },
+        {
+          "name": "领先者所有自评维度下调 3 分",
+          "detail": "C12 的自评维度 ['deliverability_20h', 'margin_structure', 'switching_cost'] 各降 3 分（不低于 0）",
+          "leader_new_total": 6.25,
+          "runner_up_total": 6.17,
+          "still_leads": true
+        },
+        {
+          "name": "领先者全维 -2 且次名全维 +2（最不利对照）",
+          "detail": "C12 每维 -2 分，C13 每维 +2 分",
+          "leader_new_total": 4.97,
+          "runner_up_total": 7.99,
+          "still_leads": false
+        }
+      ],
+      "verdict": "第一名对权重稳健；对分数的稳健性见上述三项检验"
+    }
+  },
+  "funnel": {
+    "steady_state_examples": [
+      {
+        "monthly_visitors": 500,
+        "require_card": false,
+        "visitor_to_signup": 0.045,
+        "signup_to_paid": 0.03,
+        "monthly_signups": 22.5,
+        "monthly_new_paid": 0.6749999999999999,
+        "steady_state_customers": 9.64285714285714,
+        "steady_state_mrr_gross": 183.21428571428567,
+        "steady_state_mrr_net": 161.48941071428567,
+        "steady_state_profit_net": 101.48941071428567
+      },
+      {
+        "monthly_visitors": 1000,
+        "require_card": false,
+        "visitor_to_signup": 0.045,
+        "signup_to_paid": 0.03,
+        "monthly_signups": 45.0,
+        "monthly_new_paid": 1.3499999999999999,
+        "steady_state_customers": 19.28571428571428,
+        "steady_state_mrr_gross": 366.42857142857133,
+        "steady_state_mrr_net": 322.97882142857134,
+        "steady_state_profit_net": 262.97882142857134
+      },
+      {
+        "monthly_visitors": 2000,
+        "require_card": false,
+        "visitor_to_signup": 0.045,
+        "signup_to_paid": 0.03,
+        "monthly_signups": 90.0,
+        "monthly_new_paid": 2.6999999999999997,
+        "steady_state_customers": 38.57142857142856,
+        "steady_state_mrr_gross": 732.8571428571427,
+        "steady_state_mrr_net": 645.9576428571427,
+        "steady_state_profit_net": 585.9576428571427
+      },
+      {
+        "monthly_visitors": 2729,
+        "require_card": false,
+        "visitor_to_signup": 0.045,
+        "signup_to_paid": 0.03,
+        "monthly_signups": 122.80499999999999,
+        "monthly_new_paid": 3.68415,
+        "steady_state_customers": 52.63071428571428,
+        "steady_state_mrr_gross": 999.9835714285713,
+        "steady_state_mrr_net": 881.4092036785712,
+        "steady_state_profit_net": 821.4092036785712
+      },
+      {
+        "monthly_visitors": 5000,
+        "require_card": false,
+        "visitor_to_signup": 0.045,
+        "signup_to_paid": 0.03,
+        "monthly_signups": 225.0,
+        "monthly_new_paid": 6.75,
+        "steady_state_customers": 96.42857142857142,
+        "steady_state_mrr_gross": 1832.1428571428569,
+        "steady_state_mrr_net": 1614.8941071428567,
+        "steady_state_profit_net": 1554.8941071428567
+      }
+    ],
+    "visitors_required": [
+      {
+        "target_mrr": 500,
+        "visitors_no_card": 1365.0,
+        "visitors_with_card": 497.0
+      },
+      {
+        "target_mrr": 1000,
+        "visitors_no_card": 2729.0,
+        "visitors_with_card": 995.0
+      },
+      {
+        "target_mrr": 2000,
+        "visitors_no_card": 5458.0,
+        "visitors_with_card": 1989.0
+      },
+      {
+        "target_mrr": 5000,
+        "visitors_no_card": 13645.0,
+        "visitors_with_card": 4973.0
+      }
+    ],
+    "card_switch": {
+      "at_monthly_visitors": 2000.0,
+      "rows": [
+        {
+          "require_card": false,
+          "solo_discount_applied": true,
+          "label": "不要信用卡（含单人折扣）",
+          "visitor_to_signup": 0.045,
+          "signup_to_paid": 0.03,
+          "paid_per_1000_visitors": 1.35,
+          "steady_state_customers": 38.57,
+          "steady_state_mrr_net": 645.96,
+          "visitors_for_1000_mrr": 2729.0
+        },
+        {
+          "require_card": false,
+          "solo_discount_applied": false,
+          "label": "不要信用卡（ChartMogul 原值）",
+          "visitor_to_signup": 0.045,
+          "signup_to_paid": 0.089,
+          "paid_per_1000_visitors": 4.005,
+          "steady_state_customers": 114.43,
+          "steady_state_mrr_net": 1916.34,
+          "visitors_for_1000_mrr": 920.0
+        },
+        {
+          "require_card": true,
+          "solo_discount_applied": true,
+          "label": "要信用卡（含单人折扣）",
+          "visitor_to_signup": 0.035,
+          "signup_to_paid": 0.10584,
+          "paid_per_1000_visitors": 3.704,
+          "steady_state_customers": 105.84,
+          "steady_state_mrr_net": 1772.55,
+          "visitors_for_1000_mrr": 995.0
+        },
+        {
+          "require_card": true,
+          "solo_discount_applied": false,
+          "label": "要信用卡（ChartMogul 原值）",
+          "visitor_to_signup": 0.035,
+          "signup_to_paid": 0.314,
+          "paid_per_1000_visitors": 10.99,
+          "steady_state_customers": 314.0,
+          "steady_state_mrr_net": 5258.57,
+          "visitors_for_1000_mrr": 335.0
+        }
+      ],
+      "lift_multiple": 2.744,
+      "traffic_requirement_reduction": 0.6354
+    },
+    "tornado": [
+      {
+        "param": "MONTHLY_LOGO_CHURN",
+        "param_cn": "月流失率",
+        "baseline_value": 0.07,
+        "low": 922.8,
+        "high": 496.89,
+        "swing": 425.91,
+        "swing_pct_of_baseline": 0.6593
+      },
+      {
+        "param": "CM_OPTIN_VISITOR_TO_SIGNUP",
+        "param_cn": "访客→注册率",
+        "baseline_value": 0.045,
+        "low": 452.17,
+        "high": 839.74,
+        "swing": 387.57,
+        "swing_pct_of_baseline": 0.6
+      },
+      {
+        "param": "CM_OPTIN_SIGNUP_TO_PAID",
+        "param_cn": "注册→付费率",
+        "baseline_value": 0.089,
+        "low": 452.17,
+        "high": 839.74,
+        "swing": 387.57,
+        "swing_pct_of_baseline": 0.6
+      },
+      {
+        "param": "SOLO_NO_TOUCH_DISCOUNT",
+        "param_cn": "单人零触点折扣系数",
+        "baseline_value": 0.33707865168539325,
+        "low": 452.17,
+        "high": 839.74,
+        "swing": 387.57,
+        "swing_pct_of_baseline": 0.6
+      },
+      {
+        "param": "REFUND_RATE",
+        "param_cn": "退款率",
+        "baseline_value": 0.03,
+        "low": 651.95,
+        "high": 639.96,
+        "swing": 11.99,
+        "swing_pct_of_baseline": 0.0186
+      },
+      {
+        "param": "ARPU_USD",
+        "param_cn": "客单价",
+        "baseline_value": 19.0,
+        "low": 645.96,
+        "high": 645.96,
+        "swing": 0.0,
+        "swing_pct_of_baseline": 0.0
+      }
+    ],
+    "ramp_simulation": {
+      "description": "36 个月：有机流量第 12 月 800 UV/月、第 24 月 2,500 UV/月封顶；第 4 月一次 HN 头版脉冲 15,000 UV，第 9 月一次 3,000 UV 的社群脉冲",
+      "no_card": {
+        "final_customers": 40.2,
+        "final_mrr_net": 673.17,
+        "total_net_revenue_36m": 14908.43,
+        "cumulative_profit_36m": 12748.43,
+        "peak_cumulative_drawdown": -165.45,
+        "customers_by_year": [
+          20.09,
+          29.06,
+          40.2
+        ]
+      },
+      "with_card": {
+        "final_customers": 110.3,
+        "final_mrr_net": 1847.23,
+        "total_net_revenue_36m": 40909.79,
+        "cumulative_profit_36m": 38749.79,
+        "customers_by_year": [
+          55.12,
+          79.74,
+          110.3
+        ]
+      },
+      "traffic_by_month": [
+        66.7,
+        133.3,
+        200.0,
+        15266.7,
+        333.3,
+        400.0,
+        466.7,
+        533.3,
+        3600.0,
+        666.7,
+        733.3,
+        800.0,
+        941.7,
+        1083.3,
+        1225.0,
+        1366.7,
+        1508.3,
+        1650.0,
+        1791.7,
+        1933.3,
+        2075.0,
+        2216.7,
+        2358.3,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0,
+        2500.0
+      ],
+      "customers_by_month_no_card": [
+        0.09,
+        0.264,
+        0.515,
+        21.089,
+        20.063,
+        19.199,
+        18.485,
+        17.911,
+        21.517,
+        20.911,
+        20.437,
+        20.086,
+        19.952,
+        20.018,
+        20.27,
+        20.696,
+        21.284,
+        22.021,
+        22.899,
+        23.906,
+        25.034,
+        26.274,
+        27.618,
+        29.06,
+        30.401,
+        31.648,
+        32.807,
+        33.886,
+        34.889,
+        35.822,
+        36.689,
+        37.496,
+        38.246,
+        38.944,
+        39.593,
+        40.196
+      ],
+      "customers_by_month_with_card": [
+        0.247,
+        0.724,
+        1.414,
+        57.87,
+        55.054,
+        52.682,
+        50.723,
+        49.148,
+        59.044,
+        57.381,
+        56.081,
+        55.119,
+        54.749,
+        54.929,
+        55.622,
+        56.792,
+        58.404,
+        60.428,
+        62.835,
+        65.599,
+        68.694,
+        72.097,
+        75.786,
+        79.743,
+        83.422,
+        86.844,
+        90.026,
+        92.985,
+        95.737,
+        98.297,
+        100.678,
+        102.891,
+        104.95,
+        106.865,
+        108.646,
+        110.302
+      ],
+      "mrr_by_month_no_card": [
+        1.51,
+        4.42,
+        8.63,
+        353.18,
+        335.99,
+        321.52,
+        309.56,
+        299.95,
+        360.35,
+        350.19,
+        342.26,
+        336.39,
+        334.13,
+        335.23,
+        339.46,
+        346.6,
+        356.44,
+        368.79,
+        383.48,
+        400.35,
+        419.24,
+        440.01,
+        462.52,
+        486.67,
+        509.12,
+        530.01,
+        549.43,
+        567.49,
+        584.29,
+        599.91,
+        614.43,
+        627.95,
+        640.51,
+        652.2,
+        663.06,
+        673.17
+      ],
+      "mrr_by_month_with_card": [
+        4.14,
+        12.12,
+        23.68,
+        969.15,
+        921.99,
+        882.27,
+        849.46,
+        823.09,
+        988.81,
+        960.96,
+        939.18,
+        923.07,
+        916.88,
+        919.91,
+        931.51,
+        951.09,
+        978.09,
+        1011.99,
+        1052.3,
+        1098.59,
+        1150.42,
+        1207.41,
+        1269.2,
+        1335.45,
+        1397.07,
+        1454.37,
+        1507.67,
+        1557.23,
+        1603.32,
+        1646.19,
+        1686.05,
+        1723.13,
+        1757.61,
+        1789.67,
+        1819.49,
+        1847.23
+      ]
+    }
+  },
+  "unit_economics": {
+    "per_customer_base": {
+      "price_usd": 19.0,
+      "ops_per_month": 20.0,
+      "llm_cost_per_op": 0.0,
+      "gross_revenue": 19.0,
+      "refund_loss": 0.57,
+      "mor_fee": 1.6829,
+      "mor_effective_rate": 0.0913,
+      "cogs_llm": 0.0,
+      "contribution_margin_usd": 16.7471,
+      "contribution_margin_pct": 0.8814,
+      "lifetime_months": 14.29,
+      "ltv_usd": 239.24
+    },
+    "price_ladder": [
+      {
+        "price": 9,
+        "mor_effective_rate": 0.1206,
+        "contribution_usd": 7.6776,
+        "contribution_pct": 0.8531,
+        "ltv_usd": 109.68,
+        "customers_to_cover_infra": 7.81
+      },
+      {
+        "price": 19,
+        "mor_effective_rate": 0.0913,
+        "contribution_usd": 16.7471,
+        "contribution_pct": 0.8814,
+        "ltv_usd": 239.24,
+        "customers_to_cover_infra": 3.58
+      },
+      {
+        "price": 29,
+        "mor_effective_rate": 0.0822,
+        "contribution_usd": 25.8165,
+        "contribution_pct": 0.8902,
+        "ltv_usd": 368.81,
+        "customers_to_cover_infra": 2.32
+      },
+      {
+        "price": 49,
+        "mor_effective_rate": 0.0752,
+        "contribution_usd": 43.9556,
+        "contribution_pct": 0.8971,
+        "ltv_usd": 627.94,
+        "customers_to_cover_infra": 1.37
+      },
+      {
+        "price": 99,
+        "mor_effective_rate": 0.0701,
+        "contribution_usd": 89.303,
+        "contribution_pct": 0.9021,
+        "ltv_usd": 1275.76,
+        "customers_to_cover_infra": 0.67
+      }
+    ],
+    "product_form_comparison": [
+      {
+        "form": "C12 纯规则分析（零推理）",
+        "llm_cost_per_op": 0.0,
+        "monthly_cogs_at_20_ops": 0.0,
+        "contribution_pct": 0.8814,
+        "ltv_usd": 239.24
+      },
+      {
+        "form": "单次推理式审查（Sonnet 5 推算）",
+        "llm_cost_per_op": 0.0714,
+        "monthly_cogs_at_20_ops": 1.428,
+        "contribution_pct": 0.8063,
+        "ltv_usd": 218.84
+      },
+      {
+        "form": "agentic 审查（Ellipsis 生产均值）",
+        "llm_cost_per_op": 0.12,
+        "monthly_cogs_at_20_ops": 2.4,
+        "contribution_pct": 0.7551,
+        "ltv_usd": 204.96
+      },
+      {
+        "form": "agentic 未优化（朴素全上下文实现）",
+        "llm_cost_per_op": 1.65,
+        "monthly_cogs_at_20_ops": 33.0,
+        "contribution_pct": -0.8554,
+        "ltv_usd": -232.18
+      }
+    ],
+    "breakeven": {
+      "contribution_per_customer_month": 16.75,
+      "cash_breakeven": {
+        "description": "只覆盖基础设施现金支出（$60/月）——这是最低、也是最容易误导人的口径",
+        "customers": 3.58,
+        "mrr_usd": 68.07,
+        "monthly_visitors_needed": 186.0
+      },
+      "full_breakeven": {
+        "description": "同时覆盖基础设施与时间机会成本（87 小时/月 × $30/小时 = $2,600/月）——**这才是真实的盈亏平衡**",
+        "monthly_hours": 86.7,
+        "monthly_time_cost_usd": 2600.0,
+        "customers": 158.83,
+        "mrr_usd": 3017.84,
+        "monthly_visitors_needed": 8236.0,
+        "monthly_visitors_needed_with_card": 3001.0
+      },
+      "ratio": 44.3
+    },
+    "time_based_cac_scenarios": [
+      {
+        "acquisition_hours_per_month": 4,
+        "monthly_visitors": 500,
+        "hours_on_acquisition_per_month": 4,
+        "customers_acquired_per_month": 0.675,
+        "hours_per_customer": 5.93,
+        "cac_usd_time_priced": 177.78,
+        "contribution_per_month": 16.75,
+        "payback_months": 10.6,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 1.35,
+        "healthy": false
+      },
+      {
+        "acquisition_hours_per_month": 4,
+        "monthly_visitors": 1000,
+        "hours_on_acquisition_per_month": 4,
+        "customers_acquired_per_month": 1.35,
+        "hours_per_customer": 2.96,
+        "cac_usd_time_priced": 88.89,
+        "contribution_per_month": 16.75,
+        "payback_months": 5.3,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 2.69,
+        "healthy": false
+      },
+      {
+        "acquisition_hours_per_month": 4,
+        "monthly_visitors": 2000,
+        "hours_on_acquisition_per_month": 4,
+        "customers_acquired_per_month": 2.7,
+        "hours_per_customer": 1.48,
+        "cac_usd_time_priced": 44.44,
+        "contribution_per_month": 16.75,
+        "payback_months": 2.7,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 5.38,
+        "healthy": true
+      },
+      {
+        "acquisition_hours_per_month": 4,
+        "monthly_visitors": 2729,
+        "hours_on_acquisition_per_month": 4,
+        "customers_acquired_per_month": 3.684,
+        "hours_per_customer": 1.09,
+        "cac_usd_time_priced": 32.57,
+        "contribution_per_month": 16.75,
+        "payback_months": 1.9,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 7.34,
+        "healthy": true
+      },
+      {
+        "acquisition_hours_per_month": 8,
+        "monthly_visitors": 500,
+        "hours_on_acquisition_per_month": 8,
+        "customers_acquired_per_month": 0.675,
+        "hours_per_customer": 11.85,
+        "cac_usd_time_priced": 355.56,
+        "contribution_per_month": 16.75,
+        "payback_months": 21.2,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 0.67,
+        "healthy": false
+      },
+      {
+        "acquisition_hours_per_month": 8,
+        "monthly_visitors": 1000,
+        "hours_on_acquisition_per_month": 8,
+        "customers_acquired_per_month": 1.35,
+        "hours_per_customer": 5.93,
+        "cac_usd_time_priced": 177.78,
+        "contribution_per_month": 16.75,
+        "payback_months": 10.6,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 1.35,
+        "healthy": false
+      },
+      {
+        "acquisition_hours_per_month": 8,
+        "monthly_visitors": 2000,
+        "hours_on_acquisition_per_month": 8,
+        "customers_acquired_per_month": 2.7,
+        "hours_per_customer": 2.96,
+        "cac_usd_time_priced": 88.89,
+        "contribution_per_month": 16.75,
+        "payback_months": 5.3,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 2.69,
+        "healthy": false
+      },
+      {
+        "acquisition_hours_per_month": 8,
+        "monthly_visitors": 2729,
+        "hours_on_acquisition_per_month": 8,
+        "customers_acquired_per_month": 3.684,
+        "hours_per_customer": 2.17,
+        "cac_usd_time_priced": 65.14,
+        "contribution_per_month": 16.75,
+        "payback_months": 3.9,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 3.67,
+        "healthy": true
+      },
+      {
+        "acquisition_hours_per_month": 12,
+        "monthly_visitors": 500,
+        "hours_on_acquisition_per_month": 12,
+        "customers_acquired_per_month": 0.675,
+        "hours_per_customer": 17.78,
+        "cac_usd_time_priced": 533.33,
+        "contribution_per_month": 16.75,
+        "payback_months": 31.8,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 0.45,
+        "healthy": false
+      },
+      {
+        "acquisition_hours_per_month": 12,
+        "monthly_visitors": 1000,
+        "hours_on_acquisition_per_month": 12,
+        "customers_acquired_per_month": 1.35,
+        "hours_per_customer": 8.89,
+        "cac_usd_time_priced": 266.67,
+        "contribution_per_month": 16.75,
+        "payback_months": 15.9,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 0.9,
+        "healthy": false
+      },
+      {
+        "acquisition_hours_per_month": 12,
+        "monthly_visitors": 2000,
+        "hours_on_acquisition_per_month": 12,
+        "customers_acquired_per_month": 2.7,
+        "hours_per_customer": 4.44,
+        "cac_usd_time_priced": 133.33,
+        "contribution_per_month": 16.75,
+        "payback_months": 8.0,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 1.79,
+        "healthy": false
+      },
+      {
+        "acquisition_hours_per_month": 12,
+        "monthly_visitors": 2729,
+        "hours_on_acquisition_per_month": 12,
+        "customers_acquired_per_month": 3.684,
+        "hours_per_customer": 3.26,
+        "cac_usd_time_priced": 97.72,
+        "contribution_per_month": 16.75,
+        "payback_months": 5.8,
+        "ltv_usd": 239.24,
+        "ltv_over_cac": 2.45,
+        "healthy": false
+      }
+    ]
+  },
+  "acquisition": {
+    "seo_base": {
+      "pages": 180,
+      "top10_rate": 0.0611,
+      "top10_rate_grade": "A",
+      "uv_per_ranked_page": 40.0,
+      "uv_grade": "D（本人估计，无公开数据）",
+      "monthly_uv": 439.9200000000001,
+      "note": "180 页 × 6.11% 进前十 = 11.0 页 × 40 UV/月"
+    },
+    "seo_sensitivity": [
+      {
+        "pages": 60,
+        "uv_per_ranked_page": 15,
+        "monthly_uv": 55.0
+      },
+      {
+        "pages": 60,
+        "uv_per_ranked_page": 40,
+        "monthly_uv": 146.6
+      },
+      {
+        "pages": 60,
+        "uv_per_ranked_page": 80,
+        "monthly_uv": 293.3
+      },
+      {
+        "pages": 120,
+        "uv_per_ranked_page": 15,
+        "monthly_uv": 110.0
+      },
+      {
+        "pages": 120,
+        "uv_per_ranked_page": 40,
+        "monthly_uv": 293.3
+      },
+      {
+        "pages": 120,
+        "uv_per_ranked_page": 80,
+        "monthly_uv": 586.6
+      },
+      {
+        "pages": 180,
+        "uv_per_ranked_page": 15,
+        "monthly_uv": 165.0
+      },
+      {
+        "pages": 180,
+        "uv_per_ranked_page": 40,
+        "monthly_uv": 439.9
+      },
+      {
+        "pages": 180,
+        "uv_per_ranked_page": 80,
+        "monthly_uv": 879.8
+      },
+      {
+        "pages": 300,
+        "uv_per_ranked_page": 15,
+        "monthly_uv": 275.0
+      },
+      {
+        "pages": 300,
+        "uv_per_ranked_page": 40,
+        "monthly_uv": 733.2
+      },
+      {
+        "pages": 300,
+        "uv_per_ranked_page": 80,
+        "monthly_uv": 1466.4
+      }
+    ],
+    "channels": [
+      {
+        "name": "免费 GitHub Action 本体（产品即渠道）",
+        "mechanism": "扫描器以免费 GitHub Action 形式发布。每个安装它的仓库都会在 .github/workflows/*.yml 里留下一行公开可见的引用，该文件可被 GitHub 代码搜索索引，也会被该仓库的贡献者读到。安装量本身就是曝光量。",
+        "compounding": true,
+        "m12_uv": 180,
+        "m24_uv": 600,
+        "m36_uv": 1100,
+        "grade": "D",
+        "basis": "无公开的「Action 安装→官网访问」转化数据（assumptions.MARKETPLACE_INSTALL_TO_PAID 为 D 级空缺）。此处按第 12 月 150 个安装、每安装每月带来约 1.2 次官网访问推算，属本人假设。",
+        "kill_criterion": "第 6 月安装数 < 30，或第 12 月 < 150"
+      },
+      {
+        "name": "程序化 SEO 知识库（180 页配置安全条目）",
+        "mechanism": "每个 (agent action × 危险模式) 组合一页，内容是具体的错误配置示例 + 为什么危险 + 可直接复制的修复补丁。搜索这些具体报错/配置名的人，正是处于危险三角中的人。",
+        "compounding": true,
+        "m12_uv": 0,
+        "m24_uv": 440,
+        "m36_uv": 700,
+        "grade": "A（排名概率）/ D（单页流量）",
+        "basis": "Ahrefs 100 万 URL 追踪：英文非空内容 12 个月内进前十 6.11%。180 页 × 6.11% = 11 页进前十。**第一年按 0 计**（SEO 起量周期 9–18 个月）。单页 40 UV/月为 D 级假设。",
+        "kill_criterion": "第 18 月自然搜索流量 < 100 UV/月"
+      },
+      {
+        "name": "负责任披露飞轮",
+        "mechanism": "持续在公开仓库中发现真实的 agent CI 配置漏洞，私下告知维护者并附修复补丁。每次披露产生三样东西：一个被修好的仓库、一个知道你是谁的维护者、可能的公开致谢或 advisory 署名。这是本方案中唯一同时满足「真实帮到人」与「获客」的动作。",
+        "compounding": true,
+        "m12_uv": 120,
+        "m24_uv": 300,
+        "m36_uv": 450,
+        "grade": "D",
+        "basis": "按每月 10 次披露、30% 回复率、每个回复者平均带来 4 次访问（自己 + 转发）推算。口碑的重要性有间接支持：IndieLaunches 326 个 HN 项目中，口碑是被提及最多的主渠道（40 次为主渠道，高于 SEO 的 27 次）。",
+        "kill_criterion": "第 3 月累计披露 < 20 次，或回复率 < 20%"
+      },
+      {
+        "name": "被收录进 awesome-list / 他人 README / 安全清单",
+        "mechanism": "安全工具进入 awesome-actions、awesome-ci-security 等清单后获得长期被动引用。",
+        "compounding": true,
+        "m12_uv": 60,
+        "m24_uv": 160,
+        "m36_uv": 250,
+        "grade": "D",
+        "basis": "本人假设，无公开数据。取值刻意保守。",
+        "kill_criterion": "第 12 月被收录清单数 < 2"
+      },
+      {
+        "name": "Hacker News / 垂直社群脉冲",
+        "mechanism": "发布原创安全研究（例如「我扫了 5,000 个公开仓库，发现 N 个处于危险三角」）。此类内容在本领域传播力最强——微软、CSA、Aikido、Noma 四篇来源本身都是靠这个方式传播的。",
+        "compounding": false,
+        "m12_uv": 0,
+        "m24_uv": 0,
+        "m36_uv": 0,
+        "grade": "B",
+        "basis": "HN 头版 10,000–30,000 UV/24h，48 小时内衰减到零。**按定义不计入稳态基线**，仅作为一次性事件叠加在爬坡曲线上（见 funnel.py 的 pulses 参数）。",
+        "kill_criterion": "三年内 0 次进入 HN 前 30 名"
+      }
+    ],
+    "compounding_uv_month36": 2500.0,
+    "pulse_events": {
+      "4": 15000,
+      "9": 3000,
+      "18": 15000,
+      "30": 3000
+    },
+    "steady_curve": [
+      30.0,
+      60.0,
+      90.0,
+      120.0,
+      150.0,
+      180.0,
+      210.0,
+      240.0,
+      270.0,
+      300.0,
+      330.0,
+      360.0,
+      455.0,
+      550.0,
+      645.0,
+      740.0,
+      835.0,
+      930.0,
+      1025.0,
+      1120.0,
+      1215.0,
+      1310.0,
+      1405.0,
+      1500.0,
+      1583.3,
+      1666.7,
+      1750.0,
+      1833.3,
+      1916.7,
+      2000.0,
+      2083.3,
+      2166.7,
+      2250.0,
+      2333.3,
+      2416.7,
+      2500.0
+    ],
+    "full_curve": [
+      30.0,
+      60.0,
+      90.0,
+      15120.0,
+      150.0,
+      180.0,
+      210.0,
+      240.0,
+      3270.0,
+      300.0,
+      330.0,
+      360.0,
+      455.0,
+      550.0,
+      645.0,
+      740.0,
+      835.0,
+      15930.0,
+      1025.0,
+      1120.0,
+      1215.0,
+      1310.0,
+      1405.0,
+      1500.0,
+      1583.3,
+      1666.7,
+      1750.0,
+      1833.3,
+      1916.7,
+      5000.0,
+      2083.3,
+      2166.7,
+      2250.0,
+      2333.3,
+      2416.7,
+      2500.0
+    ],
+    "checkpoints": [
+      {
+        "month": 3,
+        "steady_uv_target": 90.0,
+        "implied_steady_customers_no_card": 1.7,
+        "implied_steady_mrr_no_card": 33.0,
+        "pass_threshold_uv": 63.0,
+        "action_if_missed": "披露飞轮未启动。检查是不是选错了人群（找的仓库都是玩具项目）。重选 30 个目标仓库重试一次。"
+      },
+      {
+        "month": 6,
+        "steady_uv_target": 180.0,
+        "implied_steady_customers_no_card": 3.5,
+        "implied_steady_mrr_no_card": 66.0,
+        "pass_threshold_uv": 126.0,
+        "action_if_missed": "免费 Action 无人安装 = 产品本身没有吸引力。这是**比获客更严重的信号**，回到 Gate 1 重验付费意愿。"
+      },
+      {
+        "month": 12,
+        "steady_uv_target": 360.0,
+        "implied_steady_customers_no_card": 6.9,
+        "implied_steady_mrr_no_card": 132.0,
+        "pass_threshold_uv": 252.0,
+        "action_if_missed": "第一年靠的是披露飞轮与 Action 本体，与 SEO 无关。未达标说明这两条机制不成立，**触发赛道切换**（转 C13）。"
+      },
+      {
+        "month": 18,
+        "steady_uv_target": 930.0,
+        "implied_steady_customers_no_card": 17.9,
+        "implied_steady_mrr_no_card": 341.0,
+        "pass_threshold_uv": 651.0,
+        "action_if_missed": "SEO 未起量。Ahrefs 数据说 9–18 个月是正常周期，18 个月仍为零则内容质量或选题有问题。停止新增页面，改为深耕已有页面。"
+      },
+      {
+        "month": 24,
+        "steady_uv_target": 1500.0,
+        "implied_steady_customers_no_card": 28.9,
+        "implied_steady_mrr_no_card": 550.0,
+        "pass_threshold_uv": 1050.0,
+        "action_if_missed": "此时应已接近 995 UV/月（要卡口径的 $1,000 MRR 需求）。未达标则**必须启用信用卡门槛**或接受 $1,000 MRR 无法达成。"
+      },
+      {
+        "month": 36,
+        "steady_uv_target": 2500.0,
+        "implied_steady_customers_no_card": 48.2,
+        "implied_steady_mrr_no_card": 916.0,
+        "pass_threshold_uv": 1750.0,
+        "action_if_missed": "未达 2,729 UV/月（不要卡口径）说明纯自然流量路径走不通，**执行止损：转为免费开源项目，停止商业化投入**。"
+      }
+    ],
+    "gap_analysis": {
+      "planned_steady_uv_month36": 2500.0,
+      "required_uv_for_1000_mrr_no_card": 2729.0,
+      "required_uv_for_1000_mrr_with_card": 995.0,
+      "coverage_no_card": 0.916,
+      "coverage_with_card": 2.514,
+      "verdict_no_card": "不足",
+      "verdict_with_card": "足够",
+      "implied_mrr_at_month36_no_card": 916.0,
+      "implied_mrr_at_month36_with_card": 2514.0
+    }
+  },
+  "monte_carlo": {
+    "meta": {
+      "seed": 20260727,
+      "n_sims": 100000,
+      "horizon_months": 36,
+      "require_card": true,
+      "full_wager_usd": 94500.0,
+      "full_wager_cash_usd": 4500.0,
+      "hourly_opportunity_cost": 30.0,
+      "overrides": {}
+    },
+    "gates": [
+      {
+        "name": "Gate 0-A 收款通道",
+        "p_pass": 0.85,
+        "hours": 4,
+        "rationale": "Paddle 官方文档在国别与币种两层均支持中国大陆（docs/GATE0.md §1.3），剩余风险仅为个案 KYC。未过时不终止，转回退路径（另计成本）"
+      },
+      {
+        "name": "Gate 0-B 流量验证",
+        "p_pass": 0.35,
+        "hours": 22,
+        "rationale": "免费最小工具 14 天内获得 ≥300 UV 且 ≥30 次实际使用。无先验数据；参照 Show HN 项目中获得实质关注的比例，取约三分之一"
+      },
+      {
+        "name": "Gate 1 付费意愿",
+        "p_pass": 0.3,
+        "hours": 26,
+        "rationale": "≥3 人真实预付 $99。条件于 Gate 0-B 已过。取值低于 Gate 0-B 的理由：从「免费愿意用」到「掏钱」的落差是本领域最大的一道坎（免费开源工具过剩，见 sources.md §4.4）"
+      },
+      {
+        "name": "Gate 2 MVP 交付",
+        "p_pass": 0.85,
+        "hours": 240,
+        "rationale": "12 周 × 20 小时。C12 为纯规则引擎，工程风险低，opportunity_scoring 给可交付性 9 分"
+      }
+    ],
+    "stop_distribution": {
+      "止于 Gate 0-B（流量验证）": 0.27287,
+      "止于 Gate 1（付费意愿）": 0.50965,
+      "止于 Gate 2（MVP 未能交付）": 0.03306,
+      "运营中": 0.13818,
+      "运营期被平台方打包功能击垮": 0.04624
+    },
+    "survival_to_operation": 0.18442,
+    "outcomes_full": {
+      "P10": 0.4650522611936582,
+      "P25": 0.9541164021164021,
+      "P50": 0.9762539682539683,
+      "P75": 0.9773968253968254,
+      "P90": 0.9833650793650793,
+      "P99": 1.5185524259442806,
+      "mean": 0.9140098910202585,
+      "p_gain": 0.01894,
+      "p_loss_over_50pct": 0.10554
+    },
+    "outcomes_cash": {
+      "P10": 0.7751111111111111,
+      "P50": 0.9946666666666667,
+      "P90": 2.5033696447177096,
+      "mean": 2.4390861558698753,
+      "p_gain": 0.14009
+    },
+    "conditional_on_survival": {
+      "share_of_all_paths": 0.13818,
+      "M_P10": 0.16316387729538653,
+      "M_P50": 0.33101317056642576,
+      "M_P90": 1.2301650372547297,
+      "mrr_P10": 246.47333859059088,
+      "mrr_P50": 941.2886975677116,
+      "mrr_P90": 3755.244902413515,
+      "p_gain": 0.13482414242292662
+    },
+    "expected_value_usd": {
+      "full_accounting": -8126.065298585569,
+      "cash_only": 6475.887701414439
+    },
+    "business_metrics": {
+      "customers_P50": 0.0,
+      "customers_P90": 32.60507683563513,
+      "mrr_P50": 0.0,
+      "mrr_P90": 619.4964598770674,
+      "mrr_P99": 4683.222934220615,
+      "cum_profit_P10": 0.0,
+      "cum_profit_P50": 0.0,
+      "cum_profit_P90": 4430.970556818916,
+      "hours_spent_P50": 74.0,
+      "hours_spent_P90": 2625.3333333333335,
+      "cash_spent_P50": 36.0,
+      "cash_spent_P90": 1692.0,
+      "peak_cash_drawdown_P10": -102.70160872125766,
+      "p_reach_1000_mrr": 0.07171,
+      "p_reach_3018_mrr_full_breakeven": 0.02014
+    },
+    "no_card_comparison": {
+      "outcomes_full": {
+        "P10": 0.26887524859328166,
+        "P25": 0.952973544973545,
+        "P50": 0.9762539682539683,
+        "P75": 0.9773968253968254,
+        "P90": 0.9833650793650793,
+        "P99": 0.9833650793650793,
+        "mean": 0.8652901711411243,
+        "p_gain": 0.00434,
+        "p_loss_over_50pct": 0.13881
+      },
+      "business_metrics": {
+        "mrr_P50": 0.0,
+        "mrr_P90": 225.57110821671952,
+        "p_reach_1000_mrr": 0.02347
+      }
+    },
+    "convergence": [
+      {
+        "n": 1000,
+        "mean_of_means": 0.9141125371027201,
+        "mean_sd_across_seeds": 0.015718173436347897,
+        "mean_relative_sd": 0.01719500914643032,
+        "P999_mean": 5.5064518149636115,
+        "P999_relative_sd": 0.5094577123377949
+      },
+      {
+        "n": 10000,
+        "mean_of_means": 0.9122899458627423,
+        "mean_sd_across_seeds": 0.008977450972787923,
+        "mean_relative_sd": 0.0098405676983517,
+        "P999_mean": 5.809055338710884,
+        "P999_relative_sd": 0.19319229667997034
+      },
+      {
+        "n": 100000,
+        "mean_of_means": 0.9112931428698356,
+        "mean_sd_across_seeds": 0.0026560184050366913,
+        "mean_relative_sd": 0.002914559849174749,
+        "P999_mean": 5.923493604521056,
+        "P999_relative_sd": 0.05667933577041507
+      }
+    ],
+    "sensitivity": [
+      {
+        "scenario": "基准",
+        "p_gain": 0.017,
+        "P50": 0.9762539682539683,
+        "mean": 0.9097294800271691
+      },
+      {
+        "scenario": "Gate 0-B 通过率 0.35→0.20",
+        "p_gain": 0.01245,
+        "P50": 0.9773968253968254,
+        "mean": 0.9289190389272646
+      },
+      {
+        "scenario": "Gate 0-B 通过率 0.35→0.55",
+        "p_gain": 0.02335,
+        "P50": 0.9762539682539683,
+        "mean": 0.8980591822879833
+      },
+      {
+        "scenario": "Gate 1 通过率 0.30→0.15",
+        "p_gain": 0.0088,
+        "P50": 0.9773968253968254,
+        "mean": 0.9472200955282282
+      },
+      {
+        "scenario": "Gate 1 通过率 0.30→0.50",
+        "p_gain": 0.0283,
+        "P50": 0.9762539682539683,
+        "mean": 0.8610511172270894
+      },
+      {
+        "scenario": "流量中位实现率 0.7→0.4",
+        "p_gain": 0.00745,
+        "P50": 0.9762539682539683,
+        "mean": 0.8802383160245956
+      },
+      {
+        "scenario": "流量中位实现率 0.7→1.0",
+        "p_gain": 0.0275,
+        "P50": 0.9762539682539683,
+        "mean": 0.9392206440297428
+      },
+      {
+        "scenario": "时间机会成本 $30→$15/h",
+        "p_gain": 0.0368,
+        "P50": 0.9770909090909091,
+        "mean": 0.9726310881326764
+      },
+      {
+        "scenario": "时间机会成本 $30→$60/h",
+        "p_gain": 0.0059,
+        "P50": 0.9758048780487805,
+        "mean": 0.8759773976290921
+      },
+      {
+        "scenario": "时间机会成本 $30→$0/h（纯闲暇口径）",
+        "p_gain": 0.13815,
+        "P50": 0.9946653778636979,
+        "mean": 2.2934679963293156
+      },
+      {
+        "scenario": "月流失 7%→10%",
+        "p_gain": 0.01415,
+        "P50": 0.9762539682539683,
+        "mean": 0.9001661258386865
+      },
+      {
+        "scenario": "被打包风险 25%→50%",
+        "p_gain": 0.0118,
+        "P50": 0.9762539682539683,
+        "mean": 0.9143143852210269
+      },
+      {
+        "scenario": "关掉突破分量 P=3%→0（纯对数正态）",
+        "p_gain": 0.0147,
+        "P50": 0.9762539682539683,
+        "mean": 0.8968505767528219
+      },
+      {
+        "scenario": "突破概率 3%→8%",
+        "p_gain": 0.0213,
+        "P50": 0.9762539682539683,
+        "mean": 0.9294022959509155
+      },
+      {
+        "scenario": "乐观组合（各门+流量同时向好）",
+        "p_gain": 0.0749,
+        "P50": 0.9691428571428572,
+        "mean": 0.9586938188489068
+      }
+    ]
+  },
+  "kelly": {
+    "meta": {
+      "seed": 20260727,
+      "n_sims": 100000,
+      "note": "两种口径并列。**全口径是本 BP 的正式口径**；现金口径保留是为了展示忽略时间成本会得出多么不同的结论。"
+    },
+    "full_accounting": {
+      "label": "全口径（现金 + 时间机会成本 $30/h）",
+      "bankroll_usd": 170000.0,
+      "planned_wager_usd": 94500.0,
+      "planned_wager_as_fraction_of_bankroll": 0.5558823529411765,
+      "win_loss": {
+        "win_rate_p": 0.01894,
+        "loss_rate_q": 0.98106,
+        "avg_win_W": 1.5529489395762253,
+        "avg_loss_L": 0.11763089097029245,
+        "payoff_ratio_b": 13.201880277931592,
+        "expected_value": -0.08599010897974141,
+        "kelly_two_outcome": -0.055372141857546665,
+        "breakeven_win_rate": 0.07041321152058348
+      },
+      "buckets": [
+        {
+          "bucket": "全损（回收 <25%）",
+          "probability": 0.0499,
+          "mean_multiple": 0.1873486631734901
+        },
+        {
+          "bucket": "重损（25%–75%）",
+          "probability": 0.08676,
+          "mean_multiple": 0.45020974470095626
+        },
+        {
+          "bucket": "轻损（75%–100%）",
+          "probability": 0.8444,
+          "mean_multiple": 0.9678447919967701
+        },
+        {
+          "bucket": "回本至小成（1.0–2.0 倍）",
+          "probability": 0.01241,
+          "mean_multiple": 1.3663948185390462
+        },
+        {
+          "bucket": "中成（2.0–5.0 倍）",
+          "probability": 0.00511,
+          "mean_multiple": 2.8896195645913845
+        },
+        {
+          "bucket": "大成（>5 倍）",
+          "probability": 0.00142,
+          "mean_multiple": 11.711223410170545
+        }
+      ],
+      "kelly": {
+        "f_star": 0.0,
+        "growth_rate_at_f_star": 0.0,
+        "growth_rate_at_f_1": -0.1738619812666467,
+        "max_safe_f": 1.1105983344746677,
+        "worst_case_multiple": 0.09958526990022291,
+        "kelly_says_do_not_bet": true
+      },
+      "kelly_implied_wager_usd": 0.0,
+      "kelly_exceeds_bankroll": false,
+      "commitment_view": {
+        "share_of_paths_committed": 0.21748,
+        "win_rate_given_commitment": 0.08708846790509472,
+        "avg_loss_given_commitment": 0.48047343379726387,
+        "payoff_ratio_given_commitment": 3.2321223825071943,
+        "expected_value_given_commitment": -0.30338579469622523,
+        "note": "对比无条件胜率可见：阶段门把绝大多数失败拦在了「只亏几十小时」的阶段。无条件胜率低 ≠ 风险大；真正的风险集中在通过 Gate 1 之后的 240+ 小时。"
+      },
+      "fractional_kelly": [],
+      "annualization": {
+        "A_expect_then_annualize": {
+          "label": "口径 A：先算期望倍数，再年化",
+          "formula": "(E[M])^(1/T) − 1",
+          "value": -0.029526609704215945,
+          "misleading_because": "最容易被误读为「预期年化收益」。它是**均值的年化**，而均值被极少数右尾路径拉动；中位路径拿不到这个数。"
+        },
+        "B_annualize_then_expect": {
+          "label": "口径 B：各路径先年化，再取期望",
+          "formula": "E[M^(1/T)] − 1",
+          "value": -0.04662203904521989,
+          "misleading_because": "由 Jensen 不等式，恒 ≤ 口径 A。它更贴近「随机抽一条路径的年化」，但把全损路径的 −100% 也平均了进来，会低估「做成时」的量级。"
+        },
+        "C_geometric_conditional_on_survival": {
+          "label": "口径 C：条件于未全损的几何平均年化",
+          "formula": "exp(E[ln M | M > 0.25])^(1/T) − 1",
+          "value": -0.030893469696368525,
+          "misleading_because": "**隐藏了 5.0% 的全损概率。**这是创业故事里最常被单独引用的数字，也是最危险的一个。"
+        },
+        "D_true_geometric_all_paths": {
+          "label": "口径 D：全路径几何平均年化（重复下注的真实增长率）",
+          "formula": "exp(E[ln M])^(1/T) − 1",
+          "value": -0.05630663777437539,
+          "misleading_because": "这一口径本身不误导，但**只在「能重复下很多次同样的注」时才有意义**。单人创业一生下注个位数次，此数是理论参照而非可实现收益。"
+        },
+        "_spread_pct_points": 2.6780028070159445,
+        "_risk_free_comparison": {
+          "us_10y": 0.0471,
+          "cn_10y": 0.0173,
+          "note": "同一分布可产出相差数十个百分点的四个「年化」。BP 中任何一处出现「年化 XX%」，必须紧跟口径名与该口径的误导风险说明。"
+        }
+      },
+      "forbidden_approximations": {
+        "volatility_drag": {
+          "exact_log_growth": -0.1738619812666467,
+          "approx_mu_minus_half_sigma2": -0.30936109740919465,
+          "absolute_error": -0.13549911614254795,
+          "sign_flipped": false,
+          "verdict": "近似式 g ≈ μ − σ²/2 只在小波动下成立。本项目 σ(算术) = 0.668，远超其适用范围，误差 0.1355。**禁用，一律用精确式 E[ln M]。**"
+        },
+        "half_kelly_retention": {
+          "measured": null,
+          "c2minusc_approx": 0.75,
+          "verdict": "Kelly 最优比例为 0（优势为负），分数 Kelly 无从谈起。"
+        }
+      },
+      "inapplicable_ratios": {
+        "sharpe": -0.35017081094535146,
+        "sortino": -0.67543018106953,
+        "omega": 0.10299740583307959,
+        "skewness": 67.81872445074082,
+        "excess_kurtosis": 8175.854586976411,
+        "why_not_reported_as_conclusion": "这三个比率均以「收益对称、波动可作为风险代理」为前提。本分布偏度 与超额峰度都极高（见上），标准差主要由**右尾的好结果**贡献，于是「波动越大 = 越危险」的解读方向是反的。把它们放进 BP 正文，只会让读者得到与事实相反的印象。仅在方法论附录中作为反例出现。"
+      }
+    },
+    "cash_only": {
+      "label": "现金口径（时间按 $0 计，即把 20 小时/周当纯闲暇）",
+      "bankroll_usd": 80000.0,
+      "planned_wager_usd": 4500.0,
+      "planned_wager_as_fraction_of_bankroll": 0.05625,
+      "win_loss": {
+        "win_rate_p": 0.14009,
+        "loss_rate_q": 0.85991,
+        "avg_win_W": 10.55320402232399,
+        "avg_loss_L": 0.045840778499475376,
+        "payoff_ratio_b": 230.21432811060936,
+        "expected_value": 1.438979407647884,
+        "kelly_two_outcome": 0.1363547416124906,
+        "breakeven_win_rate": 0.004324991483752752
+      },
+      "buckets": [
+        {
+          "bucket": "全损（回收 <25%）",
+          "probability": 0.00014,
+          "mean_multiple": 0.18894848381223608
+        },
+        {
+          "bucket": "重损（25%–75%）",
+          "probability": 0.01161,
+          "mean_multiple": 0.6021820614507531
+        },
+        {
+          "bucket": "轻损（75%–100%）",
+          "probability": 0.84816,
+          "mean_multiple": 0.9591035531495699
+        },
+        {
+          "bucket": "回本至小成（1.0–2.0 倍）",
+          "probability": 0.02992,
+          "mean_multiple": 1.4449112293708453
+        },
+        {
+          "bucket": "中成（2.0–5.0 倍）",
+          "probability": 0.04267,
+          "mean_multiple": 3.270821109231329
+        },
+        {
+          "bucket": "大成（>5 倍）",
+          "probability": 0.0675,
+          "mean_multiple": 21.269491418869503
+        }
+      ],
+      "kelly": {
+        "f_star": 1.155043883602258,
+        "growth_rate_at_f_star": 0.19502387162893872,
+        "growth_rate_at_f_1": 0.1892259575438266,
+        "max_safe_f": 1.155382565189675,
+        "worst_case_multiple": 0.13448656348523202,
+        "kelly_says_do_not_bet": false
+      },
+      "kelly_implied_wager_usd": 92403.51068818064,
+      "kelly_exceeds_bankroll": true,
+      "commitment_view": {
+        "share_of_paths_committed": 0.21748,
+        "win_rate_given_commitment": 0.6441511863159831,
+        "avg_loss_given_commitment": 0.11177934628288701,
+        "payoff_ratio_given_commitment": 94.4110372198486,
+        "expected_value_given_commitment": 6.758082342645463,
+        "note": "对比无条件胜率可见：阶段门把绝大多数失败拦在了「只亏几十小时」的阶段。无条件胜率低 ≠ 风险大；真正的风险集中在通过 Gate 1 之后的 240+ 小时。"
+      },
+      "fractional_kelly": [
+        {
+          "fraction_c": 0.25,
+          "f": 0.2887609709005645,
+          "growth_rate": 0.11751760151968878,
+          "ruin": false,
+          "retention_measured": 0.6025805996882428,
+          "retention_c2minusc_approx": 0.4375
+        },
+        {
+          "fraction_c": 0.5,
+          "f": 0.577521941801129,
+          "growth_rate": 0.15913777095193266,
+          "ruin": false,
+          "retention_measured": 0.8159912405734382,
+          "retention_c2minusc_approx": 0.75
+        },
+        {
+          "fraction_c": 0.75,
+          "f": 0.8662829127016936,
+          "growth_rate": 0.18220724797013957,
+          "ruin": false,
+          "retention_measured": 0.9342817699610403,
+          "retention_c2minusc_approx": 0.9375
+        },
+        {
+          "fraction_c": 1.0,
+          "f": 1.155043883602258,
+          "growth_rate": 0.19502387162893872,
+          "ruin": false,
+          "retention_measured": 1.0,
+          "retention_c2minusc_approx": 1.0
+        },
+        {
+          "fraction_c": 1.5,
+          "f": 1.732565825403387,
+          "growth_rate": null,
+          "ruin": true,
+          "retention_measured": null,
+          "retention_c2minusc_approx": 0.75
+        },
+        {
+          "fraction_c": 2.0,
+          "f": 2.310087767204516,
+          "growth_rate": null,
+          "ruin": true,
+          "retention_measured": null,
+          "retention_c2minusc_approx": 0.0
+        }
+      ],
+      "annualization": {
+        "A_expect_then_annualize": {
+          "label": "口径 A：先算期望倍数，再年化",
+          "formula": "(E[M])^(1/T) − 1",
+          "value": 0.34607537029513535,
+          "misleading_because": "最容易被误读为「预期年化收益」。它是**均值的年化**，而均值被极少数右尾路径拉动；中位路径拿不到这个数。"
+        },
+        "B_annualize_then_expect": {
+          "label": "口径 B：各路径先年化，再取期望",
+          "formula": "E[M^(1/T)] − 1",
+          "value": 0.1084628212647305,
+          "misleading_because": "由 Jensen 不等式，恒 ≤ 口径 A。它更贴近「随机抽一条路径的年化」，但把全损路径的 −100% 也平均了进来，会低估「做成时」的量级。"
+        },
+        "C_geometric_conditional_on_survival": {
+          "label": "口径 C：条件于未全损的几何平均年化",
+          "formula": "exp(E[ln M | M > 0.25])^(1/T) − 1",
+          "value": 0.06520005511187943,
+          "misleading_because": "**隐藏了 0.0% 的全损概率。**这是创业故事里最常被单独引用的数字，也是最危险的一个。"
+        },
+        "D_true_geometric_all_paths": {
+          "label": "口径 D：全路径几何平均年化（重复下注的真实增长率）",
+          "formula": "exp(E[ln M])^(1/T) − 1",
+          "value": 0.06510705920188609,
+          "misleading_because": "这一口径本身不误导，但**只在「能重复下很多次同样的注」时才有意义**。单人创业一生下注个位数次，此数是理论参照而非可实现收益。"
+        },
+        "_spread_pct_points": 28.096831109324928,
+        "_risk_free_comparison": {
+          "us_10y": 0.0471,
+          "cn_10y": 0.0173,
+          "note": "同一分布可产出相差数十个百分点的四个「年化」。BP 中任何一处出现「年化 XX%」，必须紧跟口径名与该口径的误导风险说明。"
+        }
+      },
+      "forbidden_approximations": {
+        "volatility_drag": {
+          "exact_log_growth": 0.1892259575438266,
+          "approx_mu_minus_half_sigma2": -99.94897556995211,
+          "absolute_error": -100.13820152749594,
+          "sign_flipped": true,
+          "verdict": "近似式 g ≈ μ − σ²/2 只在小波动下成立。本项目 σ(算术) = 14.240，远超其适用范围，误差 100.1382。**禁用，一律用精确式 E[ln M]。**"
+        },
+        "half_kelly_retention": {
+          "measured": 0.8159912405734382,
+          "c2minusc_approx": 0.75,
+          "verdict": "实测半 Kelly 保留 81.6%，而流传的 c(2−c) 近似给出 75.0%。**禁用近似，用实测值。**"
+        }
+      },
+      "inapplicable_ratios": {
+        "sharpe": 0.09065485043113308,
+        "sortino": 6.043421405667298,
+        "omega": 8.721364239912111,
+        "skewness": 67.82452349995678,
+        "excess_kurtosis": 7984.852167909179,
+        "why_not_reported_as_conclusion": "这三个比率均以「收益对称、波动可作为风险代理」为前提。本分布偏度 与超额峰度都极高（见上），标准差主要由**右尾的好结果**贡献，于是「波动越大 = 越危险」的解读方向是反的。把它们放进 BP 正文，只会让读者得到与事实相反的印象。仅在方法论附录中作为反例出现。"
+      },
+      "reductio_ad_absurdum": "现金口径下 Kelly 解出 f* = 1.155 > 1，即「押上全部身家的 116% 还不够」。这是个荒谬的处方，而荒谬恰恰是有用的：它证明**现金口径本身是错的**。Kelly 之所以敢让你满仓，是因为在该口径下你几乎亏不掉什么（最差路径仍回收 13.4%）——而这只是因为它把三年 3,000 小时当成了免费的。教训：**一个模型给出「无限加杠杆」的建议时，要怀疑的是模型而不是自己的胆量**。"
+    },
+    "indifference_hourly_rate": {
+      "exists": true,
+      "indifference_hourly_usd": 12.31263671875,
+      "annual_equivalent_usd": 12312.63671875,
+      "assumed_hourly_usd": 30.0,
+      "verdict": "全口径期望值在时薪约 $12.3/h 处由正转负。换算成年：这 1,000 小时/年若能在别处挣到超过 $12,313/年，就不该做这个项目；挣不到，就该做。当前假设值为 $30/h，高于无差异点。",
+      "n_sims_per_eval": 40000,
+      "note": "此处用 4 万次/评估以控制二分法的总耗时；均值的跨种子相对标准差在此规模下约 0.5%，不影响 ±$0.25/h 的分辨率。"
+    }
+  },
+  "gates": {
+    "gates": [
+      {
+        "gid": "0-A",
+        "name": "收款通道",
+        "when": "第 1–2 周（与 0-B 并行）",
+        "hours": 4,
+        "cash_usd": 512,
+        "criteria": [
+          "A1 中国大陆自然人完成 Paddle 卖家 KYC，收到 approved 通知",
+          "A2 境内银行账户在 Transfer Preferences 中显示 verified",
+          "A3 拿到 Paddle 要求的材料清单（网站、条款、隐私、定价页）"
+        ],
+        "on_pass": "进入 Gate 1；把 MoR 实际费率回填 assumptions.py 核对",
+        "on_fail": "按成本升序走三级回退：个体工商户 → 香港公司 → 美国 LLC。三级全不可行则终止，并如实写出「本商业模式无可执行形态」",
+        "source": "docs/GATE0.md §1",
+        "retries": 0,
+        "notes": "不致命：有已定价的回退路径，最高约 $500 + 年费",
+        "cum_hours": 4.0,
+        "cum_cash": 512.0
+      },
+      {
+        "gid": "0-B",
+        "name": "流量验证（本项目的生死线）",
+        "when": "第 1–3 周",
+        "hours": 22,
+        "cash_usd": 12,
+        "criteria": [
+          "B1 目标关键词族月搜索量合计 ≥ 1,000，且 KD ≤ 20 的词 ≥ 5 个",
+          "B2 近 12 个月 ≥ 10 个相关讨论串，其中 ≥ 3 个得分 > 50",
+          "B3 免费最小工具上线 14 天内 ≥ 300 真实独立访客 且 ≥ 30 次实际使用",
+          "B4 能写出至少一条具体复利机制，且 B3 期间观察到 ≥ 1 次第三方自发引用"
+        ],
+        "on_pass": "进入 Gate 1",
+        "on_fail": "B3 未过 → **本候选赛道作废**，回到机会集取下一名重跑 0-B。理由：连免费都没人要，收费不可能有人要。最多换 3 个赛道；三次全败则结论为「不做」，转向替代的资金与时间配置",
+        "source": "docs/GATE0.md §2",
+        "retries": 2,
+        "notes": "**未通过前累计开发工时上限为 0。** 这是全表最重要的一条纪律",
+        "cum_hours": 70.0,
+        "cum_cash": 524.0
+      },
+      {
+        "gid": "1",
+        "name": "付费意愿",
+        "when": "第 3–5 周",
+        "hours": 26,
+        "cash_usd": 0,
+        "criteria": [
+          "W1 可识别的目标仓库 ≥ 200 个（受众规模下限）",
+          "W2 负责任披露后 ≥ 30% 回复，且 ≥ 3 人主动问「有没有持续监控的版本」",
+          "W3 价格锚定候补名单 ≥ 25 人留资，其中 ≥ 10 人选了付费档",
+          "W4 **≥ 3 人真实预付 $99**（唯一的 L3 级证据）"
+        ],
+        "on_pass": "进入 Gate 2，开始写第一行产品代码",
+        "on_fail": "W4 未过 → 赛道作废，回机会集。**不允许以「再打磨一下文案」为由重试**——预付款是二元信号，反复试探会滑向骚扰，违反 docs/WTP_VALIDATION.md §3 的道德底线",
+        "source": "docs/WTP_VALIDATION.md §2",
+        "retries": 0,
+        "notes": "这是全流程唯一能把「口头感兴趣」变成「掏钱」的一关，也是筛掉最多路径的一关",
+        "cum_hours": 96.0,
+        "cum_cash": 524.0
+      },
+      {
+        "gid": "2",
+        "name": "MVP 交付",
+        "when": "第 6–17 周（12 周 × 20 小时）",
+        "hours": 240,
+        "cash_usd": 30.0,
+        "criteria": [
+          "自助注册 → 接入 → 出首份报告的全链路无人工介入，端到端跑通",
+          "Paddle 订阅、开票、退款、取消四条路径全部自助可用",
+          "前 3 名预付客户全部完成接入并收到第一份有效报告"
+        ],
+        "on_pass": "进入 Gate 3，转入运营与获客",
+        "on_fail": "12 周未交付 → **不加时**，砍功能到能交付为止；若砍到无价值仍不能交付，说明范围判断错误，回 Gate 1 重定范围",
+        "source": "model/opportunity_scoring.py（可交付性维度 9 分）",
+        "retries": 0,
+        "notes": "纯规则引擎、零推理成本，工程风险是全流程最低的一环",
+        "cum_hours": 336.0,
+        "cum_cash": 554.0
+      },
+      {
+        "gid": "3",
+        "name": "首批留存",
+        "when": "第 6 个月",
+        "hours": 83.33333333333333,
+        "cash_usd": 60.0,
+        "criteria": [
+          "付费客户 ≥ 10 个",
+          "月流失率 ≤ 10%（连续 2 个月观测）",
+          "自然月访客 ≥ 300 且其中非脉冲来源占比 ≥ 50%"
+        ],
+        "on_pass": "进入 Gate 4",
+        "on_fail": "客户数不达标 → 把全部工时转投获客，产品功能冻结 8 周；流失率不达标 → 停止获客，先修留存（漏水的桶不值得多倒水）",
+        "source": "model/funnel.py、docs/ACQUISITION.md 月度检查点",
+        "retries": 0,
+        "notes": "**先诊断是「桶漏」还是「水少」，两者的处置动作正好相反**",
+        "cum_hours": 419.3333333333333,
+        "cum_cash": 614.0
+      },
+      {
+        "gid": "4",
+        "name": "复利渠道成立",
+        "when": "第 12 个月",
+        "hours": 500.0,
+        "cash_usd": 360.0,
+        "criteria": [
+          "月访客 ≥ 360，且脉冲渠道贡献占比 ≤ 30%",
+          "MRR ≥ $400",
+          "存在至少 2 条可验证的复利机制（第三方 README 引用数、被索引的程序化页面数，二者均需月度环比为正）"
+        ],
+        "on_pass": "进入 Gate 5",
+        "on_fail": "**这是最容易自欺的一关。** 若流量仍靠脉冲维持，则 docs/ACQUISITION.md 的核心假设已被证伪，必须把稳态 MRR 天花板按纯脉冲重算——大概率转负，届时应止损退出",
+        "source": "docs/ACQUISITION.md 第 12 月检查点",
+        "retries": 0,
+        "notes": "",
+        "cum_hours": 919.3333333333333,
+        "cum_cash": 974.0
+      },
+      {
+        "gid": "5",
+        "name": "稳态可持续",
+        "when": "第 24 个月",
+        "hours": 1000.0,
+        "cash_usd": 720.0,
+        "criteria": [
+          "MRR ≥ $1,000（对应约 53 个客户、月访客 ≥ 995）",
+          "月净利为正（扣除 MoR 费率、退款与基础设施）",
+          "月均投入工时 ≤ 87 小时（未靠透支时间维持）"
+        ],
+        "on_pass": "进入收获期：要么持有现金流，要么按 2–4 × ARR 寻求转让",
+        "on_fail": "**触发终局判断。** 若 24 个月、约 1,900 小时仍换不来 $1,000 MRR，则实现时薪已远低于 model/kelly.py 算出的无差异时薪（约 $11.8/h），继续投入不再由数据支持，应转为维护模式或按 2–4 × ARR 出售",
+        "source": "model/monte_carlo.py（P(达 $1,000 MRR) = 7.17%）",
+        "retries": 0,
+        "notes": "模型给出的这一关通过概率仅约 7%。**写下这个数，是为了半年后不自欺**",
+        "cum_hours": 1919.3333333333333,
+        "cum_cash": 1694.0
+      }
+    ],
+    "stop_loss": {
+      "tail_after_final_gate": {
+        "months": 12,
+        "hours": 1000.0,
+        "cash_usd": 720.0,
+        "total_hours_36m": 2919.333333333333,
+        "total_cash_36m": 2414.0
+      },
+      "hours_track": {
+        "budget": 3000.0,
+        "committed_by_final_gate": 1919.3333333333333,
+        "headroom": 1080.6666666666667,
+        "unit_value_usd": 30.0,
+        "budget_value_usd": 90000.0,
+        "rule": "任一门的累计工时超出该门上限即触线。**工时线没有银行对账单提醒你，必须自己每周记账**，否则它会在毫无感觉的情况下被烧穿——这是本项目最现实的失控方式。"
+      },
+      "cash_track": {
+        "budget": 4500.0,
+        "committed_by_final_gate": 1694.0,
+        "headroom": 2806.0,
+        "rule": "累计现金支出超出该门上限即触线，不得追加（委托方给定：不可追加）。"
+      },
+      "asymmetry_warning": "现金预算 $4,500 只占全额赌注的 4.8%。**只盯现金线等于不设防。**"
+    },
+    "gate_value": {
+      "per_gate": [
+        {
+          "gate": "Gate 0-B 流量验证",
+          "ev_with_gate_usd": -8690.306181744138,
+          "ev_without_gate_usd": -9375.6682492978,
+          "gate_value_usd": 685.3620675536622,
+          "p_gain_with_gate": 0.018625,
+          "p_gain_without_gate": 0.025475
+        },
+        {
+          "gate": "Gate 1 付费意愿",
+          "ev_with_gate_usd": -8690.306181744138,
+          "ev_without_gate_usd": -22486.479868006358,
+          "gate_value_usd": 13796.17368626222,
+          "p_gain_with_gate": 0.018625,
+          "p_gain_without_gate": 0.060275
+        },
+        {
+          "gate": "Gate 2 MVP 交付",
+          "ev_with_gate_usd": -8690.306181744138,
+          "ev_without_gate_usd": -9455.982367180593,
+          "gate_value_usd": 765.6761854364559,
+          "p_gain_with_gate": 0.018625,
+          "p_gain_without_gate": 0.0222
+        }
+      ],
+      "all_gates_removed": {
+        "ev_usd": -32946.53520700248,
+        "total_gate_value_usd": 24256.229025258344,
+        "interpretation": "全部拆掉门后期望值从 $-8,690 变为 $-32,947，即这套门机制值 $24,256。**在一个期望值本就为负的项目里，门是唯一把损失压住的东西。**"
+      },
+      "n_sims": 40000
+    },
+    "self_check_errors": []
+  },
+  "ev_sweep": [
+    {
+      "hourly_usd": 0.0,
+      "wager_usd": 4500.3,
+      "mean_multiple": 2.438979407647884,
+      "ev_usd": 6475.839028237773,
+      "p_gain": 0.14009
+    },
+    {
+      "hourly_usd": 2.0,
+      "wager_usd": 10500.0,
+      "mean_multiple": 1.5240403969601053,
+      "ev_usd": 5502.424168081106,
+      "p_gain": 0.10764
+    },
+    {
+      "hourly_usd": 4.0,
+      "wager_usd": 16500.0,
+      "mean_multiple": 1.2744824627119862,
+      "ev_usd": 4528.960634747772,
+      "p_gain": 0.08704
+    },
+    {
+      "hourly_usd": 6.0,
+      "wager_usd": 22500.0,
+      "mean_multiple": 1.1580220933961973,
+      "ev_usd": 3555.49710141444,
+      "p_gain": 0.07234
+    },
+    {
+      "hourly_usd": 8.0,
+      "wager_usd": 28500.0,
+      "mean_multiple": 1.0905976690554775,
+      "ev_usd": 2582.033568081109,
+      "p_gain": 0.06174
+    },
+    {
+      "hourly_usd": 10.0,
+      "wager_usd": 34500.0,
+      "mean_multiple": 1.046625218398486,
+      "ev_usd": 1608.5700347477705,
+      "p_gain": 0.05305
+    },
+    {
+      "hourly_usd": 12.0,
+      "wager_usd": 40500.0,
+      "mean_multiple": 1.0156816420102333,
+      "ev_usd": 635.1065014144468,
+      "p_gain": 0.04645
+    },
+    {
+      "hourly_usd": 14.0,
+      "wager_usd": 46500.0,
+      "mean_multiple": 0.9927235046899163,
+      "ev_usd": -338.35703191889087,
+      "p_gain": 0.04091
+    },
+    {
+      "hourly_usd": 16.0,
+      "wager_usd": 52500.0,
+      "mean_multiple": 0.9750129416142431,
+      "ev_usd": -1311.820565252236,
+      "p_gain": 0.03624
+    },
+    {
+      "hourly_usd": 20.0,
+      "wager_usd": 64500.0,
+      "mean_multiple": 0.9494767809004823,
+      "ev_usd": -3258.747631918894,
+      "p_gain": 0.02944
+    },
+    {
+      "hourly_usd": 25.0,
+      "wager_usd": 79500.0,
+      "mean_multiple": 0.928397402952802,
+      "ev_usd": -5692.4064652522375,
+      "p_gain": 0.02332
+    },
+    {
+      "hourly_usd": 30.0,
+      "wager_usd": 94500.0,
+      "mean_multiple": 0.9140098910202585,
+      "ev_usd": -8126.065298585569,
+      "p_gain": 0.01894
+    },
+    {
+      "hourly_usd": 40.0,
+      "wager_usd": 124500.0,
+      "mean_multiple": 0.8956354781907451,
+      "ev_usd": -12993.382965252238,
+      "p_gain": 0.01319
+    },
+    {
+      "hourly_usd": 50.0,
+      "wager_usd": 154500.0,
+      "mean_multiple": 0.8843967596639553,
+      "ev_usd": -17860.700631918913,
+      "p_gain": 0.00964
+    },
+    {
+      "hourly_usd": 60.0,
+      "wager_usd": 184500.0,
+      "mean_multiple": 0.8768129089507558,
+      "ev_usd": -22728.018298585554,
+      "p_gain": 0.00749
+    }
+  ],
+  "assumptions": {
+    "base_date": "2026-07-27",
+    "assumptions": {
+      "HOURS_PER_WEEK": {
+        "value": 20,
+        "unit": "小时/周",
+        "grade": "SELF",
+        "note": "委托方给定的可投入时间上限",
+        "source": "委托方给定条件"
+      },
+      "WEEKS_PER_YEAR": {
+        "value": 50,
+        "unit": "周/年",
+        "grade": "SELF",
+        "note": "扣除约 2 周完全无产出的时间（春节、病假等）",
+        "source": "推测"
+      },
+      "HOURS_PER_YEAR": {
+        "value": 1000,
+        "unit": "小时/年",
+        "grade": "SELF",
+        "note": "= HOURS_PER_WEEK × WEEKS_PER_YEAR = 1,000 小时",
+        "source": "派生"
+      },
+      "CASH_CAP_USD": {
+        "value": 4000.0,
+        "unit": "美元",
+        "grade": "SELF",
+        "note": "现金投入上限，占可投资净资产 <5%，破产可承受且不可追加",
+        "source": "委托方给定条件"
+      },
+      "INVESTABLE_NET_ASSETS_USD": {
+        "value": 80000.0,
+        "unit": "美元",
+        "grade": "SELF",
+        "note": "由「$4,000 占可投资净资产 <5%」反推的下限；Kelly 的 bankroll 口径。真实值只有委托方知道，此处取满足约束的最小值，属保守处理",
+        "source": "推测（由给定条件反推）"
+      },
+      "ENTITY_SETUP_RESERVE_USD": {
+        "value": 500.0,
+        "unit": "美元",
+        "grade": "SELF",
+        "note": "Gate 0-A 回退时的主体设立预留（个体工商户 ~$0 / 香港公司 ~$1,500 / 美国 LLC ~$500）。取美国 LLC 档，因其为最可能被采用的回退路径",
+        "source": "docs/GATE0.md §1.4"
+      },
+      "HOURLY_OPPORTUNITY_COST_USD": {
+        "value": 30.0,
+        "unit": "美元/小时",
+        "grade": "SELF",
+        "note": "个人时间的机会成本。**这是本模型中最重要也最主观的一个数**：按此计价，一年 1,000 小时 = $30,000，是现金投入 $4,000 的 7.5 倍。**真正的赌注是时间而非金钱**，必须做敏感性分析",
+        "source": "推测（须由委托方替换为真实值）"
+      },
+      "CM_OPTIN_VISITOR_TO_SIGNUP": {
+        "value": 0.045,
+        "unit": "比例",
+        "grade": "A",
+        "note": "free trial（不要信用卡）访客→注册；ChartMogul 原文 45 注册/千访客",
+        "source": "https://chartmogul.com/reports/saas-conversion-report/"
+      },
+      "CM_OPTIN_SIGNUP_TO_PAID": {
+        "value": 0.089,
+        "unit": "比例",
+        "grade": "A",
+        "note": "free trial（不要信用卡）注册→付费（6 个月内）；原文 3.6 付费/千访客 ÷ 45 注册",
+        "source": "https://chartmogul.com/reports/saas-conversion-report/"
+      },
+      "CM_CARD_VISITOR_TO_SIGNUP": {
+        "value": 0.035,
+        "unit": "比例",
+        "grade": "A",
+        "note": "free trial（**要**信用卡）访客→注册；注册量比不要卡低约 22%",
+        "source": "https://chartmogul.com/reports/saas-conversion-report/"
+      },
+      "CM_CARD_SIGNUP_TO_PAID": {
+        "value": 0.314,
+        "unit": "比例",
+        "grade": "A",
+        "note": "free trial（**要**信用卡）注册→付费；原文 10.5 付费/千访客 ÷ 35 注册",
+        "source": "https://chartmogul.com/reports/saas-conversion-report/"
+      },
+      "SOLO_NO_TOUCH_DISCOUNT": {
+        "value": 0.33707865168539325,
+        "unit": "倍数",
+        "grade": "D",
+        "note": "单人零人工触点的折扣系数 ≈ 0.337。推导：BENCHMARKS.md 建议把 ChartMogul 的 8.9% 下调至 3.0% 建模，理由是该样本典型受访者已在 $1M–$10M ARR 且有市场团队，而 ChartMogul 同时指出 80% 的 free trial 产品仍保留人工触点，本项目按定义不保留。**这是本模型中偏差最大且无法量化验证的一个系数**",
+        "source": "research/BENCHMARKS.md §1.1 与 §9.1②（类比推算，非测量值）"
+      },
+      "MONTHLY_LOGO_CHURN": {
+        "value": 0.07,
+        "unit": "比例/月",
+        "grade": "B",
+        "note": "客单价 $10–50/月自助订阅的月度客户流失。取 Baremetrics 分档表 $25–50 档的 7.3% 与 <$10 档的 6.2% 之间。单人无任何人工挽留动作，不宜取更低值",
+        "source": "https://chartmogul.com/reports/saas-retention-report/ 与 https://www.vitally.io/post/saas-churn-benchmarks（Baremetrics 二手转述，故降为 B）"
+      },
+      "NRR_ABOVE_100_PROBABILITY": {
+        "value": 0.027,
+        "unit": "比例",
+        "grade": "A",
+        "note": "ARPA <$10/月的公司中净收入留存 >100% 的比例仅 2.7%。**据此模型中一律不假设扩张收入**",
+        "source": "https://chartmogul.com/reports/saas-retention-report/"
+      },
+      "ARPU_USD": {
+        "value": 19.0,
+        "unit": "美元/月",
+        "grade": "SELF",
+        "note": "客单价。下限由 MoR 费率结构决定：$9 档 MoR 有效费率高达 12.1–12.6%，$19 档降至 7.6–9.6%。上限由竞品价格带（$12–$30）与 Copilot $10 天花板约束",
+        "source": "research/BENCHMARKS.md §8.1（费率为 A 级，定价选择为本人判断）"
+      },
+      "MOR_RATE_PCT": {
+        "value": 0.05,
+        "unit": "比例",
+        "grade": "A",
+        "note": "Paddle 基础费率 5%（全包，含国际卡、换汇、订阅附加与全球税务代缴）",
+        "source": "https://www.paddle.com/pricing"
+      },
+      "MOR_FEE_FIXED_USD": {
+        "value": 0.5,
+        "unit": "美元/笔",
+        "grade": "A",
+        "note": "Paddle 每笔固定费",
+        "source": "https://www.paddle.com/pricing"
+      },
+      "MOR_FX_MARGIN_PCT": {
+        "value": 0.015,
+        "unit": "比例",
+        "grade": "A",
+        "note": "Paddle 在打款币种与余额币种不同时收取的汇兑价差，最高 1.5%。选择 CNY 打款到境内银行时适用",
+        "source": "https://www.paddle.com/help/manage/get-paid/can-i-be-paid-in-my-local-currency"
+      },
+      "MOR_PAYOUT_THRESHOLD_USD": {
+        "value": 100.0,
+        "unit": "美元",
+        "grade": "A",
+        "note": "Paddle 最低打款门槛，未达门槛顺延次月。含义：现金回笼最长延迟约 60 天",
+        "source": "https://www.paddle.com/help/manage/get-paid/when-and-how-do-i-get-paid"
+      },
+      "REFUND_RATE": {
+        "value": 0.03,
+        "unit": "比例",
+        "grade": "D",
+        "note": "退款与坏账率。无本赛道公开数据；按 SaaS 常见 2–5% 取中值",
+        "source": "推测"
+      },
+      "INFRA_MONTHLY_USD": {
+        "value": 60.0,
+        "unit": "美元/月",
+        "grade": "A",
+        "note": "标准档：Vercel Pro $20 + Supabase Pro $25 + Cloudflare Workers $5 + 域名与杂项 $10。在每月几千次调用量级，成本完全由固定订阅费主导",
+        "source": "research/BENCHMARKS.md §7.1，各家官方定价页 2026-07-27"
+      },
+      "INFRA_MINIMAL_MONTHLY_USD": {
+        "value": 10.0,
+        "unit": "美元/月",
+        "grade": "A",
+        "note": "极简档：Cloudflare Workers $5 + Neon 按量约 $4 + 域名分摊 $1",
+        "source": "research/BENCHMARKS.md §7.1"
+      },
+      "LLM_COST_PER_OP_USD": {
+        "value": 0.0,
+        "unit": "美元/次",
+        "grade": "A",
+        "note": "**头号候选 C12 为纯 YAML/AST 规则分析，零推理成本。** 此常量存在的意义是：当敏感性分析切换到含推理的候选时，用 Ellipsis 公布的生产均值 $0.12/次替换（见 LLM_COST_AGENTIC_USD）",
+        "source": "outputs/opportunity_scoring.json C12 边际成本结构 10 分"
+      },
+      "LLM_COST_AGENTIC_USD": {
+        "value": 0.12,
+        "unit": "美元/次",
+        "grade": "A",
+        "note": "agentic 代码审查的真实生产均值（已做分层路由+增量处理+缓存三件套后）。**更正记录：先前误用 $0.74，那是 Ellipsis 的售价（token 透传 $0.37 + 100% 平台费 $0.37），不是成本。** 未优化的朴素实现为 $0.80–2.50/次",
+        "source": "https://www.ellipsis.dev/blog/lessons-from-building-llm-agents （2026-05-01）"
+      },
+      "LLM_COST_SINGLE_PASS_USD": {
+        "value": 0.0714,
+        "unit": "美元/次",
+        "grade": "D",
+        "note": "单次推理式审查（Claude Sonnet 5 引导价，10 文件 PR，60% 缓存命中）的自下而上推算。与 Ellipsis 生产均值 $0.12 相差 1.7 倍，属同一量级，互相印证",
+        "source": "research/BENCHMARKS.md §6.3（token 用量为推算，非测量）"
+      },
+      "SONNET5_PRICE_HIKE_DATE": {
+        "value": "2026-09-01",
+        "unit": "日期",
+        "grade": "A",
+        "note": "Claude Sonnet 5 由 $2/$10 涨至 $3/$15（+50%）。**任何跨越 9 月的推理成本测算不得使用现价**",
+        "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      "PARTTIME_PENALTY": {
+        "value": 2.2,
+        "unit": "倍数",
+        "grade": "B",
+        "note": "兼职惩罚系数：全职创始人的公司增速是兼职创始人的 2.2 倍（MicroConf 2024，n=469，p.45）。推论：所有里程碑耗时乘以 2.0–2.5",
+        "source": "https://microconf.com/state-of-indie-saas （PDF 未获取，引用官网带页码摘录，故为 B）"
+      },
+      "MEDIAN_MONTHS_TO_1K_MRR_FULLTIME": {
+        "value": 15.0,
+        "unit": "月",
+        "grade": "D",
+        "note": "全职达到 $1,000 MRR 的中位耗时，取流传区间 12–18 个月的中值。**原始来源 RockingWeb 2025 为 C 级（无公开数据集与抽样框），故此处降级为 D 级类比推算，仅用于粗略排期，不得作为概率输入**",
+        "source": "类比推算（原始 C 级来源已隔离）"
+      },
+      "PROJECT_ALIVE_12M": {
+        "value": 0.9,
+        "unit": "比例",
+        "grade": "B",
+        "note": "项目 12 个月后仍在线运行的比例。Show HN 10,000 条提交的年均死亡率约 9%。**局限：HTTP 200 只证明域名还在，不证明还有收入**",
+        "source": "https://antontarasenko.github.io/show-hn/"
+      },
+      "PMF_FAILURE_SHARE": {
+        "value": 0.43,
+        "unit": "比例",
+        "grade": "A",
+        "note": "产品-市场不匹配在失败原因中占 43%（CB Insights，n=431）。对纯自有资金项目，第一大终局原因「资金耗尽 70%」基本不适用，真实风险几乎全部集中在 PMF 与时间机会成本上",
+        "source": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+      },
+      "SEO_TOP10_PROBABILITY_12M": {
+        "value": 0.0174,
+        "unit": "比例",
+        "grade": "A",
+        "note": "新页面 12 个月内进入 Google 前十的概率（100 万随机 URL 追踪）。英文非空内容筛选后为 6.11%；高搜索量词仅 0.3%。**据此第一年的 SEO 流量一律按 0 计**",
+        "source": "https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+      },
+      "HN_FRONTPAGE_UV": {
+        "value": 15000,
+        "unit": "独立访客/次",
+        "grade": "B",
+        "note": "一次 Hacker News 头版的 24 小时流量，取 10,000–30,000 区间下沿。**48 小时内衰减到零，是脉冲不是渠道**",
+        "source": "research/BENCHMARKS.md §3.1"
+      },
+      "PRODUCT_HUNT_SIGNUPS": {
+        "value": 125,
+        "unit": "注册/次",
+        "grade": "D",
+        "note": "一次 Product Hunt 发布的 7 日注册量，取 100–150 中值。**原始来源样本极小（C 级），此处降级为 D 级类比推算**",
+        "source": "类比推算"
+      },
+      "MARKETPLACE_INSTALL_TO_PAID": {
+        "value": null,
+        "unit": "比例",
+        "grade": "D",
+        "note": "GitHub / VS Code Marketplace 安装→付费转化：**无任何公开可靠数据**。模型中不使用该路径，或用漏斗基准值替代并明示为类比",
+        "source": "无公开数据"
+      },
+      "RF_US_10Y": {
+        "value": 0.0471,
+        "unit": "年化",
+        "grade": "A",
+        "note": "美国 10 年期国债收益率",
+        "source": "FRED DGS10，2026-07-23"
+      },
+      "RF_CN_10Y": {
+        "value": 0.0173,
+        "unit": "年化",
+        "grade": "A",
+        "note": "中国 10 年期国债收益率",
+        "source": "中债国债收益率曲线，2026-07-24"
+      },
+      "HORIZON_YEARS": {
+        "value": 3.0,
+        "unit": "年",
+        "grade": "SELF",
+        "note": "评估期。选 3 年的理由：与 Show HN 存活曲线（约 6 年后死比活更可能）和兼职惩罚下达到 $1K MRR 需 24–30 个月这两条相容",
+        "source": "推测"
+      },
+      "ANGEL_IRR_BENCHMARK": {
+        "value": 0.314,
+        "unit": "年化 IRR",
+        "grade": "A",
+        "note": "Wiltbank & Boeker (2007) 天使投资 2.6 倍 / 3.5 年。**订正记录：原报告写作约 27% 系计算错误，正确值为 2.6^(1/3.5)−1 = 31.4%**",
+        "source": "research/RISK_METHODOLOGY.md（含 Right Side Capital 的订正说明）"
+      }
+    },
+    "grade_counts": {
+      "A": 19,
+      "B": 4,
+      "C": 0,
+      "D": 6,
+      "SELF": 9
+    },
+    "derived": {
+      "paid_per_1000_no_card": 1.35,
+      "paid_per_1000_with_card": 3.7045,
+      "paid_per_1000_no_card_undiscounted": 4.005,
+      "paid_per_1000_with_card_undiscounted": 10.99,
+      "mor_effective_rate_at_arpu": 0.0913,
+      "net_revenue_per_customer_month": 16.747,
+      "customer_lifetime_months": 14.29,
+      "ltv_usd": 239.24,
+      "visitors_needed_for_1000_mrr_no_card": 2729.0,
+      "visitors_needed_for_1000_mrr_with_card": 995.0,
+      "capital_at_risk": {
+        "cash_usd": 4500.0,
+        "hours": 3000.0,
+        "time_opportunity_cost_usd": 90000.0,
+        "total_usd": 94500.0,
+        "time_share": 0.9524
+      }
+    },
+    "self_check": []
+  },
+  "key_numbers": {
+    "赌注_全口径_美元": 94500.0,
+    "赌注_仅现金_美元": 4500.0,
+    "时间占赌注比例": 0.9523809523809523,
+    "止于Gate0B比例": 0.27287,
+    "止于Gate1比例": 0.50965,
+    "活到经营期比例": 0.18442,
+    "收益倍数_P10": 0.4650522611936582,
+    "收益倍数_P50": 0.9762539682539683,
+    "收益倍数_P90": 0.9833650793650793,
+    "收益倍数_均值": 0.9140098910202585,
+    "期望值_全口径_美元": -8126.065298585569,
+    "期望值_仅现金_美元": 6475.887701414439,
+    "胜率_全口径": 0.01894,
+    "盈亏比_全口径": 13.201880277931592,
+    "保本所需胜率": 0.07041321152058348,
+    "Kelly比例_全口径": 0.0,
+    "Kelly比例_现金口径": 1.155043883602258,
+    "无差异时薪_美元每小时": 12.31263671875,
+    "无差异年收入_美元": 12312.63671875,
+    "年化_口径A": -0.029526609704215945,
+    "年化_口径B": -0.04662203904521989,
+    "年化_口径C": -0.030893469696368525,
+    "年化_口径D": -0.05630663777437539,
+    "P_达1000MRR": 0.07171,
+    "P_达真实盈亏平衡MRR": 0.02014,
+    "MRR_P50_第36月": 0.0,
+    "MRR_P90_第36月": 619.4964598770674,
+    "所需月访客_要卡": 995.0,
+    "所需月访客_不要卡": 2729.0,
+    "计划月访客_第36月": 2500.0,
+    "渠道覆盖率_要卡": 2.514,
+    "渠道覆盖率_不要卡": 0.916,
+    "单客月贡献_美元": 16.7471,
+    "LTV_美元": 239.24,
+    "真实盈亏平衡客户数": 158.83,
+    "门机制总价值_美元": 24256.229025258344,
+    "Gate1价值_美元": 13796.17368626222,
+    "累计工时_36月": 2919.333333333333,
+    "累计现金_36月": 2414.0,
+    "候选总数": 16,
+    "硬过滤淘汰数": 11,
+    "入围数": 5,
+    "头号候选": "C12",
+    "头号候选得分": 6.97
+  },
+  "figures": [
+    "stop_distribution.svg",
+    "return_distribution.svg",
+    "indifference_rate.svg",
+    "gate_value.svg",
+    "sensitivity.svg",
+    "traffic_gap.svg",
+    "annualization.svg",
+    "scoring.svg"
+  ],
+  "meta": {
+    "base_date": "2026-07-27",
+    "generated_at_utc": "2026-07-27T04:25:06Z",
+    "seed": 20260727,
+    "n_sims": 100000,
+    "python": "3.12.10",
+    "numpy": "2.5.1",
+    "platform": "Windows-2025Server-10.0.26100-SP0",
+    "git_rev": "f543c8f",
+    "reproduce": "python model/run_all.py",
+    "elapsed_seconds": 25.1,
+    "manifest": [
+      {
+        "file": "outputs/figures/annualization.svg",
+        "bytes": 5618,
+        "sha256": "09a4c3aa8788f893"
+      },
+      {
+        "file": "outputs/figures/gate_value.svg",
+        "bytes": 4453,
+        "sha256": "56bde2cc2b2928bf"
+      },
+      {
+        "file": "outputs/figures/indifference_rate.svg",
+        "bytes": 13120,
+        "sha256": "399d96fdeb937772"
+      },
+      {
+        "file": "outputs/figures/return_distribution.svg",
+        "bytes": 51966,
+        "sha256": "88bddf1da3e9a67d"
+      },
+      {
+        "file": "outputs/figures/scoring.svg",
+        "bytes": 5793,
+        "sha256": "8f1d7c8853e243cb"
+      },
+      {
+        "file": "outputs/figures/sensitivity.svg",
+        "bytes": 18460,
+        "sha256": "f68c78592ba07f46"
+      },
+      {
+        "file": "outputs/figures/stop_distribution.svg",
+        "bytes": 6074,
+        "sha256": "37b1762d5df4b0d9"
+      },
+      {
+        "file": "outputs/figures/traffic_gap.svg",
+        "bytes": 12639,
+        "sha256": "9153a03740937688"
+      },
+      {
+        "file": "outputs/results.json",
+        "bytes": 114079,
+        "sha256": "8460b3fb6d0e1796"
+      }
+    ]
+  }
+}

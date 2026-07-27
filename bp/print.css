@@ -1,0 +1,54 @@
+/* ==========================================================================
+   打印 / PDF 专用
+   页码与页眉页脚由 Playwright 的 header_template / footer_template 注入
+   （Chromium 不支持 @page 的 margin box 与 CSS counter(page)，
+     用 @page 写页码在 Chromium 下会静默失效——这是常见的踩坑点）。
+   本文件负责的是：页面尺寸、边距、分页断裂控制。
+   ========================================================================== */
+
+@page {
+  size: A4;
+  /* 上下留出页眉页脚的空间，由 Playwright 的 margin 参数最终决定，
+     此处声明保持一致以免 prefer_css_page_size 与之冲突 */
+  margin: 18mm 19mm 16mm 19mm;
+}
+
+@media print {
+  html, body { background: #fff; }
+  .page { max-width: none; margin: 0; padding: 0; }
+
+  /* ---- 分页断裂控制：图表与表格不得跨页 ---- */
+  figure            { break-inside: avoid; page-break-inside: avoid; }
+  table             { break-inside: auto; }
+  thead             { display: table-header-group; }  /* 跨页时表头重复 */
+  tr                { break-inside: avoid; page-break-inside: avoid; }
+  .metrics          { break-inside: avoid; page-break-inside: avoid; }
+  .verdict          { break-inside: avoid; page-break-inside: avoid; }
+  .callout          { break-inside: avoid; page-break-inside: avoid; }
+  .kv-row           { break-inside: avoid; }
+  .toc li           { break-inside: avoid; }
+
+  /* 标题不许成为页底孤行 */
+  h1, h2, h3, h4    { break-after: avoid; page-break-after: avoid; }
+  h2                { break-before: auto; }
+  p, li             { orphans: 3; widows: 3; }
+
+  /* 一级章节另起一页 */
+  section.chapter   { break-before: page; page-break-before: always; }
+  section.chapter:first-of-type { break-before: auto; page-break-before: auto; }
+
+  .cover            { break-after: page; page-break-after: always; height: 247mm; }
+  .no-print         { display: none !important; }
+
+  /* 链接在纸上不可点，但要能被抄下来 */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 7pt; color: #86868B; word-break: break-all;
+  }
+  a.bare::after { content: ""; }
+
+  /* 打印背景色（Playwright 需同时设 print_background=True） */
+  .verdict, .callout, .grade, .row-hi td, code {
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+}

@@ -1,0 +1,688 @@
+{
+  "meta": {
+    "seed": 20260727,
+    "n_candidates": 16,
+    "n_survivors": 5,
+    "n_eliminated": 11,
+    "score_scale": "0-10",
+    "weights": {
+      "wtp_evidence": {
+        "cn": "付费意愿证据强度",
+        "w": 0.18
+      },
+      "unmanned_acquisition": {
+        "cn": "无人化获客可行性",
+        "w": 0.16
+      },
+      "competition_low": {
+        "cn": "竞争稀疏度（竞争密度的反向）",
+        "w": 0.15
+      },
+      "pain_evidence": {
+        "cn": "痛点证据强度",
+        "w": 0.14
+      },
+      "deliverability_20h": {
+        "cn": "20 小时每周的可交付性",
+        "w": 0.13
+      },
+      "vendor_independence": {
+        "cn": "跨厂商独立性（单厂商依赖度的反向）",
+        "w": 0.1
+      },
+      "margin_structure": {
+        "cn": "边际成本结构",
+        "w": 0.08
+      },
+      "switching_cost": {
+        "cn": "客户迁移成本 / 留存结构",
+        "w": 0.03
+      },
+      "regulatory_tailwind": {
+        "cn": "监管顺风",
+        "w": 0.03
+      }
+    },
+    "hard_filters": {
+      "F1": "变现路径依赖 Cursor Marketplace 或任何合同禁止收费的渠道（Publisher Terms 3.1 条：插件必须免费提供）",
+      "F2": "核心功能与平台方自营产品正面重叠，且该功能已被打包进客户已付费的订阅中（客户获得它的边际价格为零）",
+      "F3": "依赖只有编辑器厂商才能采集的数据（如设备端 AI 代码逐行签名）",
+      "F4": "需人工销售，或需先有 SOC 2 才能开出第一单",
+      "F5": "推理成本不可透传（无法 BYOK，也无法按用量转嫁）",
+      "F6": "采用「每次操作跑 LLM」的结构，且不具备分层路由/增量处理/缓存三件套的架构能力（已按 sources.md §4.1 更正：成本是架构问题，不是结构性宿命）",
+      "F7": "变现叙事依赖 EU AI Act 或美国 SSDF 对普通软件开发的强制力（该前提不成立）",
+      "F8": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+      "F9": "需要重资产才能建立护城河（千万级片段语料库、纵向代码语料、漏洞情报数据库等），$4,000 预算无法支撑",
+      "F10": "产品需对客户作出「你已合规」的法律判定——超出自身能力边界，只可做证据收集",
+      "F11": "单人 20 小时每周下 MVP 超过 12 周",
+      "F12": "合法性或公序良俗存疑"
+    }
+  },
+  "survivors": [
+    {
+      "rank": 1,
+      "cid": "C12",
+      "name": "AI agent 在 CI/CD 中的配置安全审计",
+      "thesis": "检测「不受信输入流入 agent 提示 ⨯ agent 持有高权限凭据 ⨯ 存在外发通道」的致命三角，纯 YAML/AST 规则分析，零推理成本，持续监控仓库配置漂移。",
+      "total": 6.97,
+      "scores": {
+        "wtp_evidence": {
+          "score": 3.0,
+          "cn": "付费意愿证据强度",
+          "rationale": "无任何直接付费证据。唯一支撑是 StepSecurity（同为 GitHub Actions 安全）已商业化运营这一间接类比。这是本候选最大的未验证风险。",
+          "source": "无一手来源；见 docs/WTP_VALIDATION.md"
+        },
+        "unmanned_acquisition": {
+          "score": 6.0,
+          "cn": "无人化获客可行性",
+          "rationale": "安全类内容在 HN 有天然传播力（四篇来源本身都是高传播安全研究）；GitHub Action Marketplace 是一个可被搜索的分发面。但安全产品历史上靠恐惧+销售，自助获客不确定。",
+          "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+        },
+        "competition_low": {
+          "score": 8.0,
+          "cn": "竞争稀疏度（竞争密度的反向）",
+          "rationale": "zizmor / actionlint 覆盖通用 Actions 安全，但不理解 claude-code-action 等 agent action 的配置语义；本轮调研未发现做 agent 语义感知的商业竞品。",
+          "source": "CSA 研究简报 2026-05-03 https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/05/CSA_research_note_ai_github_actions_security_20260503-csa-styled.pdf"
+        },
+        "pain_evidence": {
+          "score": 9.0,
+          "cn": "痛点证据强度",
+          "rationale": "四个独立权威源（微软威胁情报、CSA、Aikido、Noma）且均为已确认漏洞而非推测；微软案例中 Anthropic 已发版修复，说明厂商承认问题真实。",
+          "source": "微软威胁情报 https://www.microsoft.com/en-us/security/blog/2026/06/05/securing-ci-cd-in-agentic-world-claude-code-github-action-case/；CSA 研究简报 2026-05-03 https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/05/CSA_research_note_ai_github_actions_security_20260503-csa-styled.pdf；Aikido PromptPwnd https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents；Noma GitLost https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/"
+        },
+        "deliverability_20h": {
+          "score": 9.0,
+          "cn": "20 小时每周的可交付性",
+          "rationale": "纯规则引擎：解析 workflow YAML + 已知 agent action 的输入语义 + 权限图，无模型训练、无 ML。MVP 明显在 12 周内。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "vendor_independence": {
+          "score": 8.0,
+          "cn": "跨厂商独立性（单厂商依赖度的反向）",
+          "rationale": "同时适用 GitHub Actions 与 GitLab CI，且对 agent 厂商中立（Claude Code / Codex / Gemini CLI 都在覆盖面内）。",
+          "source": "Aikido PromptPwnd https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents"
+        },
+        "margin_structure": {
+          "score": 10.0,
+          "cn": "边际成本结构",
+          "rationale": "零 LLM 推理成本，边际成本仅为解析算力，可忽略。这是全部候选中唯一真正零边际成本的。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "switching_cost": {
+          "score": 4.0,
+          "cn": "客户迁移成本 / 留存结构",
+          "rationale": "规则本身可被复制；但历史发现记录与基线比对会积累一定状态黏性。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "regulatory_tailwind": {
+          "score": 4.0,
+          "cn": "监管顺风",
+          "rationale": "CRA 的漏洞报告义务间接相关，但不构成强制要求。刻意不使用已证伪的 AI Act 叙事。",
+          "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+        }
+      }
+    },
+    {
+      "rank": 2,
+      "cid": "C13",
+      "name": "MCP server / Agent Skill 的持续供应链监控",
+      "thesis": "官方 Registry 白纸黑字声明自己不做安全扫描、留给下游聚合方。一次性扫描已被免费 OSS 覆盖，唯一可收费的是持续 rug-pull 监控（你装的 47 个 server 昨晚有 3 个改了 tool description）。",
+      "total": 6.17,
+      "scores": {
+        "wtp_evidence": {
+          "score": 3.0,
+          "cn": "付费意愿证据强度",
+          "rationale": "无直接付费证据。间接信号：Enterprise 管理员已在 Cursor 后台按 URL 屏蔽 MCP，说明企业侧已有担忧，但担忧未必转化为付费。",
+          "source": "MCP Registry 官方文档 https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/about.mdx"
+        },
+        "unmanned_acquisition": {
+          "score": 6.0,
+          "cn": "无人化获客可行性",
+          "rationale": "MCP 是 2026 年的高热话题，内容与工具都容易获得自然传播；但同样意味着注意力竞争激烈。",
+          "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+        },
+        "competition_low": {
+          "score": 6.0,
+          "cn": "竞争稀疏度（竞争密度的反向）",
+          "rationale": "一次性扫描已有 4+ 免费 OSS 加 NVIDIA SkillSpector（68 个漏洞模式）；持续监控形态覆盖较少。**产品必须严格限定在持续态，否则直接撞 F8。**",
+          "source": "MCP Registry 官方文档 https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/about.mdx"
+        },
+        "pain_evidence": {
+          "score": 6.0,
+          "cn": "痛点证据强度",
+          "rationale": "rug-pull 风险在概念上成立且 Registry 官方承认不管，但本轮未找到「我因为 MCP server 被改而受损」的一手事件。痛点是预期性的，不是已发生的。",
+          "source": "MCP Registry 官方文档 https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/about.mdx"
+        },
+        "deliverability_20h": {
+          "score": 8.0,
+          "cn": "20 小时每周的可交付性",
+          "rationale": "抓取 Registry + 定期 diff tool description/权限声明 + 告警，工程量可控。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "vendor_independence": {
+          "score": 9.0,
+          "cn": "跨厂商独立性（单厂商依赖度的反向）",
+          "rationale": "MCP 是跨厂商开放标准，被 Cursor/Codex/Claude Code 等共同采用，分发不由单一厂商条款决定。",
+          "source": "Cursor MCP 文档 https://cursor.com/docs/mcp"
+        },
+        "margin_structure": {
+          "score": 9.0,
+          "cn": "边际成本结构",
+          "rationale": "以爬取与结构化 diff 为主，LLM 仅在语义变更判定时可选调用，可控。",
+          "source": "Ellipsis 工程博客：生产均值 $0.12/次审查 https://www.ellipsis.dev/blog/lessons-from-building-llm-agents"
+        },
+        "switching_cost": {
+          "score": 6.0,
+          "cn": "客户迁移成本 / 留存结构",
+          "rationale": "「你安装的 server 清单 + 历史基线」是托管状态，迁移会丢失历史，黏性中等偏上。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "regulatory_tailwind": {
+          "score": 3.0,
+          "cn": "监管顺风",
+          "rationale": "CRA 的 SBOM 要求在 2027-12-11 后可能延伸到 agent 依赖，但目前无明文。",
+          "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+        }
+      }
+    },
+    {
+      "rank": 3,
+      "cid": "C15",
+      "name": "EU CRA 证据收集与打包",
+      "thesis": "纯证据流水线：SBOM 生成、漏洞处置记录、报告时限追踪。绝不做「你已合规」的法律判定。",
+      "total": 5.5,
+      "scores": {
+        "wtp_evidence": {
+          "score": 6.0,
+          "cn": "付费意愿证据强度",
+          "rationale": "已有 4 家在此收费，说明付费意愿被市场验证过——这是全部候选中付费证据最硬的一个。",
+          "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+        },
+        "unmanned_acquisition": {
+          "score": 4.0,
+          "cn": "无人化获客可行性",
+          "rationale": "合规采购方不逛 HN，他们通过审计师、行业协会、咨询顾问获知方案。这与零人工自助获客的路径不匹配。",
+          "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+        },
+        "competition_low": {
+          "score": 3.0,
+          "cn": "竞争稀疏度（竞争密度的反向）",
+          "rationale": "4 家在收费且各价位段被占满；GitHub 的 SPDX SBOM 导出对云仓库完全免费，吃掉了最容易做的那部分。",
+          "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+        },
+        "pain_evidence": {
+          "score": 5.0,
+          "cn": "痛点证据强度",
+          "rationale": "时间窗口真实（2026-09-11 报告义务、2027-12-11 全面适用），但 Art.64(10) 对开源管理者完全免除行政罚款，微小型制造商亦部分豁免，**恐惧驱动比营销宣称的弱得多**。",
+          "source": "CRA Art.64(10) 开源管理者免除行政罚款 https://digital-strategy.ec.europa.eu/en/policies/cra-open-source"
+        },
+        "deliverability_20h": {
+          "score": 5.0,
+          "cn": "20 小时每周的可交付性",
+          "rationale": "证据流水线 + SBOM + CVE 映射 + 时限追踪，12 周内做完偏紧。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "vendor_independence": {
+          "score": 8.0,
+          "cn": "跨厂商独立性（单厂商依赖度的反向）",
+          "rationale": "与代码托管平台解耦，跨 GitHub/GitLab 均可。",
+          "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+        },
+        "margin_structure": {
+          "score": 8.0,
+          "cn": "边际成本结构",
+          "rationale": "以数据管道为主，可用 OSV.dev 免费漏洞数据源，边际成本低。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "switching_cost": {
+          "score": 8.0,
+          "cn": "客户迁移成本 / 留存结构",
+          "rationale": "合规证据是纵向累积的，迁移会丢失历史记录，黏性最强。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "regulatory_tailwind": {
+          "score": 10.0,
+          "cn": "监管顺风",
+          "rationale": "唯一有硬性外部时间窗口的候选。",
+          "source": "EU CRA 官方摘要 https://digital-strategy.ec.europa.eu/en/policies/cra-summary"
+        }
+      }
+    },
+    {
+      "rank": 4,
+      "cid": "C14",
+      "name": "CI 中 agent 的花费熔断器",
+      "thesis": "收窄至 CI 中的非交互式 agent（超支最狠、无 SLA 焦虑、必然走 API），做跨仓库预算与自动熔断。",
+      "total": 5.41,
+      "scores": {
+        "wtp_evidence": {
+          "score": 5.0,
+          "cn": "付费意愿证据强度",
+          "rationale": "HN 上有最真实的「用户正在流血」证据（退款被拒、单次调用 $12）；但流血的人第一反应是要求厂商提供免费额度控制，不是买第三方网关。",
+          "source": "HN 一手帖：月消耗 $60→$500+，单次调用 $12 https://news.ycombinator.com/item?id=46544838"
+        },
+        "unmanned_acquisition": {
+          "score": 5.0,
+          "cn": "无人化获客可行性",
+          "rationale": "成本话题传播力强，但同题材已被 Helicone / Portkey / LiteLLM 的内容占满。",
+          "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+        },
+        "competition_low": {
+          "score": 3.0,
+          "cn": "竞争稀疏度（竞争密度的反向）",
+          "rationale": "LiteLLM 是免费 OSS 网关且自带预算与速率限制；Helicone、Portkey、OpenMeter 均已商业化；模型厂商自身也提供组织级支出上限。竞争密集。",
+          "source": "Ask HN 「如何防止 agent 烧钱」仅 8 分 32 评论 https://news.ycombinator.com/item?id=47559293"
+        },
+        "pain_evidence": {
+          "score": 7.0,
+          "cn": "痛点证据强度",
+          "rationale": "个案证据极强但统计证据极弱——Ask HN 同题仅 8 分、32 条评论，说明这不是一个广泛被感知的问题。**强轶事 + 弱统计。**",
+          "source": "HN 一手帖：月消耗 $60→$500+，单次调用 $12 https://news.ycombinator.com/item?id=46544838；Ask HN 「如何防止 agent 烧钱」仅 8 分 32 评论 https://news.ycombinator.com/item?id=47559293"
+        },
+        "deliverability_20h": {
+          "score": 6.0,
+          "cn": "20 小时每周的可交付性",
+          "rationale": "网关处于请求热路径，对可用性与延迟的要求远高于旁路工具。单人维护一个不能挂的代理，风险被低估。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "vendor_independence": {
+          "score": 7.0,
+          "cn": "跨厂商独立性（单厂商依赖度的反向）",
+          "rationale": "对模型厂商中立，但存在结构性错配：最痛的人用 Cursor 订阅制，网关拦不到那部分流量。",
+          "source": "HN 一手帖：月消耗 $60→$500+，单次调用 $12 https://news.ycombinator.com/item?id=46544838"
+        },
+        "margin_structure": {
+          "score": 7.0,
+          "cn": "边际成本结构",
+          "rationale": "透传为主，但需承担带宽与常驻算力，非零边际成本。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "switching_cost": {
+          "score": 7.0,
+          "cn": "客户迁移成本 / 留存结构",
+          "rationale": "一旦进入请求热路径，替换成本高。这是本候选最强的一维。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "regulatory_tailwind": {
+          "score": 1.0,
+          "cn": "监管顺风",
+          "rationale": "无。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        }
+      }
+    },
+    {
+      "rank": 5,
+      "cid": "C16",
+      "name": "AI PR 的审阅证据包",
+      "thesis": "为 AI 生成的 PR 附上「这段代码被验证过什么」的证据，减轻审阅者负担。",
+      "total": 4.63,
+      "scores": {
+        "wtp_evidence": {
+          "score": 4.0,
+          "cn": "付费意愿证据强度",
+          "rationale": "同赛道有人付费（CodeRabbit 据 Sacra 估算 $40M ARR），但「证据包」这个特定形态无独立付费证据。",
+          "source": "Sacra 估算 https://sacra.com/c/coderabbit/"
+        },
+        "unmanned_acquisition": {
+          "score": 2.0,
+          "cn": "无人化获客可行性",
+          "rationale": "关键词（AI code review、cursor rules）已被 246 人的 CodeRabbit、有 Benchmark 背书的 Greptile 和大量 SEO 内容农场完全占据。单人无任何机会在此获得自然搜索流量。",
+          "source": "Ahrefs 100 万 URL 追踪：新页面 12 个月内进前十 1.74% https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+        },
+        "competition_low": {
+          "score": 1.0,
+          "cn": "竞争稀疏度（竞争密度的反向）",
+          "rationale": "真实玩家 30+ 家；Bugbot / CodeRabbit / Greptile 三方交火；GitHub Copilot $10/月含 code review 构成价格天花板；开源项目免费已是行业标配。",
+          "source": "Cursor Bugbot 官方文档 https://cursor.com/docs/bugbot.md；GitHub Copilot Pro $10/月含 code review（sources.md §4.2）"
+        },
+        "pain_evidence": {
+          "score": 10.0,
+          "cn": "痛点证据强度",
+          "rationale": "全场最硬：1,154 条帖子的定性编码分析，加 curl 因 AI 生成漏洞报告关闭 bug bounty 这一不可辩驳的一手事件。**但「痛点最强」与「你能赢」是两件事，这条属前者。**",
+          "source": "arXiv 2603.27249（1,154 条帖子定性编码）https://arxiv.org/abs/2603.27249；curl 关闭 bug bounty，lists.haxx.se 2026-01"
+        },
+        "deliverability_20h": {
+          "score": 6.0,
+          "cn": "20 小时每周的可交付性",
+          "rationale": "要做到比现有玩家更有说服力的证据，需要真正执行代码（Greptile 已发布 TREX 层），工程量大。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "vendor_independence": {
+          "score": 6.0,
+          "cn": "跨厂商独立性（单厂商依赖度的反向）",
+          "rationale": "跨 GitHub/GitLab 可行，但与平台自营产品同场竞技。",
+          "source": "Cursor Bugbot 官方文档 https://cursor.com/docs/bugbot.md"
+        },
+        "margin_structure": {
+          "score": 6.0,
+          "cn": "边际成本结构",
+          "rationale": "有真实推理成本。按 Ellipsis 生产均值 $0.12/次、月 20 次计，$19 客单价下毛利约 87%——**成本不是问题，竞争才是**。",
+          "source": "Ellipsis 工程博客：生产均值 $0.12/次审查 https://www.ellipsis.dev/blog/lessons-from-building-llm-agents"
+        },
+        "switching_cost": {
+          "score": 4.0,
+          "cn": "客户迁移成本 / 留存结构",
+          "rationale": "审查工具切换成本低，装个 App 即可换。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        },
+        "regulatory_tailwind": {
+          "score": 2.0,
+          "cn": "监管顺风",
+          "rationale": "无。刻意不使用已证伪的 AI Act 叙事。",
+          "source": "本 BP 自评（推测，无外部来源）"
+        }
+      }
+    }
+  ],
+  "eliminated": [
+    {
+      "cid": "C11",
+      "name": "slopsquatting 检测（独立产品）",
+      "hypothetical_total": 4.79,
+      "failed_filters": [
+        {
+          "id": "F8",
+          "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+          "reason": "至少 9 个免费 OSS 实现；Augment 已在生成端解决；零付费意愿证据。"
+        }
+      ]
+    },
+    {
+      "cid": "C06",
+      "name": "agent / prompt 回归评测",
+      "hypothetical_total": 4.54,
+      "failed_filters": [
+        {
+          "id": "F8",
+          "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+          "reason": "Promptfoo 是免费 OSS CLI 且功能完整；Braintrust、Langfuse 已占满托管形态。"
+        }
+      ]
+    },
+    {
+      "cid": "C10",
+      "name": "AGENTS.md / rules 漂移检测",
+      "hypothetical_total": 4.44,
+      "failed_filters": [
+        {
+          "id": "F8",
+          "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+          "reason": "一个脚本即可完成；且论坛证据显示主因是「模型不遵守规则」而非「文件不同步」，解决的是次要矛盾。"
+        }
+      ]
+    },
+    {
+      "cid": "C01",
+      "name": "通用 AI 代码审查",
+      "hypothetical_total": 4.39,
+      "failed_filters": [
+        {
+          "id": "F2",
+          "filter": "核心功能与平台方自营产品正面重叠，且该功能已被打包进客户已付费的订阅中（客户获得它的边际价格为零）",
+          "reason": "Cursor Bugbot 已含在 Cursor Individual/Teams 订阅中；GitHub Copilot Pro $10/月即含 code review。客户获得该功能的边际价格为零，第三方必须为一个客户已免费拥有的东西收费。（Cursor Bugbot 官方文档 https://cursor.com/docs/bugbot.md；GitHub Copilot Pro $10/月含 code review（sources.md §4.2））"
+        }
+      ]
+    },
+    {
+      "cid": "C05",
+      "name": "死代码检测",
+      "hypothetical_total": 4.23,
+      "failed_filters": [
+        {
+          "id": "F8",
+          "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+          "reason": "Knip 是免费事实标准：11,752 stars、260 贡献者、ISC 许可、且已自带 @knip/mcp；Vercel 用它删掉约 30 万行。核心功能可被一个 npx 命令完整替代。（Knip 11,752 stars, ISC 免费, 自带 MCP https://github.com/webpro-nl/knip）"
+        }
+      ]
+    },
+    {
+      "cid": "C03",
+      "name": "许可证污染 snippet 匹配",
+      "hypothetical_total": 4.17,
+      "failed_filters": [
+        {
+          "id": "F9",
+          "filter": "需要重资产才能建立护城河（千万级片段语料库、纵向代码语料、漏洞情报数据库等），$4,000 预算无法支撑",
+          "reason": "护城河是千万级代码片段语料库与索引，$4,000 预算连一次全量索引都不够。"
+        }
+      ]
+    },
+    {
+      "cid": "C04",
+      "name": "AI 技术债度量",
+      "hypothetical_total": 3.91,
+      "failed_filters": [
+        {
+          "id": "F9",
+          "filter": "需要重资产才能建立护城河（千万级片段语料库、纵向代码语料、漏洞情报数据库等），$4,000 预算无法支撑",
+          "reason": "结论需建立在纵向大规模代码语料上（GitClear 用了 6.23 亿行变更），单人无法自建；且唯一权威数据的提供者 GitClear 自己就是卖这个产品的竞品。（GitClear 6.23 亿行分析（利益冲突：其自身即该品类厂商）https://www.gitclear.com/the_ai_code_quality_maintainability_gap）"
+        }
+      ]
+    },
+    {
+      "cid": "C08",
+      "name": "EU AI Act Art.50 透明度扫描",
+      "hypothetical_total": 3.91,
+      "failed_filters": [
+        {
+          "id": "F7",
+          "filter": "变现叙事依赖 EU AI Act 或美国 SSDF 对普通软件开发的强制力（该前提不成立）",
+          "reason": "范畴错误：Art.50 管的是「你的产品是不是 AI、有没有告知用户」，与「你用 AI 写代码」无关；且 Digital Omnibus 已于 2026-07-27 生效，将高风险义务推迟至 2027-12-02。"
+        }
+      ]
+    },
+    {
+      "cid": "C07",
+      "name": "私有知识库转 MCP",
+      "hypothetical_total": 3.71,
+      "failed_filters": [
+        {
+          "id": "F8",
+          "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+          "reason": "已有多个免费 OSS 实现；KBKit 等已把该功能降级为免费赠品。"
+        }
+      ]
+    },
+    {
+      "cid": "C09",
+      "name": "AI 代码溯源 attestation",
+      "hypothetical_total": 3.68,
+      "failed_filters": [
+        {
+          "id": "F8",
+          "filter": "核心功能可被一个免费 CLI 完整替代；可收费的必须是 CLI 结构上做不到的持续托管态",
+          "reason": "agentdiff、aiir、ai-footprint、pedigree、agentmark 等 5 个功能高度重叠的免费 OSS；且没有任何法规要求证明代码作者身份。"
+        }
+      ]
+    },
+    {
+      "cid": "C02",
+      "name": "团队 AI 编码 ROI 报表 / 本地 AI 代码归因",
+      "hypothetical_total": 3.61,
+      "failed_filters": [
+        {
+          "id": "F3",
+          "filter": "依赖只有编辑器厂商才能采集的数据（如设备端 AI 代码逐行签名）",
+          "reason": "AI 代码归因依赖设备端对每行 AI 建议签名再与 git commit 比对，只有编辑器本身能产生该数据；第三方只能靠启发式 diff，精度天然落后。（Cursor AI Code Tracking API https://cursor.com/docs/account/teams/ai-code-tracking-api）"
+        },
+        {
+          "id": "F4",
+          "filter": "需人工销售，或需先有 SOC 2 才能开出第一单",
+          "reason": "Cursor Analytics / AI Code Tracking API 仅 Enterprise 可用，客户必走采购流程，与「零人工自助订阅」硬约束冲突。"
+        }
+      ]
+    }
+  ],
+  "sensitivity": {
+    "baseline_top1": "C12",
+    "one_at_a_time": [
+      {
+        "dimension": "wtp_evidence",
+        "dimension_cn": "付费意愿证据强度",
+        "perturbation": "-50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "wtp_evidence",
+        "dimension_cn": "付费意愿证据强度",
+        "perturbation": "+50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "unmanned_acquisition",
+        "dimension_cn": "无人化获客可行性",
+        "perturbation": "-50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "unmanned_acquisition",
+        "dimension_cn": "无人化获客可行性",
+        "perturbation": "+50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "competition_low",
+        "dimension_cn": "竞争稀疏度（竞争密度的反向）",
+        "perturbation": "-50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "competition_low",
+        "dimension_cn": "竞争稀疏度（竞争密度的反向）",
+        "perturbation": "+50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "pain_evidence",
+        "dimension_cn": "痛点证据强度",
+        "perturbation": "-50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "pain_evidence",
+        "dimension_cn": "痛点证据强度",
+        "perturbation": "+50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "deliverability_20h",
+        "dimension_cn": "20 小时每周的可交付性",
+        "perturbation": "-50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "deliverability_20h",
+        "dimension_cn": "20 小时每周的可交付性",
+        "perturbation": "+50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "vendor_independence",
+        "dimension_cn": "跨厂商独立性（单厂商依赖度的反向）",
+        "perturbation": "-50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "vendor_independence",
+        "dimension_cn": "跨厂商独立性（单厂商依赖度的反向）",
+        "perturbation": "+50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "margin_structure",
+        "dimension_cn": "边际成本结构",
+        "perturbation": "-50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "margin_structure",
+        "dimension_cn": "边际成本结构",
+        "perturbation": "+50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "switching_cost",
+        "dimension_cn": "客户迁移成本 / 留存结构",
+        "perturbation": "-50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "switching_cost",
+        "dimension_cn": "客户迁移成本 / 留存结构",
+        "perturbation": "+50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "regulatory_tailwind",
+        "dimension_cn": "监管顺风",
+        "perturbation": "-50%",
+        "top1": "C12",
+        "flipped": false
+      },
+      {
+        "dimension": "regulatory_tailwind",
+        "dimension_cn": "监管顺风",
+        "perturbation": "+50%",
+        "top1": "C12",
+        "flipped": false
+      }
+    ],
+    "oat_flip_count": 0,
+    "dirichlet_draws": 10000,
+    "dirichlet_top1_frequency": {
+      "C12": 0.9971,
+      "C13": 0.0,
+      "C15": 0.0029,
+      "C14": 0.0,
+      "C16": 0.0
+    },
+    "dirichlet_full_order_identical_rate": 0.5304
+  },
+  "score_robustness": {
+    "leader": "C12",
+    "runner_up": "C13",
+    "leader_weakest_dimension": "wtp_evidence",
+    "leader_weakest_score": 3.0,
+    "checks": [
+      {
+        "name": "领先者付费意愿分归零",
+        "detail": "C12 的 wtp_evidence 由 3.0 降为 0",
+        "leader_new_total": 6.43,
+        "runner_up_total": 6.17,
+        "still_leads": true
+      },
+      {
+        "name": "领先者所有自评维度下调 3 分",
+        "detail": "C12 的自评维度 ['deliverability_20h', 'margin_structure', 'switching_cost'] 各降 3 分（不低于 0）",
+        "leader_new_total": 6.25,
+        "runner_up_total": 6.17,
+        "still_leads": true
+      },
+      {
+        "name": "领先者全维 -2 且次名全维 +2（最不利对照）",
+        "detail": "C12 每维 -2 分，C13 每维 +2 分",
+        "leader_new_total": 4.97,
+        "runner_up_total": 7.99,
+        "still_leads": false
+      }
+    ],
+    "verdict": "第一名对权重稳健；对分数的稳健性见上述三项检验"
+  }
+}

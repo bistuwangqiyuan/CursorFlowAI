@@ -1,0 +1,298 @@
+{
+  "base_date": "2026-07-27",
+  "assumptions": {
+    "HOURS_PER_WEEK": {
+      "value": 20,
+      "unit": "小时/周",
+      "grade": "SELF",
+      "note": "委托方给定的可投入时间上限",
+      "source": "委托方给定条件"
+    },
+    "WEEKS_PER_YEAR": {
+      "value": 50,
+      "unit": "周/年",
+      "grade": "SELF",
+      "note": "扣除约 2 周完全无产出的时间（春节、病假等）",
+      "source": "推测"
+    },
+    "HOURS_PER_YEAR": {
+      "value": 1000,
+      "unit": "小时/年",
+      "grade": "SELF",
+      "note": "= HOURS_PER_WEEK × WEEKS_PER_YEAR = 1,000 小时",
+      "source": "派生"
+    },
+    "CASH_CAP_USD": {
+      "value": 4000.0,
+      "unit": "美元",
+      "grade": "SELF",
+      "note": "现金投入上限，占可投资净资产 <5%，破产可承受且不可追加",
+      "source": "委托方给定条件"
+    },
+    "INVESTABLE_NET_ASSETS_USD": {
+      "value": 80000.0,
+      "unit": "美元",
+      "grade": "SELF",
+      "note": "由「$4,000 占可投资净资产 <5%」反推的下限；Kelly 的 bankroll 口径。真实值只有委托方知道，此处取满足约束的最小值，属保守处理",
+      "source": "推测（由给定条件反推）"
+    },
+    "ENTITY_SETUP_RESERVE_USD": {
+      "value": 500.0,
+      "unit": "美元",
+      "grade": "SELF",
+      "note": "Gate 0-A 回退时的主体设立预留（个体工商户 ~$0 / 香港公司 ~$1,500 / 美国 LLC ~$500）。取美国 LLC 档，因其为最可能被采用的回退路径",
+      "source": "docs/GATE0.md §1.4"
+    },
+    "HOURLY_OPPORTUNITY_COST_USD": {
+      "value": 30.0,
+      "unit": "美元/小时",
+      "grade": "SELF",
+      "note": "个人时间的机会成本。**这是本模型中最重要也最主观的一个数**：按此计价，一年 1,000 小时 = $30,000，是现金投入 $4,000 的 7.5 倍。**真正的赌注是时间而非金钱**，必须做敏感性分析",
+      "source": "推测（须由委托方替换为真实值）"
+    },
+    "CM_OPTIN_VISITOR_TO_SIGNUP": {
+      "value": 0.045,
+      "unit": "比例",
+      "grade": "A",
+      "note": "free trial（不要信用卡）访客→注册；ChartMogul 原文 45 注册/千访客",
+      "source": "https://chartmogul.com/reports/saas-conversion-report/"
+    },
+    "CM_OPTIN_SIGNUP_TO_PAID": {
+      "value": 0.089,
+      "unit": "比例",
+      "grade": "A",
+      "note": "free trial（不要信用卡）注册→付费（6 个月内）；原文 3.6 付费/千访客 ÷ 45 注册",
+      "source": "https://chartmogul.com/reports/saas-conversion-report/"
+    },
+    "CM_CARD_VISITOR_TO_SIGNUP": {
+      "value": 0.035,
+      "unit": "比例",
+      "grade": "A",
+      "note": "free trial（**要**信用卡）访客→注册；注册量比不要卡低约 22%",
+      "source": "https://chartmogul.com/reports/saas-conversion-report/"
+    },
+    "CM_CARD_SIGNUP_TO_PAID": {
+      "value": 0.314,
+      "unit": "比例",
+      "grade": "A",
+      "note": "free trial（**要**信用卡）注册→付费；原文 10.5 付费/千访客 ÷ 35 注册",
+      "source": "https://chartmogul.com/reports/saas-conversion-report/"
+    },
+    "SOLO_NO_TOUCH_DISCOUNT": {
+      "value": 0.33707865168539325,
+      "unit": "倍数",
+      "grade": "D",
+      "note": "单人零人工触点的折扣系数 ≈ 0.337。推导：BENCHMARKS.md 建议把 ChartMogul 的 8.9% 下调至 3.0% 建模，理由是该样本典型受访者已在 $1M–$10M ARR 且有市场团队，而 ChartMogul 同时指出 80% 的 free trial 产品仍保留人工触点，本项目按定义不保留。**这是本模型中偏差最大且无法量化验证的一个系数**",
+      "source": "research/BENCHMARKS.md §1.1 与 §9.1②（类比推算，非测量值）"
+    },
+    "MONTHLY_LOGO_CHURN": {
+      "value": 0.07,
+      "unit": "比例/月",
+      "grade": "B",
+      "note": "客单价 $10–50/月自助订阅的月度客户流失。取 Baremetrics 分档表 $25–50 档的 7.3% 与 <$10 档的 6.2% 之间。单人无任何人工挽留动作，不宜取更低值",
+      "source": "https://chartmogul.com/reports/saas-retention-report/ 与 https://www.vitally.io/post/saas-churn-benchmarks（Baremetrics 二手转述，故降为 B）"
+    },
+    "NRR_ABOVE_100_PROBABILITY": {
+      "value": 0.027,
+      "unit": "比例",
+      "grade": "A",
+      "note": "ARPA <$10/月的公司中净收入留存 >100% 的比例仅 2.7%。**据此模型中一律不假设扩张收入**",
+      "source": "https://chartmogul.com/reports/saas-retention-report/"
+    },
+    "ARPU_USD": {
+      "value": 19.0,
+      "unit": "美元/月",
+      "grade": "SELF",
+      "note": "客单价。下限由 MoR 费率结构决定：$9 档 MoR 有效费率高达 12.1–12.6%，$19 档降至 7.6–9.6%。上限由竞品价格带（$12–$30）与 Copilot $10 天花板约束",
+      "source": "research/BENCHMARKS.md §8.1（费率为 A 级，定价选择为本人判断）"
+    },
+    "MOR_RATE_PCT": {
+      "value": 0.05,
+      "unit": "比例",
+      "grade": "A",
+      "note": "Paddle 基础费率 5%（全包，含国际卡、换汇、订阅附加与全球税务代缴）",
+      "source": "https://www.paddle.com/pricing"
+    },
+    "MOR_FEE_FIXED_USD": {
+      "value": 0.5,
+      "unit": "美元/笔",
+      "grade": "A",
+      "note": "Paddle 每笔固定费",
+      "source": "https://www.paddle.com/pricing"
+    },
+    "MOR_FX_MARGIN_PCT": {
+      "value": 0.015,
+      "unit": "比例",
+      "grade": "A",
+      "note": "Paddle 在打款币种与余额币种不同时收取的汇兑价差，最高 1.5%。选择 CNY 打款到境内银行时适用",
+      "source": "https://www.paddle.com/help/manage/get-paid/can-i-be-paid-in-my-local-currency"
+    },
+    "MOR_PAYOUT_THRESHOLD_USD": {
+      "value": 100.0,
+      "unit": "美元",
+      "grade": "A",
+      "note": "Paddle 最低打款门槛，未达门槛顺延次月。含义：现金回笼最长延迟约 60 天",
+      "source": "https://www.paddle.com/help/manage/get-paid/when-and-how-do-i-get-paid"
+    },
+    "REFUND_RATE": {
+      "value": 0.03,
+      "unit": "比例",
+      "grade": "D",
+      "note": "退款与坏账率。无本赛道公开数据；按 SaaS 常见 2–5% 取中值",
+      "source": "推测"
+    },
+    "INFRA_MONTHLY_USD": {
+      "value": 60.0,
+      "unit": "美元/月",
+      "grade": "A",
+      "note": "标准档：Vercel Pro $20 + Supabase Pro $25 + Cloudflare Workers $5 + 域名与杂项 $10。在每月几千次调用量级，成本完全由固定订阅费主导",
+      "source": "research/BENCHMARKS.md §7.1，各家官方定价页 2026-07-27"
+    },
+    "INFRA_MINIMAL_MONTHLY_USD": {
+      "value": 10.0,
+      "unit": "美元/月",
+      "grade": "A",
+      "note": "极简档：Cloudflare Workers $5 + Neon 按量约 $4 + 域名分摊 $1",
+      "source": "research/BENCHMARKS.md §7.1"
+    },
+    "LLM_COST_PER_OP_USD": {
+      "value": 0.0,
+      "unit": "美元/次",
+      "grade": "A",
+      "note": "**头号候选 C12 为纯 YAML/AST 规则分析，零推理成本。** 此常量存在的意义是：当敏感性分析切换到含推理的候选时，用 Ellipsis 公布的生产均值 $0.12/次替换（见 LLM_COST_AGENTIC_USD）",
+      "source": "outputs/opportunity_scoring.json C12 边际成本结构 10 分"
+    },
+    "LLM_COST_AGENTIC_USD": {
+      "value": 0.12,
+      "unit": "美元/次",
+      "grade": "A",
+      "note": "agentic 代码审查的真实生产均值（已做分层路由+增量处理+缓存三件套后）。**更正记录：先前误用 $0.74，那是 Ellipsis 的售价（token 透传 $0.37 + 100% 平台费 $0.37），不是成本。** 未优化的朴素实现为 $0.80–2.50/次",
+      "source": "https://www.ellipsis.dev/blog/lessons-from-building-llm-agents （2026-05-01）"
+    },
+    "LLM_COST_SINGLE_PASS_USD": {
+      "value": 0.0714,
+      "unit": "美元/次",
+      "grade": "D",
+      "note": "单次推理式审查（Claude Sonnet 5 引导价，10 文件 PR，60% 缓存命中）的自下而上推算。与 Ellipsis 生产均值 $0.12 相差 1.7 倍，属同一量级，互相印证",
+      "source": "research/BENCHMARKS.md §6.3（token 用量为推算，非测量）"
+    },
+    "SONNET5_PRICE_HIKE_DATE": {
+      "value": "2026-09-01",
+      "unit": "日期",
+      "grade": "A",
+      "note": "Claude Sonnet 5 由 $2/$10 涨至 $3/$15（+50%）。**任何跨越 9 月的推理成本测算不得使用现价**",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    "PARTTIME_PENALTY": {
+      "value": 2.2,
+      "unit": "倍数",
+      "grade": "B",
+      "note": "兼职惩罚系数：全职创始人的公司增速是兼职创始人的 2.2 倍（MicroConf 2024，n=469，p.45）。推论：所有里程碑耗时乘以 2.0–2.5",
+      "source": "https://microconf.com/state-of-indie-saas （PDF 未获取，引用官网带页码摘录，故为 B）"
+    },
+    "MEDIAN_MONTHS_TO_1K_MRR_FULLTIME": {
+      "value": 15.0,
+      "unit": "月",
+      "grade": "D",
+      "note": "全职达到 $1,000 MRR 的中位耗时，取流传区间 12–18 个月的中值。**原始来源 RockingWeb 2025 为 C 级（无公开数据集与抽样框），故此处降级为 D 级类比推算，仅用于粗略排期，不得作为概率输入**",
+      "source": "类比推算（原始 C 级来源已隔离）"
+    },
+    "PROJECT_ALIVE_12M": {
+      "value": 0.9,
+      "unit": "比例",
+      "grade": "B",
+      "note": "项目 12 个月后仍在线运行的比例。Show HN 10,000 条提交的年均死亡率约 9%。**局限：HTTP 200 只证明域名还在，不证明还有收入**",
+      "source": "https://antontarasenko.github.io/show-hn/"
+    },
+    "PMF_FAILURE_SHARE": {
+      "value": 0.43,
+      "unit": "比例",
+      "grade": "A",
+      "note": "产品-市场不匹配在失败原因中占 43%（CB Insights，n=431）。对纯自有资金项目，第一大终局原因「资金耗尽 70%」基本不适用，真实风险几乎全部集中在 PMF 与时间机会成本上",
+      "source": "https://www.cbinsights.com/research/report/startup-failure-reasons-top/"
+    },
+    "SEO_TOP10_PROBABILITY_12M": {
+      "value": 0.0174,
+      "unit": "比例",
+      "grade": "A",
+      "note": "新页面 12 个月内进入 Google 前十的概率（100 万随机 URL 追踪）。英文非空内容筛选后为 6.11%；高搜索量词仅 0.3%。**据此第一年的 SEO 流量一律按 0 计**",
+      "source": "https://ahrefs.com/blog/how-long-does-it-take-to-rank-in-google-and-how-old-are-top-ranking-pages/"
+    },
+    "HN_FRONTPAGE_UV": {
+      "value": 15000,
+      "unit": "独立访客/次",
+      "grade": "B",
+      "note": "一次 Hacker News 头版的 24 小时流量，取 10,000–30,000 区间下沿。**48 小时内衰减到零，是脉冲不是渠道**",
+      "source": "research/BENCHMARKS.md §3.1"
+    },
+    "PRODUCT_HUNT_SIGNUPS": {
+      "value": 125,
+      "unit": "注册/次",
+      "grade": "D",
+      "note": "一次 Product Hunt 发布的 7 日注册量，取 100–150 中值。**原始来源样本极小（C 级），此处降级为 D 级类比推算**",
+      "source": "类比推算"
+    },
+    "MARKETPLACE_INSTALL_TO_PAID": {
+      "value": null,
+      "unit": "比例",
+      "grade": "D",
+      "note": "GitHub / VS Code Marketplace 安装→付费转化：**无任何公开可靠数据**。模型中不使用该路径，或用漏斗基准值替代并明示为类比",
+      "source": "无公开数据"
+    },
+    "RF_US_10Y": {
+      "value": 0.0471,
+      "unit": "年化",
+      "grade": "A",
+      "note": "美国 10 年期国债收益率",
+      "source": "FRED DGS10，2026-07-23"
+    },
+    "RF_CN_10Y": {
+      "value": 0.0173,
+      "unit": "年化",
+      "grade": "A",
+      "note": "中国 10 年期国债收益率",
+      "source": "中债国债收益率曲线，2026-07-24"
+    },
+    "HORIZON_YEARS": {
+      "value": 3.0,
+      "unit": "年",
+      "grade": "SELF",
+      "note": "评估期。选 3 年的理由：与 Show HN 存活曲线（约 6 年后死比活更可能）和兼职惩罚下达到 $1K MRR 需 24–30 个月这两条相容",
+      "source": "推测"
+    },
+    "ANGEL_IRR_BENCHMARK": {
+      "value": 0.314,
+      "unit": "年化 IRR",
+      "grade": "A",
+      "note": "Wiltbank & Boeker (2007) 天使投资 2.6 倍 / 3.5 年。**订正记录：原报告写作约 27% 系计算错误，正确值为 2.6^(1/3.5)−1 = 31.4%**",
+      "source": "research/RISK_METHODOLOGY.md（含 Right Side Capital 的订正说明）"
+    }
+  },
+  "grade_counts": {
+    "A": 19,
+    "B": 4,
+    "C": 0,
+    "D": 6,
+    "SELF": 9
+  },
+  "derived": {
+    "paid_per_1000_no_card": 1.35,
+    "paid_per_1000_with_card": 3.7045,
+    "paid_per_1000_no_card_undiscounted": 4.005,
+    "paid_per_1000_with_card_undiscounted": 10.99,
+    "mor_effective_rate_at_arpu": 0.0913,
+    "net_revenue_per_customer_month": 16.747,
+    "customer_lifetime_months": 14.29,
+    "ltv_usd": 239.24,
+    "visitors_needed_for_1000_mrr_no_card": 2729.0,
+    "visitors_needed_for_1000_mrr_with_card": 995.0,
+    "capital_at_risk": {
+      "cash_usd": 4500.0,
+      "hours": 3000.0,
+      "time_opportunity_cost_usd": 90000.0,
+      "total_usd": 94500.0,
+      "time_share": 0.9524
+    }
+  },
+  "self_check": []
+}

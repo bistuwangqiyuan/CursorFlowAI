@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="628.045938pt" height="214.626543pt" viewBox="0 0 628.045938 214.626543" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-27T12:25:06.298020</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 214.626543 
+L 628.045938 214.626543 
+L 628.045938 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 226.645938 174.05625 
+L 617.245937 174.05625 
+L 617.245937 35.45625 
+L 226.645938 35.45625 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="223.145938" y="162.112874" transform="rotate(-0 223.145938 162.112874)">口径 D　全路径几何平均年化（重复下注的真实增长率）</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="223.145938" y="126.619916" transform="rotate(-0 223.145938 126.619916)">口径 C　条件于未全损的几何平均年化</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="223.145938" y="91.126959" transform="rotate(-0 223.145938 91.126959)">口径 B　各路径先年化，再取期望</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="223.145938" y="55.634001" transform="rotate(-0 223.145938 55.634001)">口径 A　先算期望倍数，再年化</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 570.031771 167.75625 
+L 348.492524 167.75625 
+L 348.492524 148.235123 
+L 570.031771 148.235123 
+z
+" clip-path="url(#pe4cf9b8d72)" style="fill: #ff3b30; opacity: 0.9"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 570.031771 132.263292 
+L 448.480986 132.263292 
+L 448.480986 112.742165 
+L 570.031771 112.742165 
+z
+" clip-path="url(#pe4cf9b8d72)" style="fill: #ff3b30; opacity: 0.9"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 570.031771 96.770335 
+L 386.596712 96.770335 
+L 386.596712 77.249208 
+L 570.031771 77.249208 
+z
+" clip-path="url(#pe4cf9b8d72)" style="fill: #ff3b30; opacity: 0.9"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 570.031771 61.277377 
+L 453.858916 61.277377 
+L 453.858916 41.75625 
+L 570.031771 41.75625 
+z
+" clip-path="url(#pe4cf9b8d72)" style="fill: #ff3b30; opacity: 0.9"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 570.031771 174.05625 
+L 570.031771 35.45625 
+" clip-path="url(#pe4cf9b8d72)" style="fill: none; stroke: #1d1d1f; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="342.590753" y="161.269612" transform="rotate(-0 342.590753 161.269612)">-5.63% </text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="442.579215" y="125.776655" transform="rotate(-0 442.579215 125.776655)">-3.09% </text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="380.694941" y="90.283697" transform="rotate(-0 380.694941 90.283697)">-4.66% </text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="447.957145" y="54.790739" transform="rotate(-0 447.957145 54.790739)">-2.95% </text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #6e6e73" x="226.645938" y="201.77625" transform="rotate(-0 226.645938 201.77625)">四者极差 2.7 个百分点，且全部为负。正文任何一处「年化 XX%」都必须紧跟口径名。</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #1d1d1f" x="421.945938" y="21.45625" transform="rotate(-0 421.945938 21.45625)">同一个分布，四个「年化」（全口径）</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe4cf9b8d72">
+   <rect x="226.645938" y="35.45625" width="390.6" height="138.6"/>
+  </clipPath>
+ </defs>
+</svg>

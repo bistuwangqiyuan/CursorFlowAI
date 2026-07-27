@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="487.37625pt" height="214.072143pt" viewBox="0 0 487.37625 214.072143" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-27T12:25:04.828113</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 214.072143 
+L 487.37625 214.072143 
+L 487.37625 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 85.97625 162.96825 
+L 476.57625 162.96825 
+L 476.57625 35.45625 
+L 85.97625 35.45625 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="82.47625" y="148.788261" transform="rotate(-0 82.47625 148.788261)">Gate 2 MVP 交付</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="82.47625" y="103.329437" transform="rotate(-0 82.47625 103.329437)">Gate 1 付费意愿</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="82.47625" y="57.870614" transform="rotate(-0 82.47625 57.870614)">Gate 0-B 流量验证</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 85.97625 157.17225 
+L 104.04123 157.17225 
+L 104.04123 132.169897 
+L 85.97625 132.169897 
+z
+" clip-path="url(#p123300ffde)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 85.97625 111.713426 
+L 411.47625 111.713426 
+L 411.47625 86.711074 
+L 85.97625 86.711074 
+z
+" clip-path="url(#p123300ffde)" style="fill: #0071e3"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 85.97625 66.254603 
+L 102.146339 66.254603 
+L 102.146339 41.25225 
+L 85.97625 41.25225 
+z
+" clip-path="url(#p123300ffde)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="108.92373" y="147.944999" transform="rotate(-0 108.92373 147.944999)">$766</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="416.35875" y="102.486176" transform="rotate(-0 416.35875 102.486176)">$13,796</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="107.028839" y="57.027352" transform="rotate(-0 107.028839 57.027352)">$685</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #6e6e73" x="85.97625" y="201.22185" transform="rotate(-0 85.97625 201.22185)">Gate 1（付费意愿）一门抵其余各门总和的 9 倍：它用 26 小时挡住了 240 小时的无效开发</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #1d1d1f" x="281.27625" y="21.45625" transform="rotate(-0 281.27625 21.45625)">每道门省下的期望损失</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p123300ffde">
+   <rect x="85.97625" y="35.45625" width="390.6" height="127.512"/>
+  </clipPath>
+ </defs>
+</svg>

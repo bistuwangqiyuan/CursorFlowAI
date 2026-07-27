@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="569.077164pt" height="305.427537pt" viewBox="0 0 569.077164 305.427537" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-27T12:25:05.523682</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 305.427537 
+L 569.077164 305.427537 
+L 569.077164 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 164.475078 257.21625 
+L 555.075078 257.21625 
+L 555.075078 35.45625 
+L 164.475078 35.45625 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="191.317941" y="268.950625" transform="rotate(-0 191.317941 268.950625)">-0.06</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="241.520017" y="268.950625" transform="rotate(-0 241.520017 268.950625)">-0.04</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="291.722092" y="268.950625" transform="rotate(-0 291.722092 268.950625)">-0.02</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="341.924167" y="268.950625" transform="rotate(-0 341.924167 268.950625)">0.00</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="392.126243" y="268.950625" transform="rotate(-0 392.126243 268.950625)">0.02</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="442.328318" y="268.950625" transform="rotate(-0 442.328318 268.950625)">0.04</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="492.530393" y="268.950625" transform="rotate(-0 492.530393 268.950625)">0.06</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="542.732469" y="268.950625" transform="rotate(-0 542.732469 268.950625)">0.08</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="359.775078" y="283.719668" transform="rotate(-0 359.775078 283.719668)">期望收益倍数相对基准（0.910）的变化</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9">
+      <path d="M 164.475078 242.33625 
+L 555.075078 242.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_10">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="246.453437" transform="rotate(-0 160.975078 246.453437)">被打包风险 25%→50%</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_11">
+      <path d="M 164.475078 226.33625 
+L 555.075078 226.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_11">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="230.453437" transform="rotate(-0 160.975078 230.453437)">月流失 7%→10%</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_13">
+      <path d="M 164.475078 210.33625 
+L 555.075078 210.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_12">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="214.453437" transform="rotate(-0 160.975078 214.453437)">Gate 0-B 通过率 0.35→0.55</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_15">
+      <path d="M 164.475078 194.33625 
+L 555.075078 194.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16"/>
+     <g id="text_13">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="198.453437" transform="rotate(-0 160.975078 198.453437)">关掉突破分量 P=3%→0（纯对数正态）</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_17">
+      <path d="M 164.475078 178.33625 
+L 555.075078 178.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_18"/>
+     <g id="text_14">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="182.453437" transform="rotate(-0 160.975078 182.453437)">Gate 0-B 通过率 0.35→0.20</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_19">
+      <path d="M 164.475078 162.33625 
+L 555.075078 162.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_15">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="166.453437" transform="rotate(-0 160.975078 166.453437)">突破概率 3%→8%</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_21">
+      <path d="M 164.475078 146.33625 
+L 555.075078 146.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_22"/>
+     <g id="text_16">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="150.453437" transform="rotate(-0 160.975078 150.453437)">流量中位实现率 0.7→0.4</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_23">
+      <path d="M 164.475078 130.33625 
+L 555.075078 130.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_24"/>
+     <g id="text_17">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="134.453437" transform="rotate(-0 160.975078 134.453437)">流量中位实现率 0.7→1.0</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_25">
+      <path d="M 164.475078 114.33625 
+L 555.075078 114.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_26"/>
+     <g id="text_18">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="118.453437" transform="rotate(-0 160.975078 118.453437)">时间机会成本 $30→$60/h</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_27">
+      <path d="M 164.475078 98.33625 
+L 555.075078 98.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_28"/>
+     <g id="text_19">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="102.453437" transform="rotate(-0 160.975078 102.453437)">Gate 1 通过率 0.30→0.15</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_29">
+      <path d="M 164.475078 82.33625 
+L 555.075078 82.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_30"/>
+     <g id="text_20">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="86.453437" transform="rotate(-0 160.975078 86.453437)">Gate 1 通过率 0.30→0.50</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_31">
+      <path d="M 164.475078 66.33625 
+L 555.075078 66.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_32"/>
+     <g id="text_21">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="70.453437" transform="rotate(-0 160.975078 70.453437)">乐观组合（各门+流量同时向好）</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_33">
+      <path d="M 164.475078 50.33625 
+L 555.075078 50.33625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_34"/>
+     <g id="text_22">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="160.975078" y="54.453437" transform="rotate(-0 160.975078 54.453437)">时间机会成本 $30→$15/h</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 341.924167 247.13625 
+L 353.432755 247.13625 
+L 353.432755 237.53625 
+L 341.924167 237.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #34c759; opacity: 0.85"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 341.924167 231.13625 
+L 317.919156 231.13625 
+L 317.919156 221.53625 
+L 341.924167 221.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #ff3b30; opacity: 0.85"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 341.924167 215.13625 
+L 312.630509 215.13625 
+L 312.630509 205.53625 
+L 341.924167 205.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #ff3b30; opacity: 0.85"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 341.924167 199.13625 
+L 309.596784 199.13625 
+L 309.596784 189.53625 
+L 341.924167 189.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #ff3b30; opacity: 0.85"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 341.924167 183.13625 
+L 390.091951 183.13625 
+L 390.091951 173.53625 
+L 341.924167 173.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #34c759; opacity: 0.85"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 341.924167 167.13625 
+L 391.304977 167.13625 
+L 391.304977 157.53625 
+L 341.924167 157.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #34c759; opacity: 0.85"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 341.924167 151.13625 
+L 267.898285 151.13625 
+L 267.898285 141.53625 
+L 341.924167 141.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #ff3b30; opacity: 0.85"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 341.924167 135.13625 
+L 415.950049 135.13625 
+L 415.950049 125.53625 
+L 341.924167 125.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #34c759; opacity: 0.85"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 341.924167 119.13625 
+L 257.202938 119.13625 
+L 257.202938 109.53625 
+L 341.924167 109.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #ff3b30; opacity: 0.85"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 341.924167 103.13625 
+L 436.029503 103.13625 
+L 436.029503 93.53625 
+L 341.924167 93.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #34c759; opacity: 0.85"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 341.924167 87.13625 
+L 219.736425 87.13625 
+L 219.736425 77.53625 
+L 341.924167 77.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #ff3b30; opacity: 0.85"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 341.924167 71.13625 
+L 464.829739 71.13625 
+L 464.829739 61.53625 
+L 341.924167 61.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #34c759; opacity: 0.85"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 341.924167 55.13625 
+L 499.813731 55.13625 
+L 499.813731 45.53625 
+L 341.924167 45.53625 
+z
+" clip-path="url(#pfa47366ff5)" style="fill: #34c759; opacity: 0.85"/>
+   </g>
+   <g id="line2d_35">
+    <path d="M 341.924167 257.21625 
+L 341.924167 35.45625 
+" clip-path="url(#pfa47366ff5)" style="fill: none; stroke: #1d1d1f; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="383.554" y="245.428291" transform="rotate(-0 383.554 245.428291)">+0.005</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="287.797911" y="229.428291" transform="rotate(-0 287.797911 229.428291)">-0.010</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="282.509264" y="213.428291" transform="rotate(-0 282.509264 213.428291)">-0.012</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="279.475538" y="197.428291" transform="rotate(-0 279.475538 197.428291)">-0.013</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="420.213197" y="181.428291" transform="rotate(-0 420.213197 181.428291)">+0.019</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="421.426222" y="165.428291" transform="rotate(-0 421.426222 165.428291)">+0.020</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="237.77704" y="149.428291" transform="rotate(-0 237.77704 149.428291)">-0.029</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="446.071294" y="133.428291" transform="rotate(-0 446.071294 133.428291)">+0.029</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="227.081693" y="117.428291" transform="rotate(-0 227.081693 117.428291)">-0.034</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="466.150748" y="101.428291" transform="rotate(-0 466.150748 101.428291)">+0.037</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="189.61518" y="85.428291" transform="rotate(-0 189.61518 85.428291)">-0.049</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="494.950984" y="69.428291" transform="rotate(-0 494.950984 69.428291)">+0.049</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="529.934976" y="53.428291" transform="rotate(-0 529.934976 53.428291)">+0.063</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 8px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #6e6e73" x="164.475078" y="292.69785" transform="rotate(-0 164.475078 292.69785)">已剔除「时薪按 $0 计」一行：那是换记账口径而非参数扰动，幅度 +1.39，另见无差异时薪图</text>
+   </g>
+   <g id="text_37">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #1d1d1f" x="359.775078" y="21.45625" transform="rotate(-0 359.775078 21.45625)">参数敏感性：单项扰动都改不了「期望值为负」这个结论</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfa47366ff5">
+   <rect x="164.475078" y="35.45625" width="390.6" height="221.76"/>
+  </clipPath>
+ </defs>
+</svg>

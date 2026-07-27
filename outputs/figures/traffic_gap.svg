@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="451.724102pt" height="289.581423pt" viewBox="0 0 451.724102 289.581423" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-27T12:25:06.008176</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 289.581423 
+L 451.724102 289.581423 
+L 451.724102 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 50.324102 223.95225 
+L 440.924102 223.95225 
+L 440.924102 35.45625 
+L 50.324102 35.45625 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 94.964102 223.95225 
+L 94.964102 35.45625 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="94.964102" y="235.686625" transform="rotate(-0 94.964102 235.686625)">5</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 150.764102 223.95225 
+L 150.764102 35.45625 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="150.764102" y="235.686625" transform="rotate(-0 150.764102 235.686625)">10</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 206.564102 223.95225 
+L 206.564102 35.45625 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="206.564102" y="235.686625" transform="rotate(-0 206.564102 235.686625)">15</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 262.364102 223.95225 
+L 262.364102 35.45625 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="262.364102" y="235.686625" transform="rotate(-0 262.364102 235.686625)">20</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 318.164102 223.95225 
+L 318.164102 35.45625 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="318.164102" y="235.686625" transform="rotate(-0 318.164102 235.686625)">25</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 373.964102 223.95225 
+L 373.964102 35.45625 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_6">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="373.964102" y="235.686625" transform="rotate(-0 373.964102 235.686625)">30</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 429.764102 223.95225 
+L 429.764102 35.45625 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke: #d2d2d7; stroke-opacity: 0.7; stroke-width: 0.5; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_7">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="429.764102" y="235.686625" transform="rotate(-0 429.764102 235.686625)">35</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="245.624102" y="250.455668" transform="rotate(-0 245.624102 250.455668)">月份</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_15"/>
+     <g id="text_9">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="46.824102" y="228.069437" transform="rotate(-0 46.824102 228.069437)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_16"/>
+     <g id="text_10">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="46.824102" y="198.03837" transform="rotate(-0 46.824102 198.03837)">500</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_17"/>
+     <g id="text_11">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="46.824102" y="168.007303" transform="rotate(-0 46.824102 168.007303)">1000</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_18"/>
+     <g id="text_12">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="46.824102" y="137.976236" transform="rotate(-0 46.824102 137.976236)">1500</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_19"/>
+     <g id="text_13">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="46.824102" y="107.945168" transform="rotate(-0 46.824102 107.945168)">2000</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_20"/>
+     <g id="text_14">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="46.824102" y="77.914101" transform="rotate(-0 46.824102 77.914101)">2500</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_21"/>
+     <g id="text_15">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="46.824102" y="47.883034" transform="rotate(-0 46.824102 47.883034)">3000</text>
+     </g>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #6e6e73" x="19.51875" y="129.70425" transform="rotate(-90 19.51875 129.70425)">月独立访客</text>
+    </g>
+   </g>
+   <g id="FillBetweenPolyCollection_1">
+    <defs>
+     <path id="mba37fc55b5" d="M 251.204102 -125.390997 
+L 251.204102 -127.192861 
+L 262.364102 -132.898764 
+L 273.524102 -138.604666 
+L 284.684102 -144.310569 
+L 295.844102 -150.016472 
+L 307.004102 -155.722375 
+L 318.164102 -160.725551 
+L 329.324102 -165.734733 
+L 340.484102 -170.737908 
+L 351.644102 -175.741084 
+L 362.804102 -180.750266 
+L 373.964102 -185.753442 
+L 385.124102 -190.756618 
+L 396.284102 -195.7658 
+L 407.444102 -200.768976 
+L 418.604102 -205.772152 
+L 429.764102 -210.781334 
+L 440.924102 -215.784509 
+L 440.924102 -125.390997 
+L 440.924102 -125.390997 
+L 429.764102 -125.390997 
+L 418.604102 -125.390997 
+L 407.444102 -125.390997 
+L 396.284102 -125.390997 
+L 385.124102 -125.390997 
+L 373.964102 -125.390997 
+L 362.804102 -125.390997 
+L 351.644102 -125.390997 
+L 340.484102 -125.390997 
+L 329.324102 -125.390997 
+L 318.164102 -125.390997 
+L 307.004102 -125.390997 
+L 295.844102 -125.390997 
+L 284.684102 -125.390997 
+L 273.524102 -125.390997 
+L 262.364102 -125.390997 
+L 251.204102 -125.390997 
+z
+" style="stroke: #34c759; stroke-opacity: 0.1"/>
+    </defs>
+    <g clip-path="url(#p126b13b825)">
+     <use xlink:href="#mba37fc55b5" x="0" y="289.581423" style="fill: #34c759; fill-opacity: 0.1; stroke: #34c759; stroke-opacity: 0.1"/>
+    </g>
+   </g>
+   <g id="line2d_22">
+    <path d="M 50.324102 222.150386 
+L 61.484102 220.348522 
+L 72.644102 218.546658 
+L 83.804102 216.744794 
+L 94.964102 214.94293 
+L 106.124102 213.141066 
+L 117.284102 211.339202 
+L 128.444102 209.537338 
+L 139.604102 207.735474 
+L 150.764102 205.93361 
+L 161.924102 204.131746 
+L 173.084102 202.329882 
+L 184.244102 196.623979 
+L 195.404102 190.918076 
+L 206.564102 185.212173 
+L 217.724102 179.50627 
+L 228.884102 173.800368 
+L 240.044102 168.094465 
+L 251.204102 162.388562 
+L 262.364102 156.682659 
+L 273.524102 150.976757 
+L 284.684102 145.270854 
+L 295.844102 139.564951 
+L 307.004102 133.859048 
+L 318.164102 128.855872 
+L 329.324102 123.84669 
+L 340.484102 118.843515 
+L 351.644102 113.840339 
+L 362.804102 108.831157 
+L 373.964102 103.827981 
+L 385.124102 98.824805 
+L 396.284102 93.815623 
+L 407.444102 88.812447 
+L 418.604102 83.809271 
+L 429.764102 78.800089 
+L 440.924102 73.796914 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke: #0071e3; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_23">
+    <path d="M 50.324102 60.042685 
+L 440.924102 60.042685 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke-dasharray: 4.07,1.76; stroke-dashoffset: 0; stroke: #ff3b30; stroke-width: 1.1"/>
+   </g>
+   <g id="line2d_24">
+    <path d="M 50.324102 164.190426 
+L 440.924102 164.190426 
+" clip-path="url(#p126b13b825)" style="fill: none; stroke-dasharray: 4.07,1.76; stroke-dashoffset: 0; stroke: #1d1d1f; stroke-width: 1.1"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 50.324102 223.95225 
+L 50.324102 35.45625 
+" style="fill: none; stroke: #d2d2d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 50.324102 223.95225 
+L 440.924102 223.95225 
+" style="fill: none; stroke: #d2d2d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #ff3b30" x="435.344102" y="53.486302" transform="rotate(-0 435.344102 53.486302)">不要信用卡：需 2,729 UV/月</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="435.344102" y="158.214244" transform="rotate(-0 435.344102 158.214244)">要求信用卡：需 995 UV/月</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #0071e3" x="307.004102" y="174.400989" transform="rotate(-0 307.004102 174.400989)">复利渠道计划流量</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #6e6e73" x="50.324102" y="276.73113" transform="rotate(-0 50.324102 276.73113)">「是否要求信用卡」这一个开关，把所需流量从 2,729 降到 995 UV/月</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #1d1d1f" x="245.624102" y="21.45625" transform="rotate(-0 245.624102 21.45625)">维持 $1,000 MRR 所需流量 vs 计划能拿到的流量</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p126b13b825">
+   <rect x="50.324102" y="35.45625" width="390.6" height="188.496"/>
+  </clipPath>
+ </defs>
+</svg>

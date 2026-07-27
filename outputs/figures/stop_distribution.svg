@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="532.739688pt" height="244.453263pt" viewBox="0 0 532.739688 244.453263" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-27T12:25:02.892145</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 244.453263 
+L 532.739687 244.453263 
+L 532.739687 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 131.339687 196.23225 
+L 521.939687 196.23225 
+L 521.939687 35.45625 
+L 131.339687 35.45625 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="127.839687" y="183.509264" transform="rotate(-0 127.839687 183.509264)">运营中</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="127.839687" y="151.735351" transform="rotate(-0 127.839687 151.735351)">运营期被平台方打包功能击垮</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="127.839687" y="119.961437" transform="rotate(-0 127.839687 119.961437)">止于 Gate 2（MVP 未能交付）</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="127.839687" y="88.187524" transform="rotate(-0 127.839687 88.187524)">止于 Gate 1（付费意愿）</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #6e6e73" x="127.839687" y="56.413611" transform="rotate(-0 127.839687 56.413611)">止于 Gate 0-B（流量验证）</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 131.339687 188.92425 
+L 218.144853 188.92425 
+L 218.144853 169.859902 
+L 131.339687 169.859902 
+z
+" clip-path="url(#pa45ae212b0)" style="fill: #0071e3"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 131.339687 157.150337 
+L 160.387819 157.150337 
+L 160.387819 138.085989 
+L 131.339687 138.085989 
+z
+" clip-path="url(#pa45ae212b0)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 131.339687 125.376424 
+L 152.108097 125.376424 
+L 152.108097 106.312076 
+L 131.339687 106.312076 
+z
+" clip-path="url(#pa45ae212b0)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 131.339687 93.602511 
+L 451.503622 93.602511 
+L 451.503622 74.538163 
+L 131.339687 74.538163 
+z
+" clip-path="url(#pa45ae212b0)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 131.339687 61.828598 
+L 302.757588 61.828598 
+L 302.757588 42.76425 
+L 131.339687 42.76425 
+z
+" clip-path="url(#pa45ae212b0)" style="fill: #e8e8ed"/>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="223.170481" y="182.666002" transform="rotate(-0 223.170481 182.666002)">13.8%</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="165.413448" y="150.892089" transform="rotate(-0 165.413448 150.892089)">4.6%</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="157.133725" y="119.118176" transform="rotate(-0 157.133725 119.118176)">3.3%</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="456.52925" y="87.344263" transform="rotate(-0 456.52925 87.344263)">51.0%</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 500; font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #1d1d1f" x="307.783216" y="55.57035" transform="rotate(-0 307.783216 55.57035)">27.3%</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.5px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: start; fill: #6e6e73" x="131.339687" y="231.60297" transform="rotate(-0 131.339687 231.60297)">阶段门把 78.3% 的失败拦在只亏几十小时的阶段</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 600; font-size: 11px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: middle; fill: #1d1d1f" x="326.639688" y="21.45625" transform="rotate(-0 326.639688 21.45625)">三年后项目停在哪一步（10 万次模拟）</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa45ae212b0">
+   <rect x="131.339687" y="35.45625" width="390.6" height="160.776"/>
+  </clipPath>
+ </defs>
+</svg>

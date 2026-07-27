@@ -1,0 +1,274 @@
+{
+  "seo_base": {
+    "pages": 180,
+    "top10_rate": 0.0611,
+    "top10_rate_grade": "A",
+    "uv_per_ranked_page": 40.0,
+    "uv_grade": "D（本人估计，无公开数据）",
+    "monthly_uv": 439.9200000000001,
+    "note": "180 页 × 6.11% 进前十 = 11.0 页 × 40 UV/月"
+  },
+  "seo_sensitivity": [
+    {
+      "pages": 60,
+      "uv_per_ranked_page": 15,
+      "monthly_uv": 55.0
+    },
+    {
+      "pages": 60,
+      "uv_per_ranked_page": 40,
+      "monthly_uv": 146.6
+    },
+    {
+      "pages": 60,
+      "uv_per_ranked_page": 80,
+      "monthly_uv": 293.3
+    },
+    {
+      "pages": 120,
+      "uv_per_ranked_page": 15,
+      "monthly_uv": 110.0
+    },
+    {
+      "pages": 120,
+      "uv_per_ranked_page": 40,
+      "monthly_uv": 293.3
+    },
+    {
+      "pages": 120,
+      "uv_per_ranked_page": 80,
+      "monthly_uv": 586.6
+    },
+    {
+      "pages": 180,
+      "uv_per_ranked_page": 15,
+      "monthly_uv": 165.0
+    },
+    {
+      "pages": 180,
+      "uv_per_ranked_page": 40,
+      "monthly_uv": 439.9
+    },
+    {
+      "pages": 180,
+      "uv_per_ranked_page": 80,
+      "monthly_uv": 879.8
+    },
+    {
+      "pages": 300,
+      "uv_per_ranked_page": 15,
+      "monthly_uv": 275.0
+    },
+    {
+      "pages": 300,
+      "uv_per_ranked_page": 40,
+      "monthly_uv": 733.2
+    },
+    {
+      "pages": 300,
+      "uv_per_ranked_page": 80,
+      "monthly_uv": 1466.4
+    }
+  ],
+  "channels": [
+    {
+      "name": "免费 GitHub Action 本体（产品即渠道）",
+      "mechanism": "扫描器以免费 GitHub Action 形式发布。每个安装它的仓库都会在 .github/workflows/*.yml 里留下一行公开可见的引用，该文件可被 GitHub 代码搜索索引，也会被该仓库的贡献者读到。安装量本身就是曝光量。",
+      "compounding": true,
+      "m12_uv": 180,
+      "m24_uv": 600,
+      "m36_uv": 1100,
+      "grade": "D",
+      "basis": "无公开的「Action 安装→官网访问」转化数据（assumptions.MARKETPLACE_INSTALL_TO_PAID 为 D 级空缺）。此处按第 12 月 150 个安装、每安装每月带来约 1.2 次官网访问推算，属本人假设。",
+      "kill_criterion": "第 6 月安装数 < 30，或第 12 月 < 150"
+    },
+    {
+      "name": "程序化 SEO 知识库（180 页配置安全条目）",
+      "mechanism": "每个 (agent action × 危险模式) 组合一页，内容是具体的错误配置示例 + 为什么危险 + 可直接复制的修复补丁。搜索这些具体报错/配置名的人，正是处于危险三角中的人。",
+      "compounding": true,
+      "m12_uv": 0,
+      "m24_uv": 440,
+      "m36_uv": 700,
+      "grade": "A（排名概率）/ D（单页流量）",
+      "basis": "Ahrefs 100 万 URL 追踪：英文非空内容 12 个月内进前十 6.11%。180 页 × 6.11% = 11 页进前十。**第一年按 0 计**（SEO 起量周期 9–18 个月）。单页 40 UV/月为 D 级假设。",
+      "kill_criterion": "第 18 月自然搜索流量 < 100 UV/月"
+    },
+    {
+      "name": "负责任披露飞轮",
+      "mechanism": "持续在公开仓库中发现真实的 agent CI 配置漏洞，私下告知维护者并附修复补丁。每次披露产生三样东西：一个被修好的仓库、一个知道你是谁的维护者、可能的公开致谢或 advisory 署名。这是本方案中唯一同时满足「真实帮到人」与「获客」的动作。",
+      "compounding": true,
+      "m12_uv": 120,
+      "m24_uv": 300,
+      "m36_uv": 450,
+      "grade": "D",
+      "basis": "按每月 10 次披露、30% 回复率、每个回复者平均带来 4 次访问（自己 + 转发）推算。口碑的重要性有间接支持：IndieLaunches 326 个 HN 项目中，口碑是被提及最多的主渠道（40 次为主渠道，高于 SEO 的 27 次）。",
+      "kill_criterion": "第 3 月累计披露 < 20 次，或回复率 < 20%"
+    },
+    {
+      "name": "被收录进 awesome-list / 他人 README / 安全清单",
+      "mechanism": "安全工具进入 awesome-actions、awesome-ci-security 等清单后获得长期被动引用。",
+      "compounding": true,
+      "m12_uv": 60,
+      "m24_uv": 160,
+      "m36_uv": 250,
+      "grade": "D",
+      "basis": "本人假设，无公开数据。取值刻意保守。",
+      "kill_criterion": "第 12 月被收录清单数 < 2"
+    },
+    {
+      "name": "Hacker News / 垂直社群脉冲",
+      "mechanism": "发布原创安全研究（例如「我扫了 5,000 个公开仓库，发现 N 个处于危险三角」）。此类内容在本领域传播力最强——微软、CSA、Aikido、Noma 四篇来源本身都是靠这个方式传播的。",
+      "compounding": false,
+      "m12_uv": 0,
+      "m24_uv": 0,
+      "m36_uv": 0,
+      "grade": "B",
+      "basis": "HN 头版 10,000–30,000 UV/24h，48 小时内衰减到零。**按定义不计入稳态基线**，仅作为一次性事件叠加在爬坡曲线上（见 funnel.py 的 pulses 参数）。",
+      "kill_criterion": "三年内 0 次进入 HN 前 30 名"
+    }
+  ],
+  "compounding_uv_month36": 2500.0,
+  "pulse_events": {
+    "4": 15000,
+    "9": 3000,
+    "18": 15000,
+    "30": 3000
+  },
+  "steady_curve": [
+    30.0,
+    60.0,
+    90.0,
+    120.0,
+    150.0,
+    180.0,
+    210.0,
+    240.0,
+    270.0,
+    300.0,
+    330.0,
+    360.0,
+    455.0,
+    550.0,
+    645.0,
+    740.0,
+    835.0,
+    930.0,
+    1025.0,
+    1120.0,
+    1215.0,
+    1310.0,
+    1405.0,
+    1500.0,
+    1583.3,
+    1666.7,
+    1750.0,
+    1833.3,
+    1916.7,
+    2000.0,
+    2083.3,
+    2166.7,
+    2250.0,
+    2333.3,
+    2416.7,
+    2500.0
+  ],
+  "full_curve": [
+    30.0,
+    60.0,
+    90.0,
+    15120.0,
+    150.0,
+    180.0,
+    210.0,
+    240.0,
+    3270.0,
+    300.0,
+    330.0,
+    360.0,
+    455.0,
+    550.0,
+    645.0,
+    740.0,
+    835.0,
+    15930.0,
+    1025.0,
+    1120.0,
+    1215.0,
+    1310.0,
+    1405.0,
+    1500.0,
+    1583.3,
+    1666.7,
+    1750.0,
+    1833.3,
+    1916.7,
+    5000.0,
+    2083.3,
+    2166.7,
+    2250.0,
+    2333.3,
+    2416.7,
+    2500.0
+  ],
+  "checkpoints": [
+    {
+      "month": 3,
+      "steady_uv_target": 90.0,
+      "implied_steady_customers_no_card": 1.7,
+      "implied_steady_mrr_no_card": 33.0,
+      "pass_threshold_uv": 63.0,
+      "action_if_missed": "披露飞轮未启动。检查是不是选错了人群（找的仓库都是玩具项目）。重选 30 个目标仓库重试一次。"
+    },
+    {
+      "month": 6,
+      "steady_uv_target": 180.0,
+      "implied_steady_customers_no_card": 3.5,
+      "implied_steady_mrr_no_card": 66.0,
+      "pass_threshold_uv": 126.0,
+      "action_if_missed": "免费 Action 无人安装 = 产品本身没有吸引力。这是**比获客更严重的信号**，回到 Gate 1 重验付费意愿。"
+    },
+    {
+      "month": 12,
+      "steady_uv_target": 360.0,
+      "implied_steady_customers_no_card": 6.9,
+      "implied_steady_mrr_no_card": 132.0,
+      "pass_threshold_uv": 252.0,
+      "action_if_missed": "第一年靠的是披露飞轮与 Action 本体，与 SEO 无关。未达标说明这两条机制不成立，**触发赛道切换**（转 C13）。"
+    },
+    {
+      "month": 18,
+      "steady_uv_target": 930.0,
+      "implied_steady_customers_no_card": 17.9,
+      "implied_steady_mrr_no_card": 341.0,
+      "pass_threshold_uv": 651.0,
+      "action_if_missed": "SEO 未起量。Ahrefs 数据说 9–18 个月是正常周期，18 个月仍为零则内容质量或选题有问题。停止新增页面，改为深耕已有页面。"
+    },
+    {
+      "month": 24,
+      "steady_uv_target": 1500.0,
+      "implied_steady_customers_no_card": 28.9,
+      "implied_steady_mrr_no_card": 550.0,
+      "pass_threshold_uv": 1050.0,
+      "action_if_missed": "此时应已接近 995 UV/月（要卡口径的 $1,000 MRR 需求）。未达标则**必须启用信用卡门槛**或接受 $1,000 MRR 无法达成。"
+    },
+    {
+      "month": 36,
+      "steady_uv_target": 2500.0,
+      "implied_steady_customers_no_card": 48.2,
+      "implied_steady_mrr_no_card": 916.0,
+      "pass_threshold_uv": 1750.0,
+      "action_if_missed": "未达 2,729 UV/月（不要卡口径）说明纯自然流量路径走不通，**执行止损：转为免费开源项目，停止商业化投入**。"
+    }
+  ],
+  "gap_analysis": {
+    "planned_steady_uv_month36": 2500.0,
+    "required_uv_for_1000_mrr_no_card": 2729.0,
+    "required_uv_for_1000_mrr_with_card": 995.0,
+    "coverage_no_card": 0.916,
+    "coverage_with_card": 2.514,
+    "verdict_no_card": "不足",
+    "verdict_with_card": "足够",
+    "implied_mrr_at_month36_no_card": 916.0,
+    "implied_mrr_at_month36_with_card": 2514.0
+  }
+}
