@@ -6,7 +6,6 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-07-27T12:25:06.298020</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -70,7 +69,7 @@ L 348.492524 167.75625
 L 348.492524 148.235123 
 L 570.031771 148.235123 
 z
-" clip-path="url(#pe4cf9b8d72)" style="fill: #ff3b30; opacity: 0.9"/>
+" clip-path="url(#p906c9b7e09)" style="fill: #ff3b30; opacity: 0.9"/>
    </g>
    <g id="patch_4">
     <path d="M 570.031771 132.263292 
@@ -78,7 +77,7 @@ L 448.480986 132.263292
 L 448.480986 112.742165 
 L 570.031771 112.742165 
 z
-" clip-path="url(#pe4cf9b8d72)" style="fill: #ff3b30; opacity: 0.9"/>
+" clip-path="url(#p906c9b7e09)" style="fill: #ff3b30; opacity: 0.9"/>
    </g>
    <g id="patch_5">
     <path d="M 570.031771 96.770335 
@@ -86,7 +85,7 @@ L 386.596712 96.770335
 L 386.596712 77.249208 
 L 570.031771 77.249208 
 z
-" clip-path="url(#pe4cf9b8d72)" style="fill: #ff3b30; opacity: 0.9"/>
+" clip-path="url(#p906c9b7e09)" style="fill: #ff3b30; opacity: 0.9"/>
    </g>
    <g id="patch_6">
     <path d="M 570.031771 61.277377 
@@ -94,12 +93,12 @@ L 453.858916 61.277377
 L 453.858916 41.75625 
 L 570.031771 41.75625 
 z
-" clip-path="url(#pe4cf9b8d72)" style="fill: #ff3b30; opacity: 0.9"/>
+" clip-path="url(#p906c9b7e09)" style="fill: #ff3b30; opacity: 0.9"/>
    </g>
    <g id="line2d_5">
     <path d="M 570.031771 174.05625 
 L 570.031771 35.45625 
-" clip-path="url(#pe4cf9b8d72)" style="fill: none; stroke: #1d1d1f; stroke-width: 0.9; stroke-linecap: square"/>
+" clip-path="url(#p906c9b7e09)" style="fill: none; stroke: #1d1d1f; stroke-width: 0.9; stroke-linecap: square"/>
    </g>
    <g id="text_5">
     <text style="font-size: 9px; font-family: 'Inter', 'Noto Sans SC', 'DejaVu Sans'; text-anchor: end; fill: #1d1d1f" x="342.590753" y="161.269612" transform="rotate(-0 342.590753 161.269612)">-5.63% </text>
@@ -122,7 +121,7 @@ L 570.031771 35.45625
   </g>
  </g>
  <defs>
-  <clipPath id="pe4cf9b8d72">
+  <clipPath id="p906c9b7e09">
    <rect x="226.645938" y="35.45625" width="390.6" height="138.6"/>
   </clipPath>
  </defs>

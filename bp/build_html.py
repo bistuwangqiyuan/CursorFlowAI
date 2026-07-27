@@ -779,7 +779,7 @@ def ch8_risk() -> str:
     cv = fa["commitment_view"]
     return chapter(8, "第八章", "风险量化：胜率、盈亏比、Kelly 与四种年化", f"""
 <p class="lede">{num(R['meta']['n_sims'])} 次三年期模拟，随机种子 {R['meta']['seed']}，
-任何人重跑都得到逐位相同的数字。本章与常见创业财务预测最大的不同是
+重跑得到相同结果（比对方式见附录 C.1）。本章与常见创业财务预测最大的不同是
 <strong>把阶段门做进了模拟</strong>——因为门的经济意义正是截断左尾，不建模门就会系统性算错。</p>
 
 <h2>8.1 模型结构：三个不常见的设定</h2>
@@ -1253,9 +1253,23 @@ def appendix() -> str:
 <p class="eyebrow">附录 C</p><h1>复现说明</h1>
 
 <h2>C.1 一条命令</h2>
-<p class="mono">python model/run_all.py &amp;&amp; python bp/build_html.py &amp;&amp; python bp/build_pdf.py</p>
+<p class="mono">python build.py</p>
+<p>它串起五步——跑模型、渲染正文、审计手打数字、检查字体覆盖、导出并校验 PDF——
+任一步非零退出即整体失败。所以它可以直接放进 CI，不需要人去看输出。</p>
 <p>随机种子固定为 {R['meta']['seed']}，{num(R['meta']['n_sims'])} 次模拟。
-任何人在任何时间重跑，都会得到与本文件<strong>逐位相同</strong>的数字。</p>
+<code>python tools/verify_reproducible.py</code> 会重跑一遍并比对，
+用来<strong>证明</strong>这一点而不是声明它：8 张 SVG 逐字节一致，
+9 份 JSON 在剔除构建元数据（时间戳、git 版本号、耗时）后一致。
+逐个子模型分别比对，所以一旦出问题能直接指出是哪个模型不确定。</p>
+{callout("这条检查本身是红队自检的产物", """
+<p>本附录原来写的是「任何人在任何时间重跑，都会得到逐位相同的数字」。
+第一次真去核就发现不成立：SVG 里嵌着 <code>&lt;dc:date&gt;</code>，
+matplotlib 还用随机数给 clipPath 编 id。
+<strong>数字一直是对的，但「文件可逐位复核」当时是一句假话。</strong></p>
+<p>处置是两条一起做：固定 <code>svg.hashsalt</code> 并去掉日期元数据（治本），
+再加一个重跑比对的工具把它守住（防复发）。
+之所以把这段留在正文里而不是悄悄改掉——<strong>一份声称经得起检验的文件，
+应当让读者看见它被检验时确实塌过一次。</strong></p>""", "warn")}
 
 {kv([("Python", R["meta"]["python"]), ("NumPy", R["meta"]["numpy"]),
      ("运行平台", R["meta"]["platform"]),
@@ -1277,6 +1291,10 @@ def appendix() -> str:
    ["<code>model/run_all.py</code>", "一键复现 + 跨模型交叉校验"],
    ["<code>bp/build_html.py</code>", "本文件的生成器（数字全部取自 results.json）"],
    ["<code>bp/build_pdf.py</code>", "Playwright 导出 PDF 并校验"],
+   ["<code>build.py</code>", "一条命令串起全部五步，任一步失败即整体失败"],
+   ["<code>tools/audit_numbers.py</code>", "守住模型数字不被手打替换（见 C.3）"],
+   ["<code>tools/verify_reproducible.py</code>", "重跑并比对，证明 C.1 的复现声明"],
+   ["<code>tools/font_coverage.py</code>", "守住字符不回退到系统字体"],
    ["<code>docs/GATE0.md</code> 等", "各专题的完整论证"],
    ["<code>research/sources.md</code>", "事实底稿，每条含 URL、日期与证据分级"]])}
 

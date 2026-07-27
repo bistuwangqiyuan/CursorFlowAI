@@ -2835,60 +2835,60 @@
   ],
   "meta": {
     "base_date": "2026-07-27",
-    "generated_at_utc": "2026-07-27T04:25:06Z",
+    "generated_at_utc": "2026-07-27T04:38:35Z",
     "seed": 20260727,
     "n_sims": 100000,
     "python": "3.12.10",
     "numpy": "2.5.1",
     "platform": "Windows-2025Server-10.0.26100-SP0",
-    "git_rev": "f543c8f",
-    "reproduce": "python model/run_all.py",
-    "elapsed_seconds": 25.1,
+    "git_rev": "0d7092c",
+    "reproduce": "python build.py",
+    "elapsed_seconds": 13.3,
     "manifest": [
       {
         "file": "outputs/figures/annualization.svg",
-        "bytes": 5618,
-        "sha256": "09a4c3aa8788f893"
+        "bytes": 5567,
+        "sha256": "65d15d92e60b099f"
       },
       {
         "file": "outputs/figures/gate_value.svg",
-        "bytes": 4453,
-        "sha256": "56bde2cc2b2928bf"
+        "bytes": 4402,
+        "sha256": "f2b963ab175d8e3c"
       },
       {
         "file": "outputs/figures/indifference_rate.svg",
-        "bytes": 13120,
-        "sha256": "399d96fdeb937772"
+        "bytes": 13069,
+        "sha256": "e42d8f0a5529e906"
       },
       {
         "file": "outputs/figures/return_distribution.svg",
-        "bytes": 51966,
-        "sha256": "88bddf1da3e9a67d"
+        "bytes": 51915,
+        "sha256": "4298c1d5f5dd7c9d"
       },
       {
         "file": "outputs/figures/scoring.svg",
-        "bytes": 5793,
-        "sha256": "8f1d7c8853e243cb"
+        "bytes": 5742,
+        "sha256": "afbb9d272c90170e"
       },
       {
         "file": "outputs/figures/sensitivity.svg",
-        "bytes": 18460,
-        "sha256": "f68c78592ba07f46"
+        "bytes": 18409,
+        "sha256": "15156ae7aa4521b3"
       },
       {
         "file": "outputs/figures/stop_distribution.svg",
-        "bytes": 6074,
-        "sha256": "37b1762d5df4b0d9"
+        "bytes": 6023,
+        "sha256": "31e00f33d1289c73"
       },
       {
         "file": "outputs/figures/traffic_gap.svg",
-        "bytes": 12639,
-        "sha256": "9153a03740937688"
+        "bytes": 12588,
+        "sha256": "bbeb8a9a7ee1e9fd"
       },
       {
         "file": "outputs/results.json",
-        "bytes": 114079,
-        "sha256": "8460b3fb6d0e1796"
+        "bytes": 114071,
+        "sha256": "6d8c0989b9b2830e"
       }
     ]
   }

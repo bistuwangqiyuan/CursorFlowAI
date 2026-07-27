@@ -74,6 +74,11 @@ def setup() -> None:
         "figure.facecolor": "white",
         "axes.facecolor": "white",
         "axes.unicode_minus": False,
+        # 默认 matplotlib 用随机数给 SVG 里的 clipPath 等元素编 id，
+        # 同样的数据两次构建会得到不同的文件。固定盐值后 id 变成确定的，
+        # 图表因此可以逐字节对比——这是「可复现」的一部分，不是洁癖：
+        # 只有字节可比，才能一眼看出某次改动到底动了图还是只动了时间戳。
+        "svg.hashsalt": "cursorflowai-bp",
     })
 
 
@@ -91,7 +96,10 @@ def _clean(ax, keep=("left",), grid_axis="x") -> None:
 def _save(fig, name: str) -> Path:
     FIG_DIR.mkdir(parents=True, exist_ok=True)
     p = FIG_DIR / name
-    fig.savefig(p, format="svg", bbox_inches="tight", pad_inches=0.15)
+    # metadata Date=None 去掉 <dc:date>：那是构建时刻，不是图的内容，
+    # 留着会让每次构建的 SVG 都不同，掩盖真正的改动。
+    fig.savefig(p, format="svg", bbox_inches="tight", pad_inches=0.15,
+                metadata={"Date": None})
     plt.close(fig)
 
     # svg.fonttype="none" 让文字以文本形式保留（PDF 中可检索、可复制），

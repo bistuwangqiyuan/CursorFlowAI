@@ -250,7 +250,7 @@ def main() -> None:
         "numpy": np.__version__,
         "platform": platform.platform(),
         "git_rev": _git_rev(),
-        "reproduce": "python model/run_all.py",
+        "reproduce": "python build.py",
         "elapsed_seconds": round(time.time() - t0, 1),
     }
 
