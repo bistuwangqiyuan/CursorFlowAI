@@ -1,0 +1,6 @@
+{
+  "name": "@triadguard/action",
+  "private": true,
+  "version": "0.1.0",
+  "description": "GitHub Action wrapper for TriadGuard CLI"
+}

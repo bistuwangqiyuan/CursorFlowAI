@@ -1,0 +1,21 @@
+# Dogfood: scan this repo's workflows with TriadGuard (composite Action).
+name: TriadGuard self-check
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/**"
+      - "product/**"
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./product/action
+        with:
+          path: .github/workflows
+          fail-on-critical: "false"

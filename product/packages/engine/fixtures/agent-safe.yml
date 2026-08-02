@@ -1,0 +1,14 @@
+# Gold: agent present but trusted trigger + read-only — info only, not fatal
+name: agent-docs
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: anthropics/claude-code-action@v1
+        with:
+          prompt: Summarize CHANGELOG.md

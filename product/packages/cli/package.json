@@ -1,0 +1,36 @@
+{
+  "name": "triadguard",
+  "version": "0.1.0",
+  "description": "CLI: scan GitHub Actions workflows for AI agent fatal-triangle risks",
+  "type": "module",
+  "bin": {
+    "triadguard": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "@triadguard/engine": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bistuwangqiyuan/CursorFlowAI.git",
+    "directory": "product/packages/cli"
+  },
+  "keywords": [
+    "github-actions",
+    "security",
+    "ai-agent",
+    "ci",
+    "triadguard"
+  ]
+}

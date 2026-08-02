@@ -1,6 +1,22 @@
 __pycache__/
 *.pyc
 
+# TriadGuard / Node
+node_modules/
+product/**/node_modules/
+product/**/dist/
+product/web/.next/
+product/web/out/
+.vercel/
+*.tsbuildinfo
+.env
+.env.*
+product/*.log
+product/web/*.log
+product/cli-out.txt
+product/gate0/hn-raw*.json
+.vercel/
+
 # 开发期用来目检排版的截图，可由 tools/preview_pages.py、tools/zoom_element.py
 # 随时重新生成，不属于产出物。
 outputs/preview/

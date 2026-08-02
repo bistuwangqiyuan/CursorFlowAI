@@ -1,0 +1,27 @@
+[
+  {
+    "query": "path:.github/workflows anthropics/claude-code-action",
+    "incomplete_results": false,
+    "total_count": 7488
+  },
+  {
+    "query": "path:.github/workflows google-github-actions/run-gemini-cli",
+    "incomplete_results": false,
+    "total_count": 1142
+  },
+  {
+    "query": "path:.github/workflows openai/codex-action",
+    "incomplete_results": false,
+    "total_count": 888
+  },
+  {
+    "query": "path:.github/workflows pull_request_target claude-code-action",
+    "incomplete_results": false,
+    "total_count": 536
+  },
+  {
+    "query": "path:.github/workflows permissions: write-all claude-code-action",
+    "incomplete_results": false,
+    "total_count": 14
+  }
+]

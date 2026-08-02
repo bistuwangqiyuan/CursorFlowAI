@@ -1,0 +1,923 @@
+[
+  {
+    "query": "GitHub Actions AI agent",
+    "nbHits": 324,
+    "hits": [
+      {
+        "title": "PromptPwnd: Prompt Injection Vulnerabilities in GitHub Actions Using AI Agents",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2025-12-05T05:57:13Z",
+        "url": "https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents",
+        "hn": "https://news.ycombinator.com/item?id=46157229"
+      },
+      {
+        "title": "Prompt injection through GitHub Action workflow impacts Gemini and others",
+        "points": 4,
+        "num_comments": 1,
+        "created_at": "2025-12-04T15:37:21Z",
+        "url": "https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents",
+        "hn": "https://news.ycombinator.com/item?id=46148809"
+      },
+      {
+        "title": "Show HN: DealLedger – An open ledger of every business for sale in America",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-23T17:49:20Z",
+        "url": "https://dealledger.org",
+        "hn": "https://news.ycombinator.com/item?id=47125841"
+      },
+      {
+        "title": "Show HN: Cq – Stack Overflow for AI coding agents",
+        "points": 225,
+        "num_comments": 103,
+        "created_at": "2026-03-23T16:11:03Z",
+        "url": "https://blog.mozilla.ai/cq-stack-overflow-for-agents/",
+        "hn": "https://news.ycombinator.com/item?id=47491466"
+      },
+      {
+        "title": "Show HN: GitAgent – An open standard that turns any Git repo into an AI agent",
+        "points": 147,
+        "num_comments": 39,
+        "created_at": "2026-03-14T13:41:25Z",
+        "url": "https://www.gitagent.sh/",
+        "hn": "https://news.ycombinator.com/item?id=47376584"
+      },
+      {
+        "title": "Show HN: A tool to safely migrate GitHub Actions workflows to Ubuntu-slim runner",
+        "points": 69,
+        "num_comments": 3,
+        "created_at": "2025-11-15T10:53:03Z",
+        "url": "https://github.com/fchimpan/gh-slimify",
+        "hn": "https://news.ycombinator.com/item?id=45936564"
+      },
+      {
+        "title": "Show HN: CLI that helps AI agents avoid vulnerable dependencies",
+        "points": 26,
+        "num_comments": 5,
+        "created_at": "2026-07-01T20:51:47Z",
+        "url": "https://github.com/clidey/deptrust",
+        "hn": "https://news.ycombinator.com/item?id=48752948"
+      },
+      {
+        "title": "Show HN: GitHub Action for AI/LLM Security Scanning in CI/CD",
+        "points": 5,
+        "num_comments": 1,
+        "created_at": "2026-01-01T07:14:05Z",
+        "url": "https://github.com/XSource-Sec/agent-audit-action",
+        "hn": "https://news.ycombinator.com/item?id=46452017"
+      },
+      {
+        "title": "Show HN: G0 – The control layer for AI agents (scan, test, monitor, comply)",
+        "points": 4,
+        "num_comments": 2,
+        "created_at": "2026-03-10T18:52:44Z",
+        "url": "https://github.com/guard0-ai/g0",
+        "hn": "https://news.ycombinator.com/item?id=47327358"
+      },
+      {
+        "title": "Show HN: N8n-Style Actions and AI Agents in TypeScript",
+        "points": 4,
+        "num_comments": 0,
+        "created_at": "2025-12-16T19:19:23Z",
+        "url": "https://github.com/VoltAgent/voltagent/blob/main/README.md",
+        "hn": "https://news.ycombinator.com/item?id=46293047"
+      },
+      {
+        "title": "Show HN: Cobalt – Unit tests for AI agents, like Jest but for LLMs",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-02-20T17:43:05Z",
+        "url": "https://github.com/basalt-ai/cobalt",
+        "hn": "https://news.ycombinator.com/item?id=47091182"
+      },
+      {
+        "title": "Show HN: Voicetest – open-source test harness for voice AI agents",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-02-17T15:49:09Z",
+        "hn": "https://news.ycombinator.com/item?id=47048811"
+      },
+      {
+        "title": "Show HN: GitAgent – Clone a repo, get an AI agent – Claude Code / OpenClaw",
+        "points": 2,
+        "num_comments": 3,
+        "created_at": "2026-03-02T11:27:56Z",
+        "url": "https://www.gitagent.sh/",
+        "hn": "https://news.ycombinator.com/item?id=47216582"
+      },
+      {
+        "title": "Show HN: AgentMD – CI/CD for AI agents, makes AGENTS.md executable",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-02-25T22:09:01Z",
+        "hn": "https://news.ycombinator.com/item?id=47158728"
+      },
+      {
+        "title": "Show HN: Agent Action Guard – AI agent action safety",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-04-01T17:02:51Z",
+        "hn": "https://news.ycombinator.com/item?id=47603542"
+      },
+      {
+        "title": "Show HN: Ran an AI agent 100x – pass rate 70%, not 100%",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-02-09T09:35:43Z",
+        "url": "https://github.com/alepot55/agentrial",
+        "hn": "https://news.ycombinator.com/item?id=46943395"
+      },
+      {
+        "title": "Show HN: Agentrial – pytest for AI agents with statistical rigor",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-02-05T19:15:20Z",
+        "url": "https://github.com/alepot55/agentrial",
+        "hn": "https://news.ycombinator.com/item?id=46903718"
+      },
+      {
+        "title": "Show HN: Inkog – Pre-flight check for AI agents (governance, loops, injection)",
+        "points": 1,
+        "num_comments": 2,
+        "created_at": "2026-02-17T10:29:33Z",
+        "url": "https://inkog.io",
+        "hn": "https://news.ycombinator.com/item?id=47045811"
+      },
+      {
+        "title": "Show HN: Agent OS – Safety-first platform for building AI agents with VS Code",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-01-30T18:08:10Z",
+        "url": "https://github.com/imran-siddique/agent-os",
+        "hn": "https://news.ycombinator.com/item?id=46827747"
+      },
+      {
+        "title": "Show HN: RenderCV – Open-source CV/resume generator, YAML to PDF",
+        "points": 100,
+        "num_comments": 41,
+        "created_at": "2025-12-21T13:15:28Z",
+        "url": "https://github.com/rendercv/rendercv",
+        "hn": "https://news.ycombinator.com/item?id=46344616"
+      },
+      {
+        "title": "GitHub Banned All CI for Our (OSS) Org Because of Bad Drive-By Contributors",
+        "points": 9,
+        "num_comments": 4,
+        "created_at": "2026-06-22T01:35:32Z",
+        "hn": "https://news.ycombinator.com/item?id=48624574"
+      },
+      {
+        "title": "Show HN: TITO – Automated threat modeling from code (open source)",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-02-04T21:22:52Z",
+        "url": "https://github.com/Leathal1/TITO",
+        "hn": "https://news.ycombinator.com/item?id=46891988"
+      },
+      {
+        "title": "Show HN: Babylog – baby tracker built with OpenClaw from a hospital room",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-02-16T22:50:26Z",
+        "hn": "https://news.ycombinator.com/item?id=47041425"
+      },
+      {
+        "title": "Show HN: What agentic collaborative pentesting looks like",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-14T01:32:08Z",
+        "url": "https://www.youtube.com/watch?v=PU5BicXMiio",
+        "hn": "https://news.ycombinator.com/item?id=47372369"
+      },
+      {
+        "title": "Show HN: BreakMyAgent – Open-source red-teaming sandbox for LLM system prompts",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-02-26T13:00:17Z",
+        "hn": "https://news.ycombinator.com/item?id=47165464"
+      },
+      {
+        "title": "Show HN: Nod – Pre-code compliance validation for agentic coding workflows",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-02-02T01:25:05Z",
+        "url": "https://github.com/mraml/nod",
+        "hn": "https://news.ycombinator.com/item?id=46851289"
+      },
+      {
+        "title": "Show HN: Bellwether – MCP Server Testing and Drift Detection for CI/CD",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-02-01T15:23:48Z",
+        "url": "https://github.com/dotsetlabs/bellwether",
+        "hn": "https://news.ycombinator.com/item?id=46846797"
+      },
+      {
+        "title": "Show HN: Show HN: GitHub Pages for Agents with GitHub Agentic Workflows (Gh-Aw)",
+        "points": 1,
+        "num_comments": 3,
+        "created_at": "2026-03-15T10:33:52Z",
+        "url": "https://github.com/idorozin/AgentPages",
+        "hn": "https://news.ycombinator.com/item?id=47386038"
+      },
+      {
+        "title": "Show HN: HN Jobs Trends – Monthly trend analysis of HN job postings",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-15T11:41:04Z",
+        "url": "https://hn-job-trends.gantryops.dev",
+        "hn": "https://news.ycombinator.com/item?id=47386436"
+      },
+      {
+        "title": "Show HN: Unpinched – open-source PinchTab and CDP bridge detector",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-09T10:47:54Z",
+        "url": "https://github.com/Helixar-AI/Unpinched",
+        "hn": "https://news.ycombinator.com/item?id=47307336"
+      }
+    ]
+  },
+  {
+    "query": "prompt injection GitHub Actions",
+    "nbHits": 42,
+    "hits": [
+      {
+        "title": "Prompt injection through GitHub Action workflow impacts Gemini and others",
+        "points": 4,
+        "num_comments": 1,
+        "created_at": "2025-12-04T15:37:21Z",
+        "url": "https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents",
+        "hn": "https://news.ycombinator.com/item?id=46148809"
+      },
+      {
+        "title": "\"Clinejection\" Turned an AI Bot into a Supply Chain Attack – Snyk",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2026-03-06T08:51:46Z",
+        "url": "https://snyk.io/blog/cline-supply-chain-attack-prompt-injection-github-actions/",
+        "hn": "https://news.ycombinator.com/item?id=47272606"
+      },
+      {
+        "title": "\"Clinejection\" Turned an AI Bot into a Supply Chain Attack",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-07T02:55:32Z",
+        "url": "https://snyk.io/blog/cline-supply-chain-attack-prompt-injection-github-actions/",
+        "hn": "https://news.ycombinator.com/item?id=47283998"
+      },
+      {
+        "title": "PromptPwnd: Prompt Injection Vulnerabilities in GitHub Actions Using AI Agents",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2025-12-05T05:57:13Z",
+        "url": "https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents",
+        "hn": "https://news.ycombinator.com/item?id=46157229"
+      },
+      {
+        "title": "Show HN: MCPSpec – Ship reliable MCP servers without writing test code",
+        "points": 7,
+        "num_comments": 2,
+        "created_at": "2026-02-25T15:04:50Z",
+        "url": "https://light-handle.github.io/mcpspec/",
+        "hn": "https://news.ycombinator.com/item?id=47152493"
+      },
+      {
+        "title": "Show HN: G0 – The control layer for AI agents (scan, test, monitor, comply)",
+        "points": 4,
+        "num_comments": 2,
+        "created_at": "2026-03-10T18:52:44Z",
+        "url": "https://github.com/guard0-ai/g0",
+        "hn": "https://news.ycombinator.com/item?id=47327358"
+      },
+      {
+        "title": "Show HN: Only firewall for AI prompts with a security grade on every PR",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-03-03T12:03:09Z",
+        "url": "https://promptguard.co/",
+        "hn": "https://news.ycombinator.com/item?id=47231187"
+      },
+      {
+        "title": "Show HN: BreakMyAgent – Open-source red-teaming sandbox for LLM system prompts",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-02-26T13:00:17Z",
+        "hn": "https://news.ycombinator.com/item?id=47165464"
+      },
+      {
+        "title": "Show HN: Inkog – Pre-flight check for AI agents (governance, loops, injection)",
+        "points": 1,
+        "num_comments": 2,
+        "created_at": "2026-02-17T10:29:33Z",
+        "url": "https://inkog.io",
+        "hn": "https://news.ycombinator.com/item?id=47045811"
+      },
+      {
+        "title": "Show HN: PromptSonar – Static analysis for LLM prompt security",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-12T13:28:23Z",
+        "url": "https://github.com/meghal86/promptsonar",
+        "hn": "https://news.ycombinator.com/item?id=47350257"
+      },
+      {
+        "title": "Show HN: Aidevshield NPM audit for AI coding tool workflows",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-06T02:44:22Z",
+        "url": "https://github.com/aidevshield/aidevshield",
+        "hn": "https://news.ycombinator.com/item?id=47270193"
+      },
+      {
+        "title": "Show HN: Lelu – gate OpenAI agent actions on confidence and prompt injection",
+        "points": 6,
+        "num_comments": 0,
+        "created_at": "2026-06-24T18:39:34Z",
+        "url": "https://github.com/Lelu-ai/lelu",
+        "hn": "https://news.ycombinator.com/item?id=48664025"
+      },
+      {
+        "title": "Show HN: Solution for Prompt Injection of AI Agents",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-27T17:23:11Z",
+        "url": "https://github.com/safe-agentic-world/nomos",
+        "hn": "https://news.ycombinator.com/item?id=47545620"
+      },
+      {
+        "title": "I built an AI browser with prompt-injection defense at 16 on an i5 with 8GB RAM",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-02-24T17:21:29Z",
+        "hn": "https://news.ycombinator.com/item?id=47139768"
+      },
+      {
+        "title": "Show HN: AI agent framework where dangerous actions are structurally unreachable",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-02-20T13:36:07Z",
+        "url": "https://github.com/hibanaworks/hibana-agent",
+        "hn": "https://news.ycombinator.com/item?id=47087864"
+      },
+      {
+        "title": "Show HN: ÆTHERYA Core – deterministic action-governance kernel for LLM agents",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-03-18T12:19:21Z",
+        "url": "https://github.com/nayfly/aetherya-core",
+        "hn": "https://news.ycombinator.com/item?id=47424776"
+      },
+      {
+        "title": "Show HN: OmniGlass – An open-source, sandboxed Visual Action Engine",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-23T17:53:09Z",
+        "url": "https://github.com/goshtasb/OmniGlass",
+        "hn": "https://news.ycombinator.com/item?id=47125907"
+      },
+      {
+        "title": "Show HN: OneCLI – OSS credential gateway that keeps secrets out of AI agents",
+        "points": 110,
+        "num_comments": 32,
+        "created_at": "2026-07-23T15:42:40Z",
+        "url": "https://github.com/onecli/onecli",
+        "hn": "https://news.ycombinator.com/item?id=49023427"
+      },
+      {
+        "title": "Show HN: Smooth CLI – Token-efficient browser for AI agents",
+        "points": 109,
+        "num_comments": 74,
+        "created_at": "2026-02-05T16:13:33Z",
+        "url": "https://docs.smooth.sh/cli/overview",
+        "hn": "https://news.ycombinator.com/item?id=46901233"
+      },
+      {
+        "title": "Show HN: ContextFort – Visibility and controls for browser agents",
+        "points": 14,
+        "num_comments": 1,
+        "created_at": "2026-01-14T09:22:42Z",
+        "url": "https://contextfort.ai/",
+        "hn": "https://news.ycombinator.com/item?id=46614015"
+      },
+      {
+        "title": "Show HN: AgentArmor – open-source 8-layer security framework for AI agents",
+        "points": 10,
+        "num_comments": 6,
+        "created_at": "2026-03-14T09:44:36Z",
+        "url": "https://github.com/Agastya910/agentarmor",
+        "hn": "https://news.ycombinator.com/item?id=47374958"
+      },
+      {
+        "title": "Show HN: ClawShell, Process-Level Isolation for OpenClaw Credentials",
+        "points": 10,
+        "num_comments": 1,
+        "created_at": "2026-02-19T16:49:21Z",
+        "url": "https://github.com/clawshell/clawshell",
+        "hn": "https://news.ycombinator.com/item?id=47075823"
+      },
+      {
+        "title": "Show HN: Beelzebub (OSS) – MCP \"canary tools\" for AI agents",
+        "points": 8,
+        "num_comments": 1,
+        "created_at": "2025-09-07T15:00:29Z",
+        "hn": "https://news.ycombinator.com/item?id=45158776"
+      },
+      {
+        "title": "Show HN: OpenClaw-superpowers – Self-modifying skill library for OpenClaw agents",
+        "points": 8,
+        "num_comments": 0,
+        "created_at": "2026-03-15T06:27:17Z",
+        "url": "https://github.com/ArchieIndian/openclaw-superpowers",
+        "hn": "https://news.ycombinator.com/item?id=47384832"
+      },
+      {
+        "title": "Show HN: Agent-browser-shield – free extension to protect AI agents on the web",
+        "points": 7,
+        "num_comments": 5,
+        "created_at": "2026-06-03T16:23:24Z",
+        "url": "https://github.com/pixiebrix/agent-browser-shield",
+        "hn": "https://news.ycombinator.com/item?id=48386116"
+      },
+      {
+        "title": "Show HN: Costanza – an autonomous AI agent that can't be turned off",
+        "points": 5,
+        "num_comments": 3,
+        "created_at": "2026-05-06T15:50:59Z",
+        "url": "https://ahrussell.com/writing/costanza/",
+        "hn": "https://news.ycombinator.com/item?id=48037640"
+      },
+      {
+        "title": "Show HN: Clawdstrike – a security toolbox for the OpenClaw ecosystem",
+        "points": 4,
+        "num_comments": 1,
+        "created_at": "2026-02-03T19:19:42Z",
+        "url": "https://github.com/backbay-labs/clawdstrike",
+        "hn": "https://news.ycombinator.com/item?id=46875842"
+      },
+      {
+        "title": "Show HN: Driftcop – Open-source CLI SAST for \"MCP rug pull attacks in AI Agents\"",
+        "points": 4,
+        "num_comments": 1,
+        "created_at": "2025-08-09T03:37:01Z",
+        "url": "https://github.com/sudoviz/driftcop",
+        "hn": "https://news.ycombinator.com/item?id=44843841"
+      },
+      {
+        "title": "Show HN: Lightbox – Flight recorder for AI agents (record, replay, verify)",
+        "points": 4,
+        "num_comments": 0,
+        "created_at": "2026-01-27T17:23:11Z",
+        "url": "https://uselightbox.app/",
+        "hn": "https://news.ycombinator.com/item?id=46783126"
+      },
+      {
+        "title": "How are you securing your GenAI apps from malicious prompts?",
+        "points": 4,
+        "num_comments": 0,
+        "created_at": "2025-09-19T14:23:03Z",
+        "hn": "https://news.ycombinator.com/item?id=45302015"
+      }
+    ]
+  },
+  {
+    "query": "claude code action",
+    "nbHits": 216,
+    "hits": [
+      {
+        "title": "Show HN: Agent Flow: A beautiful way to visualize Claude Code actions",
+        "points": 5,
+        "num_comments": 3,
+        "created_at": "2026-03-26T10:42:43Z",
+        "url": "https://github.com/patoles/agent-flow",
+        "hn": "https://news.ycombinator.com/item?id=47528814"
+      },
+      {
+        "title": "Claude Code in Action – Anthropic Official Claude Code Course",
+        "points": 5,
+        "num_comments": 0,
+        "created_at": "2026-01-01T07:24:17Z",
+        "url": "https://anthropic.skilljar.com/claude-code-in-action",
+        "hn": "https://news.ycombinator.com/item?id=46452058"
+      },
+      {
+        "title": "Show HN: Agent Flow: A beautiful way to visualize Claude Code actions",
+        "points": 4,
+        "num_comments": 0,
+        "created_at": "2026-03-24T11:19:26Z",
+        "hn": "https://news.ycombinator.com/item?id=47501036"
+      },
+      {
+        "title": "Show HN: CanaryAI v0.2.5 – Security monitoring on Claude Code actions",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-02-22T13:24:03Z",
+        "url": "https://github.com/jx887/homebrew-canaryai",
+        "hn": "https://news.ycombinator.com/item?id=47110812"
+      },
+      {
+        "title": "Supercharge your development workflow with Claude Code action",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-01-04T16:14:18Z",
+        "url": "https://medium.com/learnings-from-the-paas/supercharge-your-development-workflow-with-claude-code-action-0c649b29545e",
+        "hn": "https://news.ycombinator.com/item?id=46489345"
+      },
+      {
+        "title": "Unauthorized Prompt Injection to RCE in Anthropic's Claude Code Action",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-05T17:40:15Z",
+        "url": "https://johnstawinski.com/2026/02/05/trusting-claude-with-a-knife-unauthorized-prompt-injection-to-rce-in-anthropics-claude-code-action/",
+        "hn": "https://news.ycombinator.com/item?id=46902240"
+      },
+      {
+        "title": "Show HN: Voicescri.pt – generate code hands-free with voice agents (BYOK)",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2025-10-06T15:33:28Z",
+        "url": "https://www.voicescri.pt/",
+        "hn": "https://news.ycombinator.com/item?id=45492497"
+      },
+      {
+        "title": "Show HN: How to Catch Documentation Drift with Claude Code and GitHub Actions",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-06T21:14:03Z",
+        "url": "https://dosu.dev/blog/how-to-catch-documentation-drift-claude-code-github-actions",
+        "hn": "https://news.ycombinator.com/item?id=47281158"
+      },
+      {
+        "title": "Bringing Observability to Claude Code: OpenTelemetry in Action",
+        "points": 51,
+        "num_comments": 18,
+        "created_at": "2025-09-21T18:37:04Z",
+        "url": "https://signoz.io/blog/claude-code-monitoring-with-opentelemetry/",
+        "hn": "https://news.ycombinator.com/item?id=45325410"
+      },
+      {
+        "title": "Combining Claude Code with GitHub Actions and Pull Requests to Scale AI Coding",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2025-08-22T19:14:47Z",
+        "url": "https://www.aiengineering.report/p/combining-claude-code-with-github",
+        "hn": "https://news.ycombinator.com/item?id=44988640"
+      },
+      {
+        "title": "Show HN: Open-source agent skill that automates SOC 2 audit prep",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-02-10T13:07:15Z",
+        "url": "https://github.com/Screenata/compliance-automation",
+        "hn": "https://news.ycombinator.com/item?id=46959220"
+      },
+      {
+        "title": "I Built Claude Code into Gmail with GitHub Actions and MCP Bundles",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-01-05T18:43:02Z",
+        "url": "https://medium.com/@tony.lewis.london/how-i-built-an-ai-active-gmail-inbox-with-real-context-personalization-without-googles-ai-64937a191ffa",
+        "hn": "https://news.ycombinator.com/item?id=46502845"
+      },
+      {
+        "title": "Show HN: Cq – Stack Overflow for AI coding agents",
+        "points": 225,
+        "num_comments": 103,
+        "created_at": "2026-03-23T16:11:03Z",
+        "url": "https://blog.mozilla.ai/cq-stack-overflow-for-agents/",
+        "hn": "https://news.ycombinator.com/item?id=47491466"
+      },
+      {
+        "title": "Claude Code Analytics – Turn AI Conversations into Actionable Insights",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2025-12-31T19:43:48Z",
+        "url": "https://github.com/sujankapadia/claude-code-utils",
+        "hn": "https://news.ycombinator.com/item?id=46447571"
+      },
+      {
+        "title": "Show HN: Claude-PR-reviewer – AI code review in GitHub Actions (BYOK)",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-25T20:16:59Z",
+        "url": "https://github.com/indoor47/claude-pr-reviewer",
+        "hn": "https://news.ycombinator.com/item?id=47157228"
+      },
+      {
+        "title": "Show HN: yoyo - a 200 line baby coding agent evolving in its own Truman Show",
+        "points": 3,
+        "num_comments": 1,
+        "created_at": "2026-03-04T21:27:46Z",
+        "url": "https://github.com/yologdev/yoyo-evolve",
+        "hn": "https://news.ycombinator.com/item?id=47254139"
+      },
+      {
+        "title": "Show HN: Enjoy – A gamified GitHub repo where contributions earn karma",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-01-19T12:40:01Z",
+        "url": "https://github.com/fabriziosalmi/enjoy",
+        "hn": "https://news.ycombinator.com/item?id=46678332"
+      },
+      {
+        "title": "Show HN: Epistemic Protocols – Decision Checkpoints for Claude Code",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-01-14T22:53:11Z",
+        "url": "https://github.com/jongwony/epistemic-protocols",
+        "hn": "https://news.ycombinator.com/item?id=46625077"
+      },
+      {
+        "title": "Show HN: macOS local meeting recorder with Whisper transcription/ Claude notes",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2025-12-17T03:13:51Z",
+        "url": "https://github.com/daredammy/kumbuka",
+        "hn": "https://news.ycombinator.com/item?id=46297830"
+      },
+      {
+        "title": "Show HN: Playwright Skill for Claude Code – Less context than playwright-MCP",
+        "points": 189,
+        "num_comments": 45,
+        "created_at": "2025-10-20T11:58:35Z",
+        "url": "https://github.com/lackeyjb/playwright-skill",
+        "hn": "https://news.ycombinator.com/item?id=45642911"
+      },
+      {
+        "title": "Show HN: A context-aware permission guard for Claude Code",
+        "points": 127,
+        "num_comments": 94,
+        "created_at": "2026-03-11T23:26:25Z",
+        "url": "https://github.com/manuelschipper/nah/",
+        "hn": "https://news.ycombinator.com/item?id=47343927"
+      },
+      {
+        "title": "Show HN: Policy enforcement for Claude Code, Cursor, and Codex",
+        "points": 13,
+        "num_comments": 5,
+        "created_at": "2026-07-09T15:26:24Z",
+        "url": "https://kastra.ai/",
+        "hn": "https://news.ycombinator.com/item?id=48847526"
+      },
+      {
+        "title": "Show HN: FlowLens – MCP server for debugging with Claude Code",
+        "points": 6,
+        "num_comments": 1,
+        "created_at": "2025-10-23T21:35:18Z",
+        "url": "https://magentic.ai/flowlens/",
+        "hn": "https://news.ycombinator.com/item?id=45687524"
+      },
+      {
+        "title": "Show HN: Scape – One-click worktrees and orchestrators for Claude Code",
+        "points": 5,
+        "num_comments": 2,
+        "created_at": "2026-03-05T04:52:33Z",
+        "url": "https://www.scape.work/",
+        "hn": "https://news.ycombinator.com/item?id=47257712"
+      },
+      {
+        "title": "Show HN: Decipher x Claude Code – Infra to auto-generate and maintain E2E tests",
+        "points": 5,
+        "num_comments": 2,
+        "created_at": "2026-03-04T16:33:58Z",
+        "url": "https://docs.getdecipher.com/pages/features/testing/claude-code-integration",
+        "hn": "https://news.ycombinator.com/item?id=47249977"
+      },
+      {
+        "title": "Show HN: I solved Claude Code's context drift with persistent Markdown files",
+        "points": 4,
+        "num_comments": 3,
+        "created_at": "2026-03-16T17:36:07Z",
+        "hn": "https://news.ycombinator.com/item?id=47402125"
+      },
+      {
+        "title": "Show HN: Claude Code 2.0 router – preference-aligned routing to multiple LLMs",
+        "points": 4,
+        "num_comments": 1,
+        "created_at": "2025-10-01T16:09:15Z",
+        "url": "https://github.com/katanemo/archgw/tree/main/demos/use_cases/claude_code_router",
+        "hn": "https://news.ycombinator.com/item?id=45439423"
+      },
+      {
+        "title": "Show HN: Caliper – pass@k reliability testing for Claude Code and Codex skills",
+        "points": 3,
+        "num_comments": 3,
+        "created_at": "2026-06-28T17:42:41Z",
+        "url": "https://github.com/edonadei/caliper",
+        "hn": "https://news.ycombinator.com/item?id=48709606"
+      },
+      {
+        "title": "Show HN: DispatchSEO – open-source SEO manager tool for Claude Code",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-07-30T12:52:23Z",
+        "url": "https://github.com/NeoZi12/dispatchseo",
+        "hn": "https://news.ycombinator.com/item?id=49109315"
+      },
+      {
+        "title": "Show HN: First-token-only flaw in Claude Code permissions (triage bot too)",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-25T13:03:31Z",
+        "url": "https://spitfirecowboy.com/workshop/0008-the-receipt-was-lying/",
+        "hn": "https://news.ycombinator.com/item?id=47516808"
+      }
+    ]
+  },
+  {
+    "query": "AI agent CI/CD security",
+    "nbHits": 20,
+    "hits": [
+      {
+        "title": "Show HN: Headless Cloud Security – Headless SaaS has come to security",
+        "points": 10,
+        "num_comments": 1,
+        "created_at": "2026-05-13T13:30:08Z",
+        "url": "https://www.sysdig.com/learn-cloud-native/what-is-headless-cloud-security",
+        "hn": "https://news.ycombinator.com/item?id=48121671"
+      },
+      {
+        "title": "Show HN: TITO – Automated threat modeling from code (open source)",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-02-04T21:22:52Z",
+        "url": "https://github.com/Leathal1/TITO",
+        "hn": "https://news.ycombinator.com/item?id=46891988"
+      },
+      {
+        "title": "Show HN: Get a security assessment of MCP servers directly from your terminal",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-07-29T08:26:16Z",
+        "url": "https://index.canopii.dev/cli",
+        "hn": "https://news.ycombinator.com/item?id=49094760"
+      },
+      {
+        "title": "Ask HN: Why do AI agents keep repeating mistakes your team already fixed?",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-03-16T14:04:31Z",
+        "hn": "https://news.ycombinator.com/item?id=47399209"
+      },
+      {
+        "title": "Show HN: Bellwether – MCP Server Testing and Drift Detection for CI/CD",
+        "points": 2,
+        "num_comments": 0,
+        "created_at": "2026-02-01T15:23:48Z",
+        "url": "https://github.com/dotsetlabs/bellwether",
+        "hn": "https://news.ycombinator.com/item?id=46846797"
+      },
+      {
+        "title": "AI agent has more production access than your senior engineers",
+        "points": 1,
+        "num_comments": 1,
+        "created_at": "2026-02-10T20:23:14Z",
+        "hn": "https://news.ycombinator.com/item?id=46966307"
+      },
+      {
+        "title": "Show HN: Publish.my – Static hosting where the AI agent is the customer",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-06-23T15:12:15Z",
+        "url": "https://publish.my/",
+        "hn": "https://news.ycombinator.com/item?id=48646299"
+      },
+      {
+        "title": "Show HN: Lume 0.2 – Build and Run macOS VMs with unattended setup",
+        "points": 154,
+        "num_comments": 44,
+        "created_at": "2026-01-18T17:53:21Z",
+        "url": "https://cua.ai/docs/lume/guide/getting-started/introduction",
+        "hn": "https://news.ycombinator.com/item?id=46670181"
+      },
+      {
+        "title": "Show HN: Babylog – baby tracker built with OpenClaw from a hospital room",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2026-02-16T22:50:26Z",
+        "hn": "https://news.ycombinator.com/item?id=47041425"
+      },
+      {
+        "title": "Show HN: Bytesalt – AI that finds bugs Playwright tests miss",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-07-01T13:38:00Z",
+        "url": "https://bytesalt.com",
+        "hn": "https://news.ycombinator.com/item?id=48746576"
+      },
+      {
+        "title": "Show HN: We scanned 306 MCP servers – 10% have critical vulnerabilities",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-03T15:29:06Z",
+        "url": "https://mcpsafe.org/",
+        "hn": "https://news.ycombinator.com/item?id=46872194"
+      },
+      {
+        "title": "Show HN: GitHub Action for AI/LLM Security Scanning in CI/CD",
+        "points": 5,
+        "num_comments": 1,
+        "created_at": "2026-01-01T07:14:05Z",
+        "url": "https://github.com/XSource-Sec/agent-audit-action",
+        "hn": "https://news.ycombinator.com/item?id=46452017"
+      },
+      {
+        "title": "Show HN: 127 PRs to Prod this wknd with 18 AI agents: metaswarm. MIT licensed",
+        "points": 5,
+        "num_comments": 2,
+        "created_at": "2026-02-03T01:18:39Z",
+        "url": "https://github.com/dsifry/metaswarm",
+        "hn": "https://news.ycombinator.com/item?id=46864977"
+      },
+      {
+        "title": "I built an AI browser with prompt-injection defense at 16 on an i5 with 8GB RAM",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-02-24T17:21:29Z",
+        "hn": "https://news.ycombinator.com/item?id=47139768"
+      },
+      {
+        "title": "Show HN:Secure deployment platform for AI-generated code and internal tools",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2025-08-05T20:19:27Z",
+        "hn": "https://news.ycombinator.com/item?id=44803721"
+      },
+      {
+        "title": "We just released Khaos SDK and khaos-examples (BSL 1.1)",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-02-14T00:39:08Z",
+        "hn": "https://news.ycombinator.com/item?id=47009969"
+      },
+      {
+        "title": "Open source Agent Testing (BSL 1.1)",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-16T16:02:36Z",
+        "hn": "https://news.ycombinator.com/item?id=47036689"
+      },
+      {
+        "title": "Show HN: Metaswarm: Production-ready agent swarms, MIT license",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-03T15:59:44Z",
+        "url": "https://dsifry.github.io/metaswarm/",
+        "hn": "https://news.ycombinator.com/item?id=46872673"
+      },
+      {
+        "title": "Show HN: Host, share, promote and track release artifacts via your coding agent",
+        "points": 12,
+        "num_comments": 0,
+        "created_at": "2026-04-14T11:49:03Z",
+        "url": "https://jfrog.com/fly/",
+        "hn": "https://news.ycombinator.com/item?id=47764383"
+      },
+      {
+        "title": "Tell HN: We modeled the cost of boilerplate (it's ~80% of the budget)",
+        "points": 3,
+        "num_comments": 0,
+        "created_at": "2026-03-05T11:51:33Z",
+        "hn": "https://news.ycombinator.com/item?id=47260560"
+      }
+    ]
+  },
+  {
+    "query": "PromptPwnd",
+    "nbHits": 4,
+    "hits": [
+      {
+        "title": "PromptPwnd: Prompt Injection Vulnerabilities in GitHub Actions Using AI Agents",
+        "points": 2,
+        "num_comments": 1,
+        "created_at": "2025-12-05T05:57:13Z",
+        "url": "https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents",
+        "hn": "https://news.ycombinator.com/item?id=46157229"
+      },
+      {
+        "title": "Prompt injection through GitHub Action workflow impacts Gemini and others",
+        "points": 4,
+        "num_comments": 1,
+        "created_at": "2025-12-04T15:37:21Z",
+        "url": "https://www.aikido.dev/blog/promptpwnd-github-actions-ai-agents",
+        "hn": "https://news.ycombinator.com/item?id=46148809"
+      },
+      {
+        "title": "Show HN: Prompt2pwn – CTF Automated Solver",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-24T16:54:29Z",
+        "url": "https://github.com/edelauna/prompt2pwn",
+        "hn": "https://news.ycombinator.com/item?id=47139390"
+      },
+      {
+        "title": "I spent $100 benchmarking LLM providers on a weekend CTF",
+        "points": 1,
+        "num_comments": 0,
+        "created_at": "2026-02-24T13:11:31Z",
+        "hn": "https://news.ycombinator.com/item?id=47136683"
+      }
+    ]
+  }
+]

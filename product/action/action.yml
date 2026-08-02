@@ -1,0 +1,40 @@
+name: TriadGuard
+description: Scan GitHub Actions workflows for AI agent fatal-triangle configuration risks (zero LLM).
+author: TriadGuard
+branding:
+  icon: shield
+  color: orange
+inputs:
+  path:
+    description: Path to workflows directory or file (relative to repository root)
+    required: false
+    default: .github/workflows
+  fail-on-critical:
+    description: Fail the job when critical findings are present
+    required: false
+    default: "true"
+runs:
+  using: composite
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+    - name: Install and build TriadGuard
+      shell: bash
+      working-directory: ${{ github.action_path }}/..
+      run: |
+        npm install
+        npm run build -w @triadguard/engine
+        npm run build -w triadguard
+    - name: Scan workflows
+      shell: bash
+      working-directory: ${{ github.workspace }}
+      run: |
+        set +e
+        node "${{ github.action_path }}/../packages/cli/dist/cli.js" "${{ inputs.path }}"
+        code=$?
+        if [ "${{ inputs.fail-on-critical }}" != "true" ] && [ "$code" -eq 1 ]; then
+          exit 0
+        fi
+        exit $code
