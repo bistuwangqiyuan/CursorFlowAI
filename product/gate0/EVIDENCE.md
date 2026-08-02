@@ -86,6 +86,7 @@ Script: `fetch_b2_hn.mjs` → `hn-b2.json` (2026-08-03).
 |-------|-------|
 | Product | TriadGuard free browser scan + CLI + Action |
 | Launch URL | https://triadguard.vercel.app (alias → product-dusky-eight.vercel.app) |
+| Source commit | https://github.com/bistuwangqiyuan/CursorFlowAI/commit/4cc9123785fad3423cbe724f34a21a566db3718b |
 | Launch posts | See `LAUNCH.md` (draft; human posts) |
 | Window start | _(UTC date when Show HN + 2 communities posted)_ |
 | Window end | start + 14 days |

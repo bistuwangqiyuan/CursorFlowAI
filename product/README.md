@@ -13,7 +13,7 @@ This directory is the product validation surface for business-plan candidate **C
 | `action` | Composite GitHub Action |
 | `web` | Next.js site → Vercel |
 
-## Develop
+## Develop / CLI (npm publish pending auth)
 
 ```bash
 cd product
@@ -21,8 +21,11 @@ npm install
 npm test
 npm run build
 npm run dev          # web on :3000
-npm run scan -- ../product/packages/engine/fixtures
+node packages/cli/dist/cli.js .github/workflows
+# or: npm run scan -- packages/engine/fixtures
 ```
+
+Until the `triadguard` package is published to npm, run the CLI from this monorepo after `npm run build`.
 
 ## GitHub Action
 
